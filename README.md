@@ -8,6 +8,8 @@ https://sound-au.com/tcaas/jlhupdate.htm
 https://www.elprocus.com/2n5551-transistor/
 https://github.com/adafruit/Adafruit_Brain-Machine-Kit
 
+Souce code added as examples for learning
+
 ### Data
 ___
 
