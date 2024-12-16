@@ -57,7 +57,7 @@ in many places.
 #define leftEyeRed 6    // Define pinout for left eye
 #define rightEarLow 9   // Define pinout for left ear
 #define lefttEarLow 10  // Define pinout for left ear
-#define wakePin 2       // the input pin where the pushbutton is connected.
+//#define wakePin 2       // the input pin where the pushbutton is connected.
 
 #define SAMPLE_MAX (65535.0)
 #define SAMPLE_FREQUENCY (8000.0)
@@ -195,9 +195,9 @@ void setup() {
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
   pinMode(buttonPin, INPUT);     // Pin input at wakePin
   pinMode(13, OUTPUT);
-  digitalWrite(13,LOW);
+  digitalWrite(13, LOW);
   pinMode(12, OUTPUT);
-  digitalWrite(12,LOW);
+  digitalWrite(12, LOW);
 }
 
 
@@ -207,22 +207,23 @@ void setup() {
 
 void loop() {
   int j = 0;
-  while (buttonState) {
-  CHECK: buttonState = digitalRead(buttonPin);
+  int t = 0;
+//CHECK:
+  buttonState = digitalRead(buttonPin);
   if (buttonState == LOW) {
-    OCR0A =0
+    //OCR0A = 0;
     // OCR1A =0
-    delay(2000); // пасиб/thanks
+    delay(2000);                                             // пасиб/thanks
     while (pgm_read_byte(&brainwaveTab[j].bwType) != '0') {  // '0' signifies end of table
       do_brainwave_element(j);
       j++;
-      goto CHECK;
+      //goto CHECK;
     }
-  else
-    OCR1A += (TIMER1_FREQUENCY/UPDATE_RATE);
-    t++;
-    OCR0A = ((-t & 4095) * (255 & t * (t & t >> 13)) >> 12) + (127 & t * (234 & t >> 8 & t >> 3) >> (3 & t >> 14));  //OC0A/P13 by tejeez
-    goto CHECK;
+  //else {
+  //OCR1A += (TIMER1_FREQUENCY / UPDATE_RATE);
+  //t++;
+  //OCR0A = ((-t & 4095) * (255 & t * (t & t >> 13)) >> 12) + (127 & t * (234 & t >> 8 & t >> 3) >> (3 & t >> 14));  //OC0A/P13 by tejeez
+  //goto CHECK;
   }
   // Shut down everything and put the CPU to sleep
   analogWrite(rightEyeRed, 255);  // common anode -
@@ -293,17 +294,15 @@ to create a binaural beat (between Left and Right ears)
 for a Brainwave Element.
 (See notes above for beat creation method.)
 ***************************************************/
-void stoptoneandleds(int buttonState) {
-  if (buttonState == LOW) {
-    rightEar.stop();
-    leftEar.stop();
-    analogWrite(rightEyeRed, 255);  // common anode -
-    analogWrite(leftEyeRed, 255);   // HIGH means 'off'
-
-    sleepNow();
-  }
-}
-
+//void stoptoneandleds(int buttonState) {
+//  if (buttonState == LOW) {
+//    rightEar.stop();
+//    leftEar.stop();
+//    analogWrite(rightEyeRed, 255);  // common anode -
+//    analogWrite(leftEyeRed, 255);   // HIGH means 'off'
+//    sleepNow();
+//  }
+//}
 
 void do_brainwave_element(int index) {
   char brainChr = pgm_read_byte(&brainwaveTab[index].bwType);
