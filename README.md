@@ -17,6 +17,9 @@ https://interface.khm.de/index.php/lab/interfaces-advanced/arduino-realtime-audi
 https://www.electronicshub.org/wp-content/smush-webp/2021/01/Arduino-Mega-Pinout.jpg.webp
 https://commons.wikimedia.org/wiki/File:Pinout_of_ARDUINO_Board_and_ATMega328PU.svg
 
+### Ideas
+https://www.instructables.com/Algorithmic-noise-machine/
+
 ### Images
 ___
 
