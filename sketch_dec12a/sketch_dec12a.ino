@@ -59,6 +59,11 @@ in many places.
 #define lefttEarLow 10  // Define pinout for left ear
 #define wakePin 2       // the input pin where the pushbutton is connected.
 
+#define SAMPLE_MAX (65535.0)
+#define SAMPLE_FREQUENCY (8000.0)
+#define TIMER1_FREQUENCY 40
+#define UPDATE_RATE 8000
+
 /***************************************************
 BRAINWAVE TABLE
 See 'Some information about PROGMEM' above.
@@ -189,6 +194,10 @@ void setup() {
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
   pinMode(buttonPin, INPUT);     // Pin input at wakePin
+  pinMode(13, OUTPUT);
+  digitalWrite(13,LOW);
+  pinMode(12, OUTPUT);
+  digitalWrite(12,LOW);
 }
 
 
@@ -198,14 +207,22 @@ void setup() {
 
 void loop() {
   int j = 0;
-  buttonState = digitalRead(buttonPin);
+  while (buttonState) {
+  CHECK: buttonState = digitalRead(buttonPin);
   if (buttonState == LOW) {
+    OCR0A =0
+    // OCR1A =0
     delay(2000); // пасиб/thanks
     while (pgm_read_byte(&brainwaveTab[j].bwType) != '0') {  // '0' signifies end of table
       do_brainwave_element(j);
       j++;
+      goto CHECK;
     }
-//    else OCR0A = ((-t & 4095) * (255 & t * (t & t >> 13)) >> 12) + (127 & t * (234 & t >> 8 & t >> 3) >> (3 & t >> 14));  //OC0A/P13 by tejeez
+  else
+    OCR1A += (TIMER1_FREQUENCY/UPDATE_RATE);
+    t++;
+    OCR0A = ((-t & 4095) * (255 & t * (t & t >> 13)) >> 12) + (127 & t * (234 & t >> 8 & t >> 3) >> (3 & t >> 14));  //OC0A/P13 by tejeez
+    goto CHECK;
   }
   // Shut down everything and put the CPU to sleep
   analogWrite(rightEyeRed, 255);  // common anode -
@@ -297,7 +314,7 @@ void do_brainwave_element(int index) {
       buttonState = digitalRead(buttonPin);
       rightEar.play(centralTone - (binauralBeat[0] / 2));
       leftEar.play(centralTone + (binauralBeat[0] / 2));
-      stoptoneandleds(buttonState);
+      // stoptoneandleds(buttonState);
       //  Generate binaural beat of 14.4Hz
       //  delay for the time specified in the table while blinking the LEDs at the correct rate
       blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 347, 347);
@@ -308,7 +325,7 @@ void do_brainwave_element(int index) {
       buttonState = digitalRead(buttonPin);
       rightEar.play(centralTone - (binauralBeat[0] / 2));
       leftEar.play(centralTone + (binauralBeat[0] / 2));
-      stoptoneandleds(buttonState);
+      // stoptoneandleds(buttonState);
       //  Generate binaural beat of 14.4Hz
       //  delay for the time specified in the table while blinking the LEDs at the correct rate
       alt_blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 347, 347);
@@ -319,7 +336,7 @@ void do_brainwave_element(int index) {
       buttonState = digitalRead(buttonPin);
       rightEar.play(centralTone - (binauralBeat[1] / 2));
       leftEar.play(centralTone + (binauralBeat[1] / 2));
-      stoptoneandleds(buttonState);
+      // stoptoneandleds(buttonState);
       // Generates a binaural beat of 11.1Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 451, 450);
@@ -330,7 +347,7 @@ void do_brainwave_element(int index) {
       buttonState = digitalRead(buttonPin);
       rightEar.play(centralTone - (binauralBeat[1] / 2));
       leftEar.play(centralTone + (binauralBeat[1] / 2));
-      stoptoneandleds(buttonState);
+      // stoptoneandleds(buttonState);
       // Generates a binaural beat of 11.1Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       alt_blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 451, 450);
@@ -343,7 +360,7 @@ void do_brainwave_element(int index) {
       //   to Right ear speaker through output OC1A (PB3, pin 15)
       rightEar.play(centralTone - (binauralBeat[2] / 2));
       leftEar.play(centralTone + (binauralBeat[2] / 2));
-      stoptoneandleds(buttonState);
+      // stoptoneandleds(buttonState);
       // Generates a binaural beat of 6.0Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 835, 835);
@@ -356,7 +373,7 @@ void do_brainwave_element(int index) {
       //   to Right ear speaker through output OC1A (PB3, pin 15)
       rightEar.play(centralTone - (binauralBeat[2] / 2));
       leftEar.play(centralTone + (binauralBeat[2] / 2));
-      stoptoneandleds(buttonState);
+      // stoptoneandleds(buttonState);
       // Generates a binaural beat of 6.0Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       alt_blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 835, 835);
@@ -367,7 +384,7 @@ void do_brainwave_element(int index) {
       buttonState = digitalRead(buttonPin);
       rightEar.play(centralTone - (binauralBeat[3] / 2));
       leftEar.play(centralTone + (binauralBeat[3] / 2));
-      stoptoneandleds(buttonState);
+      // stoptoneandleds(buttonState);
 
       // Generates a binaural beat of 2.2Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
@@ -379,7 +396,7 @@ void do_brainwave_element(int index) {
       buttonState = digitalRead(buttonPin);
       rightEar.play(centralTone - (binauralBeat[3] / 2));
       leftEar.play(centralTone + (binauralBeat[3] / 2));
-      stoptoneandleds(buttonState);
+      // stoptoneandleds(buttonState);
 
       // Generates a binaural beat of 2.2Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
@@ -391,7 +408,7 @@ void do_brainwave_element(int index) {
       buttonState = digitalRead(buttonPin);
       rightEar.play(centralTone - (binauralBeat[4] / 2));
       leftEar.play(centralTone + (binauralBeat[4] / 2));
-      stoptoneandleds(buttonState);
+      // stoptoneandleds(buttonState);
       // Generates a binaural beat of 40.4Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 124, 124);
@@ -402,7 +419,7 @@ void do_brainwave_element(int index) {
       buttonState = digitalRead(buttonPin);
       rightEar.play(centralTone - (binauralBeat[4] / 2));
       leftEar.play(centralTone + (binauralBeat[4] / 2));
-      stoptoneandleds(buttonState);
+      // stoptoneandleds(buttonState);
 
       // Generates a binaural beat of 40.4Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate

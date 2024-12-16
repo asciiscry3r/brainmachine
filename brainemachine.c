@@ -1,4 +1,4 @@
-/*
+\/*
 Brain Machine
 Firmware
 for use with ATtiny25
