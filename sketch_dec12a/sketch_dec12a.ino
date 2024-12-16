@@ -42,10 +42,10 @@ And to access brainwaveTab[3].bwDuration, which is a double-word, this is how to
 /***************************************************
 LIBRARIES - Define necessary libraries here.
 ***************************************************/
-#include <avr/pgmspace.h> // for arrays - PROGMEM 
-#include <Tone.h> // Include the arduino tone library
-#include <avr/sleep.h> // A library to control the sleep mode
-#include <avr/power.h> // A library to control power
+#include <avr/pgmspace.h>  // for arrays - PROGMEM
+#include <Tone.h>          // Include the arduino tone library
+#include <avr/sleep.h>     // A library to control the sleep mode
+#include <avr/power.h>     // A library to control power
 
 /***************************************************
 GLOBALS
@@ -53,11 +53,11 @@ We isolate calls to pins with these globals so we can change
 which pin we'll use i one please, rather than having to search and replace
 in many places.
 ***************************************************/
-#define rightEyeRed 5 // Define pinout for right eye
-#define leftEyeRed 6 // Define pinout for left eye
-#define rightEarLow 9 // Define pinout for left ear
-#define lefttEarLow 10 // Define pinout for left ear
-#define wakePin 2 // the input pin where the pushbutton is connected.
+#define rightEyeRed 5   // Define pinout for right eye
+#define leftEyeRed 6    // Define pinout for left eye
+#define rightEarLow 9   // Define pinout for left ear
+#define lefttEarLow 10  // Define pinout for left ear
+#define wakePin 2       // the input pin where the pushbutton is connected.
 
 /***************************************************
 BRAINWAVE TABLE
@@ -76,68 +76,50 @@ struct brainwaveElement {
   // A, B, T, D and G offer alternating flash instead of concurrent flash.
   unsigned long int bwDuration;  // Duration of this Brainwave Type (divide by 10,000 to get seconds)
 } const brainwaveTab[] PROGMEM = {
-{ 'b', 700000 },
-{ 'a', 100000 },
-{ 'b', 200000 },
-{ 'a', 150000 },
-{ 'b', 150000 },
-{ 'a', 200000 },
-{ 'b', 100000 },
-{ 'a', 300000 },
-{ 'b', 60000 },
-{ 'a', 600000 },
-{ 't', 100000 },
-{ 'A', 300000 },
-{ 't', 200000 },
-{ 'a', 200000 },
-{ 't', 300000 },
-{ 'A', 150000 },
-{ 't', 600000 },
-{ 'a', 100000 },
-{ 'b', 10000 },
-{ 'a', 60000 },
-{ 'T', 550000 },
-{ 'd', 10000 },
-{ 't', 450000 },
-{ 'd', 60000 },
-{ 'T', 350000 },
-{ 'd', 100000 },
-{ 't', 250000 },
-{ 'd', 150000 },
-{ 'g', 10000 },
-{ 'T', 60000 },
-{ 'g', 10000 },
-{ 'd', 300000 },
-{ 'g', 50000 },
-{ 'd', 600000 },
-{ 'g', 100000 },
-{ 'D', 300000 },
-{ 'g', 60000 },
-{ 'd', 150000 },
-{ 'g', 10000 },
-{ 't', 100000 },
-{ 'D', 100000 },
-{ 't', 200000 },
-{ 'a', 10000 },
-{ 'd', 100000 },
-{ 't', 300000 },
-{ 'a', 60000 },
-{ 'B', 10000 },
-{ 'a', 100000 },
-{ 't', 220000 },
-{ 'A', 150000 },
-{ 'b', 10000 },
-{ 'a', 300000 },
-{ 'b', 60000 },
-{ 'a', 200000 },
-{ 'B', 120000 },
-{ 'a', 150000 },
-{ 'b', 200000 },
-{ 'a', 100000 },
-{ 'b', 250000 },
-{ 'A', 60000 },
-{ 'b', 700000 },
-{ '0', 0 }
+  { 'b', 600000 },
+  { 'a', 100000 },
+  { 'b', 200000 },
+  { 'a', 150000 },
+  { 'b', 150000 },
+  { 'a', 200000 },
+  { 'b', 100000 },
+  { 'a', 300000 },
+  { 'b',  50000 },
+  { 'a', 600000 },
+  { 't', 100000 },
+  { 'a', 300000 },
+  { 't', 200000 },
+  { 'a', 300000 },
+  { 't', 300000 },
+  { 'a', 150000 },
+  { 't', 600000 },
+  { 'a', 150000 },
+  { 'b',  10000 },
+  { 'a', 150000 },
+  { 't', 600000 },
+  { 'd',  10000 },
+  { 't', 100000 },
+  { 'd',  10000 },
+  { 't', 100000 },
+  { 'd',  10000 },
+  { 't', 300000 },
+  { 'a', 150000 },
+  { 'b',  10000 },
+  { 'a', 150000 },
+  { 't', 300000 },
+  { 'a', 150000 },
+  { 'b',  10000 },
+  { 'a', 200000 },
+  { 'b',  50000 },
+  { 'a', 200000 },
+  { 'b', 150000 },
+  { 'a', 150000 },
+  { 'b', 200000 },
+  { 'a', 100000 },
+  { 'b', 250000 },
+  { 'a',  50000 },
+  { 'b', 600000 },
+  { '0',      0 }
 };
 
 
@@ -167,21 +149,24 @@ Isolating the central tone makes it easy for
 the user to choose a preferred frequency base.
 
 ***************************************************/
-float binauralBeat[] = { 14.4, 11.1, 6.0, 2.2, 40.4 }; // For beta, alpha, gamma and delta beat differences.
-Tone rightEar; 
+float binauralBeat[] = { 14.4, 11.1, 6.0, 2.2, 40.4 };  // For beta, alpha, gamma and delta beat differences.
+Tone rightEar;
 Tone leftEar;
-float centralTone = 440.0; //We're starting at this tone and spreading the binaural beat from there.
+float centralTone = 440.0;  //We're starting at this tone and spreading the binaural beat from there.
 
 //Button States below: Still Diagnostic - These values aren't used yet...
-int val = 0;     // val will be used to store the state of the input pin.
-int old_val = 0; // This variable stores the previous value of "val".
-int state = 0;  // 0 = LED off while 1 = LED on
+int val = 0;      // val will be used to store the state of the input pin.
+int old_val = 0;  // This variable stores the previous value of "val".
+int state = 0;    // 0 = LED off while 1 = LED on
 
 //Blink statuses for function 'blink_LEDs' and 'alt_blink_LEDS
 unsigned long int duration = 0;
 unsigned long int onTime = 0;
 unsigned long int offTime = 0;
 
+const int buttonPin = 2;  // the number of the pushbutton pin
+// variables will change:
+int buttonState = 0;  // variable for reading the pushbutton status
 
 /***************************************************
   SETUP defines pins and tones.
@@ -195,14 +180,15 @@ unsigned long int offTime = 0;
   pin 5V - for common anode on LED's
   pin GND - ground for tones
 */
-void setup()  { 
-  rightEar.begin(rightEarLow); // Tone rightEar begins at pin output rightEarLow
-  leftEar.begin(lefttEarLow); // Tone leftEar begins at pin output leftEarLow
-  pinMode(rightEyeRed, OUTPUT); // Pin output at rightEyeRed
-  pinMode(leftEyeRed, OUTPUT); // Pin output at leftEyeRed
-  pinMode(wakePin, INPUT); // Pin input at wakePin
-//  Serial.begin(9600); // 
-//  myTimer(); // Comment this out when you've adjusted DelayCount
+
+
+
+void setup() {
+  rightEar.begin(rightEarLow);   // Tone rightEar begins at pin output rightEarLow
+  leftEar.begin(lefttEarLow);    // Tone leftEar begins at pin output leftEarLow
+  pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
+  pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
+  pinMode(buttonPin, INPUT);     // Pin input at wakePin
 }
 
 
@@ -212,18 +198,22 @@ void setup()  {
 
 void loop() {
   int j = 0;
-  while (pgm_read_byte(&brainwaveTab[j].bwType) != '0') {  // '0' signifies end of table
-    do_brainwave_element(j);
-    j++;
+  buttonState = digitalRead(buttonPin);
+  if (buttonState == LOW) {
+    while (pgm_read_byte(&brainwaveTab[j].bwType) != '0') {  // '0' signifies end of table
+      do_brainwave_element(j);
+      j++;
+    }
   }
- 
+  //if (buttonState == LOW) {
+  //  blink_LEDs(37400, 374, 347);
+  //}
   // Shut down everything and put the CPU to sleep
-  analogWrite(rightEyeRed, 255);  // common anode - 
-  analogWrite(leftEyeRed, 255);  // HIGH means 'off'
+  analogWrite(rightEyeRed, 255);  // common anode -
+  analogWrite(leftEyeRed, 255);   // HIGH means 'off'
   rightEar.stop();
-  leftEar.stop();  
-  
-// myTimer(); // Comment this out when you've adjusted DelayCount
+  leftEar.stop();
+
   sleepNow();
 }
 
@@ -233,15 +223,15 @@ This function delays the specified number of 1/10 milliseconds
 
 void delay_one_tenth_ms(unsigned long int ms) {
   unsigned long int timer;
-  const unsigned long int DelayCount=196;  // Default: 87 - this value was determined by trial and error
- 
+  const unsigned long int DelayCount = 196;  // Default: 87 - this value was determined by trial and error
+
   while (ms != 0) {
     // Toggling PD0 is done here to force the compiler to do this loop, rather than optimize it away
-    for (timer=0; timer <= DelayCount; timer++) {PIND |= 0b0000001;};
+    for (timer = 0; timer <= DelayCount; timer++) { PIND |= 0b0000001; };
     ms--;
   }
 }
- 
+
 /***************************************************
 This function blinks the LEDs 
 (connected to Pin 6, Pin 5 - 
@@ -253,33 +243,33 @@ In this particular instance, digitalWrites are set
 for common anode, so "on" = LOW and "off" = HIGH.
 ***************************************************/
 
-void blink_LEDs( unsigned long int duration, unsigned long int onTime, unsigned long int offTime) {
-  for (int i=0; i<(duration/(onTime+offTime)); i++) {   
+void blink_LEDs(unsigned long int duration, unsigned long int onTime, unsigned long int offTime) {
+  for (int i = 0; i < (duration / (onTime + offTime)); i++) {
     analogWrite(rightEyeRed, 0);  // common anode -
-    analogWrite(leftEyeRed, 0);  // LOW means 'on'
-    // turn on LEDs     
-    delay_one_tenth_ms(onTime);   //   for onTime     
-    
-    analogWrite(rightEyeRed, 255);  // common anode - 
-    analogWrite(leftEyeRed, 255);  // HIGH means 'off'
-   // turn off LEDs    
-    delay_one_tenth_ms(offTime);  //   for offTime   
-  } 
-} 
+    analogWrite(leftEyeRed, 0);   // LOW means 'on'
+    // turn on LEDs
+    delay_one_tenth_ms(onTime);  //   for onTime
 
-void alt_blink_LEDs( unsigned long int duration, unsigned long int onTime, unsigned long int offTime) {
-  for (int i=0; i<(duration/(onTime+offTime)); i++) {   
-    analogWrite(rightEyeRed, 0);  // common anode -
+    analogWrite(rightEyeRed, 255);  // common anode -
+    analogWrite(leftEyeRed, 255);   // HIGH means 'off'
+                                    // turn off LEDs
+    delay_one_tenth_ms(offTime);    //   for offTime
+  }
+}
+
+void alt_blink_LEDs(unsigned long int duration, unsigned long int onTime, unsigned long int offTime) {
+  for (int i = 0; i < (duration / (onTime + offTime)); i++) {
+    analogWrite(rightEyeRed, 0);   // common anode -
     analogWrite(leftEyeRed, 255);  // LOW means 'on'
-    // turn on LEDs     
-    delay_one_tenth_ms(onTime);   //   for onTime     
-    
-    analogWrite(rightEyeRed, 255);  // common anode - 
-    analogWrite(leftEyeRed, 0);  // HIGH means 'off'
-   // turn off LEDs    
-    delay_one_tenth_ms(offTime);  //   for offTime   
-  } 
-} 
+    // turn on LEDs
+    delay_one_tenth_ms(onTime);  //   for onTime
+
+    analogWrite(rightEyeRed, 255);  // common anode -
+    analogWrite(leftEyeRed, 0);     // HIGH means 'off'
+                                    // turn off LEDs
+    delay_one_tenth_ms(offTime);    //   for offTime
+  }
+}
 /***************************************************
 This function starts with a central audio frequency and
 splits the difference between two tones
@@ -287,108 +277,150 @@ to create a binaural beat (between Left and Right ears)
 for a Brainwave Element.
 (See notes above for beat creation method.)
 ***************************************************/
+void stoptoneandleds(int buttonState) {
+  if (buttonState == LOW) {
+    rightEar.stop();
+    leftEar.stop();
+    analogWrite(rightEyeRed, 255);  // common anode -
+    analogWrite(leftEyeRed, 255);   // HIGH means 'off'
 
-void do_brainwave_element(int index) {     
-  char brainChr = pgm_read_byte(&brainwaveTab[index].bwType);     
-    
+    sleepNow();
+  }
+}
+
+
+void do_brainwave_element(int index) {
+  char brainChr = pgm_read_byte(&brainwaveTab[index].bwType);
+
   switch (brainChr) {
-    case 'b':         
-      // Beta       
-      rightEar.play(centralTone - (binauralBeat[0]/2));
-      leftEar.play(centralTone + (binauralBeat[0]/2));  
-      //  Generate binaural beat of 14.4Hz       
-      //  delay for the time specified in the table while blinking the LEDs at the correct rate       
-      blink_LEDs( pgm_read_dword(&brainwaveTab[index].bwDuration), 347, 347 );
-      return;   // Beta
- 
-    case 'B':         
+    case 'b':
+      // Beta
+      buttonState = digitalRead(buttonPin);
+      rightEar.play(centralTone - (binauralBeat[0] / 2));
+      leftEar.play(centralTone + (binauralBeat[0] / 2));
+      stoptoneandleds(buttonState);
+      //  Generate binaural beat of 14.4Hz
+      //  delay for the time specified in the table while blinking the LEDs at the correct rate
+      blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 347, 347);
+      return;  // Beta
+
+    case 'B':
       // Beta - with alternating blinks
-      rightEar.play(centralTone - (binauralBeat[0]/2));
-      leftEar.play(centralTone + (binauralBeat[0]/2));  
-      //  Generate binaural beat of 14.4Hz       
-      //  delay for the time specified in the table while blinking the LEDs at the correct rate       
-      alt_blink_LEDs( pgm_read_dword(&brainwaveTab[index].bwDuration), 347, 347 );
-      return;   // Beta - with alternating blinks
- 
+      buttonState = digitalRead(buttonPin);
+      rightEar.play(centralTone - (binauralBeat[0] / 2));
+      leftEar.play(centralTone + (binauralBeat[0] / 2));
+      stoptoneandleds(buttonState);
+      //  Generate binaural beat of 14.4Hz
+      //  delay for the time specified in the table while blinking the LEDs at the correct rate
+      alt_blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 347, 347);
+      return;  // Beta - with alternating blinks
+
     case 'a':
       // Alpha
-      rightEar.play(centralTone - (binauralBeat[1]/2));
-      leftEar.play(centralTone + (binauralBeat[1]/2));  
+      buttonState = digitalRead(buttonPin);
+      rightEar.play(centralTone - (binauralBeat[1] / 2));
+      leftEar.play(centralTone + (binauralBeat[1] / 2));
+      stoptoneandleds(buttonState);
       // Generates a binaural beat of 11.1Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
-      blink_LEDs( pgm_read_dword(&brainwaveTab[index].bwDuration), 451, 450 );
-      return;   // Alpha
- 
+      blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 451, 450);
+      stoptoneandleds(buttonState);
+      return;  // Alpha
+
     case 'A':
       // Alpha
-      rightEar.play(centralTone - (binauralBeat[1]/2));
-      leftEar.play(centralTone + (binauralBeat[1]/2));  
+      buttonState = digitalRead(buttonPin);
+      rightEar.play(centralTone - (binauralBeat[1] / 2));
+      leftEar.play(centralTone + (binauralBeat[1] / 2));
+      stoptoneandleds(buttonState);
       // Generates a binaural beat of 11.1Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
-      alt_blink_LEDs( pgm_read_dword(&brainwaveTab[index].bwDuration), 451, 450 );
-      return;   // Alpha - with alternating blinks
- 
+      alt_blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 451, 450);
+      stoptoneandleds(buttonState);
+      return;  // Alpha - with alternating blinks
+
     case 't':
       // Theta
+      buttonState = digitalRead(buttonPin);
       // start Timer 1 with the correct Offset Frequency for a binaural beat for the Brainwave Type
       //   to Right ear speaker through output OC1A (PB3, pin 15)
-      rightEar.play(centralTone - (binauralBeat[2]/2));
-      leftEar.play(centralTone + (binauralBeat[2]/2));  
+      rightEar.play(centralTone - (binauralBeat[2] / 2));
+      leftEar.play(centralTone + (binauralBeat[2] / 2));
+      stoptoneandleds(buttonState);
       // Generates a binaural beat of 6.0Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
-      blink_LEDs( pgm_read_dword(&brainwaveTab[index].bwDuration), 835, 835 );
-      return;   // Theta
- 
+      blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 835, 835);
+      stoptoneandleds(buttonState);
+      return;  // Theta
+
     case 'T':
       // Theta
+      buttonState = digitalRead(buttonPin);
       // start Timer 1 with the correct Offset Frequency for a binaural beat for the Brainwave Type
       //   to Right ear speaker through output OC1A (PB3, pin 15)
-      rightEar.play(centralTone - (binauralBeat[2]/2));
-      leftEar.play(centralTone + (binauralBeat[2]/2));  
+      rightEar.play(centralTone - (binauralBeat[2] / 2));
+      leftEar.play(centralTone + (binauralBeat[2] / 2));
+      stoptoneandleds(buttonState);
       // Generates a binaural beat of 6.0Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
-      alt_blink_LEDs( pgm_read_dword(&brainwaveTab[index].bwDuration), 835, 835 );
-      return;   // Theta - with alternating blinks
- 
+      alt_blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 835, 835);
+      stoptoneandleds(buttonState);
+      return;  // Theta - with alternating blinks
+
     case 'd':
       // Delta
-      rightEar.play(centralTone - (binauralBeat[3]/2));
-      leftEar.play(centralTone + (binauralBeat[3]/2));  
+      buttonState = digitalRead(buttonPin);
+      rightEar.play(centralTone - (binauralBeat[3] / 2));
+      leftEar.play(centralTone + (binauralBeat[3] / 2));
+      stoptoneandleds(buttonState);
+
       // Generates a binaural beat of 2.2Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
-      blink_LEDs( pgm_read_dword(&brainwaveTab[index].bwDuration), 2253, 2253 );
-      return;   // Delta
- 
+      blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 2253, 2253);
+      stoptoneandleds(buttonState);
+      return;  // Delta
+
     case 'D':
       // Delta
-      rightEar.play(centralTone - (binauralBeat[3]/2));
-      leftEar.play(centralTone + (binauralBeat[3]/2));  
+      buttonState = digitalRead(buttonPin);
+      rightEar.play(centralTone - (binauralBeat[3] / 2));
+      leftEar.play(centralTone + (binauralBeat[3] / 2));
+      stoptoneandleds(buttonState);
+
       // Generates a binaural beat of 2.2Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
-      alt_blink_LEDs( pgm_read_dword(&brainwaveTab[index].bwDuration), 2253, 2253 );
-      return;   // Delta
- 
+      alt_blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 2253, 2253);
+      stoptoneandleds(buttonState);
+      return;  // Delta
+
     case 'g':
       // Gamma
-      rightEar.play(centralTone - (binauralBeat[4]/2));
-      leftEar.play(centralTone + (binauralBeat[4]/2));  
+      buttonState = digitalRead(buttonPin);
+      rightEar.play(centralTone - (binauralBeat[4] / 2));
+      leftEar.play(centralTone + (binauralBeat[4] / 2));
+      stoptoneandleds(buttonState);
       // Generates a binaural beat of 40.4Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
-      blink_LEDs( pgm_read_dword(&brainwaveTab[index].bwDuration), 124, 124 );
-      return;   // Gamma
- 
+      blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 124, 124);
+      stoptoneandleds(buttonState);
+      return;  // Gamma
+
     case 'G':
       // Gamma
-      rightEar.play(centralTone - (binauralBeat[4]/2));
-      leftEar.play(centralTone + (binauralBeat[4]/2));  
+      buttonState = digitalRead(buttonPin);
+      rightEar.play(centralTone - (binauralBeat[4] / 2));
+      leftEar.play(centralTone + (binauralBeat[4] / 2));
+      stoptoneandleds(buttonState);
+
       // Generates a binaural beat of 40.4Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
-      alt_blink_LEDs( pgm_read_dword(&brainwaveTab[index].bwDuration), 124, 124 );
-      return;   // Gamma
- 
+      alt_blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 124, 124);
+      stoptoneandleds(buttonState);
+      return;  // Gamma
+
     // this should never be executed, since we catch the end of table in the main loop
     default:
-      return;      // end of table
+      return;  // end of table
   }
 }
 
@@ -396,9 +428,9 @@ void do_brainwave_element(int index) {
 /***************************************************
 SLEEP function
 ***************************************************/
-void sleepNow()         // here we put the arduino to sleep
+void sleepNow()  // here we put the arduino to sleep
 {
-    /* Now is the time to set the sleep mode. In the Atmega8 datasheet
+  /* Now is the time to set the sleep mode. In the Atmega8 datasheet
      * http://www.atmel.com/dyn/resources/prod_documents/doc2486.pdf on page 35
      * there is a list of sleep modes which explains which clocks and 
      * wake up sources are available in which sleep mode.
@@ -416,13 +448,13 @@ void sleepNow()         // here we put the arduino to sleep
      * choose the according 
      * sleep mode: SLEEP_MODE_PWR_DOWN
      * 
-     */  
-    set_sleep_mode(SLEEP_MODE_PWR_DOWN);   // sleep mode is set here
+     */
+  set_sleep_mode(SLEEP_MODE_PWR_DOWN);  // sleep mode is set here
 
-    sleep_enable();          // enables the sleep bit in the mcucr register
-                             // so sleep is possible. just a safety pin 
+  sleep_enable();  // enables the sleep bit in the mcucr register
+                   // so sleep is possible. just a safety pin
 
-    /* Now it is time to enable an interrupt. We do it here so an 
+  /* Now it is time to enable an interrupt. We do it here so an 
      * accidentally pushed interrupt button doesn't interrupt 
      * our running program. if you want to be able to run 
      * interrupt code besides the sleep function, place it in 
@@ -442,24 +474,23 @@ void sleepNow()         // here we put the arduino to sleep
      * In all but the IDLE sleep modes only LOW can be used.
      */
 
-    attachInterrupt(0,wakeUpNow, LOW); // use interrupt 0 (pin 2) and run function
-                                       // wakeUpNow when pin 2 gets LOW 
+  attachInterrupt(0, wakeUpNow, LOW);  // use interrupt 0 (pin 2) and run function
+                                       // wakeUpNow when pin 2 gets LOW
 
-    sleep_mode();            // here the device is actually put to sleep!!
-                             // THE PROGRAM CONTINUES FROM HERE AFTER WAKING UP
+  sleep_mode();  // here the device is actually put to sleep!!
+                 // THE PROGRAM CONTINUES FROM HERE AFTER WAKING UP
 
-    sleep_disable();         // first thing after waking from sleep:
-                             // disable sleep...
-    detachInterrupt(0);      // disables interrupt 0 on pin 2 so the 
-                             // wakeUpNow code will not be executed 
-                             // during normal running time.
-
+  sleep_disable();     // first thing after waking from sleep:
+                       // disable sleep...
+  detachInterrupt(0);  // disables interrupt 0 on pin 2 so the
+                       // wakeUpNow code will not be executed
+                       // during normal running time.
 }
 
 /***************************************************
 WAKE function
 ***************************************************/
-void wakeUpNow()        // here the interrupt is handled after wakeup
+void wakeUpNow()  // here the interrupt is handled after wakeup
 {
   // execute code here after wake-up before returning to the loop() function
   // timers and code using timers (serial.print and more...) will not work here.
@@ -475,7 +506,7 @@ by changing delayCount. delayCount from Mitch Altman's original sketch
 was at 87. But we're using a faster chip, so I've determined for the 
 arduino delayCount should be somewhere around 196.
 ***************************************************/
-void myTimer(){
+void myTimer() {
   Serial.println("  ");
   Serial.print("Time: ");
   long int time = millis();
