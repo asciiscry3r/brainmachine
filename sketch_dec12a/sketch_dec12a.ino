@@ -324,7 +324,6 @@ void do_brainwave_element(int index) {
       // Generates a binaural beat of 11.1Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 451, 450);
-      stoptoneandleds(buttonState);
       return;  // Alpha
 
     case 'A':
@@ -336,7 +335,6 @@ void do_brainwave_element(int index) {
       // Generates a binaural beat of 11.1Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       alt_blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 451, 450);
-      stoptoneandleds(buttonState);
       return;  // Alpha - with alternating blinks
 
     case 't':
@@ -350,7 +348,6 @@ void do_brainwave_element(int index) {
       // Generates a binaural beat of 6.0Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 835, 835);
-      stoptoneandleds(buttonState);
       return;  // Theta
 
     case 'T':
@@ -364,7 +361,6 @@ void do_brainwave_element(int index) {
       // Generates a binaural beat of 6.0Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       alt_blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 835, 835);
-      stoptoneandleds(buttonState);
       return;  // Theta - with alternating blinks
 
     case 'd':
@@ -377,7 +373,6 @@ void do_brainwave_element(int index) {
       // Generates a binaural beat of 2.2Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 2253, 2253);
-      stoptoneandleds(buttonState);
       return;  // Delta
 
     case 'D':
@@ -390,7 +385,6 @@ void do_brainwave_element(int index) {
       // Generates a binaural beat of 2.2Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       alt_blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 2253, 2253);
-      stoptoneandleds(buttonState);
       return;  // Delta
 
     case 'g':
@@ -402,7 +396,6 @@ void do_brainwave_element(int index) {
       // Generates a binaural beat of 40.4Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 124, 124);
-      stoptoneandleds(buttonState);
       return;  // Gamma
 
     case 'G':
@@ -415,7 +408,6 @@ void do_brainwave_element(int index) {
       // Generates a binaural beat of 40.4Hz
       // delay for the time specified in the table while blinking the LEDs at the correct rate
       alt_blink_LEDs(pgm_read_dword(&brainwaveTab[index].bwDuration), 124, 124);
-      stoptoneandleds(buttonState);
       return;  // Gamma
 
     // this should never be executed, since we catch the end of table in the main loop
