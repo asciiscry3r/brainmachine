@@ -84,7 +84,7 @@ struct brainwaveElement {
   { 'a', 200000 },
   { 'b', 100000 },
   { 'a', 300000 },
-  { 'b',  50000 },
+  { 'b', 50000 },
   { 'a', 600000 },
   { 't', 100000 },
   { 'a', 300000 },
@@ -94,32 +94,32 @@ struct brainwaveElement {
   { 'a', 150000 },
   { 't', 600000 },
   { 'a', 150000 },
-  { 'b',  10000 },
+  { 'b', 10000 },
   { 'a', 150000 },
   { 't', 600000 },
-  { 'd',  10000 },
+  { 'd', 10000 },
   { 't', 100000 },
-  { 'd',  10000 },
+  { 'd', 10000 },
   { 't', 100000 },
-  { 'd',  10000 },
+  { 'd', 10000 },
   { 't', 300000 },
   { 'a', 150000 },
-  { 'b',  10000 },
+  { 'b', 10000 },
   { 'a', 150000 },
   { 't', 300000 },
   { 'a', 150000 },
-  { 'b',  10000 },
+  { 'b', 10000 },
   { 'a', 200000 },
-  { 'b',  50000 },
+  { 'b', 50000 },
   { 'a', 200000 },
   { 'b', 150000 },
   { 'a', 150000 },
   { 'b', 200000 },
   { 'a', 100000 },
   { 'b', 250000 },
-  { 'a',  50000 },
+  { 'a', 50000 },
   { 'b', 600000 },
-  { '0',      0 }
+  { '0', 0 }
 };
 
 
@@ -200,14 +200,13 @@ void loop() {
   int j = 0;
   buttonState = digitalRead(buttonPin);
   if (buttonState == LOW) {
+    delay(2000); // пасиб/thanks
     while (pgm_read_byte(&brainwaveTab[j].bwType) != '0') {  // '0' signifies end of table
       do_brainwave_element(j);
       j++;
     }
+//    else OCR0A = ((-t & 4095) * (255 & t * (t & t >> 13)) >> 12) + (127 & t * (234 & t >> 8 & t >> 3) >> (3 & t >> 14));  // by tejeez
   }
-  //if (buttonState == LOW) {
-  //  blink_LEDs(37400, 374, 347);
-  //}
   // Shut down everything and put the CPU to sleep
   analogWrite(rightEyeRed, 255);  // common anode -
   analogWrite(leftEyeRed, 255);   // HIGH means 'off'
