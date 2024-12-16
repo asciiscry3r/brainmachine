@@ -6,6 +6,7 @@ https://github.com/LaughterOnWater/Arduino-Brain-Machine/blob/master/Arduino_Bra
 https://github.com/LaughterOnWater/Arduino-Brain-Machine/blob/master/Arduino_Brain_Machine/Chart_A_Entrainment_Timing_of_Stages.png
 https://sound-au.com/tcaas/jlhupdate.htm
 https://www.elprocus.com/2n5551-transistor/
+https://github.com/adafruit/Adafruit_Brain-Machine-Kit
 
 ### Data
 ___
