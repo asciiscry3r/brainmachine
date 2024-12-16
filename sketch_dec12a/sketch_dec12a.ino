@@ -205,7 +205,7 @@ void loop() {
       do_brainwave_element(j);
       j++;
     }
-//    else OCR0A = ((-t & 4095) * (255 & t * (t & t >> 13)) >> 12) + (127 & t * (234 & t >> 8 & t >> 3) >> (3 & t >> 14));  // by tejeez
+//    else OCR0A = ((-t & 4095) * (255 & t * (t & t >> 13)) >> 12) + (127 & t * (234 & t >> 8 & t >> 3) >> (3 & t >> 14));  //OC0A/P13 by tejeez
   }
   // Shut down everything and put the CPU to sleep
   analogWrite(rightEyeRed, 255);  // common anode -
