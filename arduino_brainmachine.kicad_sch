@@ -4229,7 +4229,7 @@
 		(at 105.41 165.1)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "af6f3394-20fd-44c6-9739-d1afc6e0a95c")
+		(uuid "ac0ba5ae-a8b7-4cbf-8fb0-5b3d03788309")
 	)
 	(junction
 		(at 229.87 116.84)
@@ -4380,16 +4380,6 @@
 			(type default)
 		)
 		(uuid "0bd3ee4f-5353-45da-8c18-fe68070f3167")
-	)
-	(wire
-		(pts
-			(xy 105.41 175.26) (xy 107.95 175.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0de8f723-8ac6-4090-b4e9-1c11368c8e0a")
 	)
 	(wire
 		(pts
@@ -4663,6 +4653,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 165.1) (xy 107.95 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4834d535-b0fb-4682-a892-102bab5fd446")
+	)
+	(wire
+		(pts
 			(xy 219.71 116.84) (xy 219.71 129.54)
 		)
 		(stroke
@@ -4740,6 +4740,16 @@
 			(type default)
 		)
 		(uuid "56e809f9-36d6-4b22-aa24-9f04e1deef3a")
+	)
+	(wire
+		(pts
+			(xy 115.57 165.1) (xy 118.11 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56f7685e-49bb-4b8f-8fe4-042fafaa6d53")
 	)
 	(wire
 		(pts
@@ -4830,16 +4840,6 @@
 			(type default)
 		)
 		(uuid "62b23eba-41da-464a-9223-160c0f1d5b81")
-	)
-	(wire
-		(pts
-			(xy 115.57 175.26) (xy 118.11 175.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6427f806-75fb-4e0d-9202-8b7ed19c150e")
 	)
 	(wire
 		(pts
@@ -5040,6 +5040,16 @@
 			(type default)
 		)
 		(uuid "8add51ba-9307-488b-80c5-063ba94cda96")
+	)
+	(wire
+		(pts
+			(xy 115.57 175.26) (xy 118.11 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f52b284-8de5-43d3-9e24-cd1695330758")
 	)
 	(wire
 		(pts
@@ -5463,16 +5473,6 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 165.1) (xy 118.11 165.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e0919640-1fca-4b06-af73-b8220a181bb0")
-	)
-	(wire
-		(pts
 			(xy 218.44 68.58) (xy 215.9 68.58)
 		)
 		(stroke
@@ -5510,6 +5510,16 @@
 			(type default)
 		)
 		(uuid "e64094c5-1b93-4211-b352-80e50351546b")
+	)
+	(wire
+		(pts
+			(xy 105.41 175.26) (xy 107.95 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7b5c7ac-ee3a-4b01-8f2c-415d06b08f55")
 	)
 	(wire
 		(pts
@@ -5620,16 +5630,6 @@
 			(type default)
 		)
 		(uuid "fcaac225-0166-4b32-9bb4-0915d95a2a4b")
-	)
-	(wire
-		(pts
-			(xy 107.95 165.1) (xy 105.41 165.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fcd810ae-d16c-46db-9962-5cbe98de0cd2")
 	)
 	(wire
 		(pts
@@ -6571,15 +6571,15 @@
 	(symbol
 		(lib_id "Device:LED")
 		(at 111.76 175.26 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "28a4709e-3b17-415a-a961-d753bba099c4")
 		(property "Reference" "D2"
-			(at 110.1725 168.91 0)
+			(at 113.3475 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6587,7 +6587,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 110.1725 171.45 0)
+			(at 113.3475 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7472,15 +7472,15 @@
 	(symbol
 		(lib_id "Device:LED")
 		(at 111.76 165.1 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "5d5aa317-0f67-4168-aa54-819b7614ee73")
 		(property "Reference" "D1"
-			(at 110.1725 158.75 0)
+			(at 113.3475 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7488,7 +7488,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 110.1725 161.29 0)
+			(at 113.3475 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
