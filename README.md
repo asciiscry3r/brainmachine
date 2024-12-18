@@ -1,3 +1,9 @@
+Repository: Brain Machine
+Based on Chris Sparnicht - Laughter on Water - http://low.li
+Creation Date: 2024.12.15
+Last Modification Date: 2024.12.18
+License: Creative Commons 2.5 Attrib. & Share Alike
+
 ## Plan
 ___
 https://github.com/LaughterOnWater/Arduino-Brain-Machine
