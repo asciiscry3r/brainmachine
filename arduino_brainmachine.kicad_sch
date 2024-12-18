@@ -3427,6 +3427,151 @@
 				)
 			)
 		)
+		(symbol "Switch:SW_Push"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 1.27 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SW_Push"
+				(at 0 -1.524 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Push button switch, generic, two pins"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Push_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Transistor_BJT:2N2219"
 			(pin_names
 				(offset 0) hide)
@@ -3991,6 +4136,12 @@
 		(uuid "14c5e026-d8ea-49c8-9998-394a6ae6a98b")
 	)
 	(junction
+		(at 144.78 33.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "199fc51d-695a-4353-840e-87436e1f17b6")
+	)
+	(junction
 		(at 185.42 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4067,6 +4218,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7cda9340-b52b-4f83-935e-3028a7e57fec")
+	)
+	(junction
+		(at 172.72 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8b8e40b7-7b2b-4bb2-bb1c-a605a17a3972")
 	)
 	(junction
 		(at 105.41 165.1)
@@ -4166,6 +4323,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 29.21) (xy 144.78 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04ea8d3f-b2aa-47f7-bf3c-92223f6d0fe9")
+	)
+	(wire
+		(pts
 			(xy 207.01 99.06) (xy 209.55 99.06)
 		)
 		(stroke
@@ -4226,6 +4393,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 33.02) (xy 153.67 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f747b68-3df1-44ff-8d05-d355b89cef73")
+	)
+	(wire
+		(pts
 			(xy 207.01 115.57) (xy 208.28 115.57)
 		)
 		(stroke
@@ -4243,6 +4420,16 @@
 			(type default)
 		)
 		(uuid "1681c8de-9809-43fd-8dc1-0ba8b4b6cc0d")
+	)
+	(wire
+		(pts
+			(xy 163.83 33.02) (xy 172.72 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1723bc7f-6a66-42f3-9e75-7ee28081e36c")
 	)
 	(wire
 		(pts
@@ -4396,6 +4583,16 @@
 	)
 	(wire
 		(pts
+			(xy 78.74 19.05) (xy 144.78 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "381307fc-5c74-45b3-96c1-9dc96051dcb8")
+	)
+	(wire
+		(pts
 			(xy 144.78 40.64) (xy 152.4 40.64)
 		)
 		(stroke
@@ -4496,6 +4693,16 @@
 	)
 	(wire
 		(pts
+			(xy 78.74 33.02) (xy 78.74 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d89ff0e-04c0-4f20-818f-e90726c8bcf8")
+	)
+	(wire
+		(pts
 			(xy 205.74 48.26) (xy 205.74 50.8)
 		)
 		(stroke
@@ -4563,6 +4770,16 @@
 			(type default)
 		)
 		(uuid "5a7fdcea-4302-4a58-9a3e-77e9a8dfd488")
+	)
+	(wire
+		(pts
+			(xy 172.72 33.02) (xy 172.72 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b85f9ed-b400-4ab9-b649-b99438940b75")
 	)
 	(wire
 		(pts
@@ -6507,6 +6724,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 78.74 142.24 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3347a477-172a-48c0-b02b-33495625af30")
+		(property "Reference" "#PWR06"
+			(at 78.74 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 78.74 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 78.74 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 78.74 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1a43acb5-c6c9-49ff-a2d3-61195694e973")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_Elektuur:R")
 		(at 195.58 85.09 0)
 		(unit 1)
@@ -7119,6 +7402,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 158.75 33.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "54bb3e7c-8e17-4d63-a529-44818b3e28db")
+		(property "Reference" "SW1"
+			(at 158.75 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 158.75 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 158.75 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 158.75 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 158.75 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5c3c7159-0fb4-4bd6-b7d4-989a47f54058")
+		)
+		(pin "2"
+			(uuid "f4d380ef-7efe-4873-a4e8-4da0b54fd783")
+		)
+		(instances
+			(project ""
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED")
 		(at 111.76 165.1 0)
 		(unit 1)
@@ -7181,6 +7532,95 @@
 			(project ""
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Elektuur:R")
+		(at 144.78 24.13 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "66ee7905-7151-43fc-9efe-b4eac16480d7")
+		(property "Reference" "R21"
+			(at 147.32 22.8599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "220 Om"
+			(at 147.32 25.3999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 144.78 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "resistor"
+			(at 144.78 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 147.955 27.305 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 142.24 20.955 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a5cddebd-4dbf-4226-9795-28930a9397b0")
+		)
+		(pin "2"
+			(uuid "3afaafc7-c72d-4725-afb4-69001551f621")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "R21")
 					(unit 1)
 				)
 			)
