@@ -197,14 +197,15 @@ void setup() {
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
   pinMode(buttonPin, INPUT);     // Pin input at wakePin
-                                 //  pinMode(13, OUTPUT);
-                                 //  digitalWrite(13, LOW);
-                                 //  pinMode(12, OUTPUT);
-                                 //  digitalWrite(12, LOW);
-  randomSeed(analogRead(0));
-  randomSeed(analogRead(1));
-  randomSeed(analogRead(2));
-  randomSeed(analogRead(3));
+  //pinMode(13, OUTPUT);
+  //digitalWrite(13, LOW);
+  //pinMode(12, OUTPUT);
+  //digitalWrite(12, LOW);
+  //randomSeed(analogRead(0));
+  //randomSeed(analogRead(1));
+  //randomSeed(analogRead(2));
+  //randomSeed(analogRead(3));
+  randomSeed(analogRead(4));
 }
 
 
@@ -213,7 +214,7 @@ void setup() {
 ***************************************************/
 
 void loop() {
-  int t = 0;
+  randomSeed(analogRead(4) + analogRead(3) + analogRead(0) + analogRead(2) + analogRead(1));
   buttonState = digitalRead(buttonPin);
   switch (buttonState) {
     case LOW:
@@ -227,10 +228,12 @@ void loop() {
       analogWrite(leftEyeRed, 255);   // HIGH means 'off'
       runrandomnoise();
       buttonState = digitalRead(buttonPin);
-      //OCR0A = 0;
-      //OCR1A = 0;
+      //OCR0A = (analogRead(0) * randNumber);
+      //OCR1A = (analogRead(1) * randNumber);
+      //randNumber = random(80);
       //while (buttonState == HIGH) {
       //OCR1A += (TIMER1_FREQUENCY / UPDATE_RATE);
+      //OCR0A += randNumber;
       //t++;
       //OCR0A = ((-t & 4095) * (255 & t * (t & t >> 13)) >> 12) + (127 & t * (234 & t >> 8 & t >> 3) >> (3 & t >> 14));  //OC0A/P13 by tejeez;
       //}
@@ -239,7 +242,7 @@ void loop() {
   //rightEar.stop();
   //leftEar.stop();
   //analogWrite(rightEyeRed, 255);  // common anode -
-  //analogWrite(leftEyeRed, 255); 
+  //analogWrite(leftEyeRed, 255);
   //sleepNow();
 }
 
