@@ -319,6 +319,200 @@
 				)
 			)
 		)
+		(symbol "Device:Microphone_Condenser"
+			(pin_names
+				(offset 0.0254) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "MK"
+				(at -3.302 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Value" "Microphone_Condenser"
+				(at -3.302 -0.635 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 2.54 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 2.54 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Condenser microphone"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "capacitance condenser microphone"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Microphone_Condenser_0_1"
+				(polyline
+					(pts
+						(xy -2.54 2.54) (xy -2.54 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.762) (xy 0 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy 0 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 3.81) (xy 0.762 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 4.064) (xy 0.508 3.556)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.016 -0.254)
+					(end -1.016 -0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 1.016 0.762)
+					(end -1.016 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "Microphone_Condenser_1_1"
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:R_Potentiometer"
 			(pin_names
 				(offset 1.016) hide)
@@ -4383,6 +4577,12 @@
 		(uuid "01ace683-5d78-415a-ae28-ef47233656d0")
 	)
 	(junction
+		(at 21.59 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0a2ca313-a39f-4fdf-bd20-524c4980b783")
+	)
+	(junction
 		(at 173.99 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4393,6 +4593,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "106c5be0-0435-4f44-8e90-ac5febfbd046")
+	)
+	(junction
+		(at 39.37 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "12df983a-bacc-486e-882d-07c3697e0503")
 	)
 	(junction
 		(at 30.48 77.47)
@@ -4455,6 +4661,12 @@
 		(uuid "44eb0f45-3a9f-4f9a-8ca3-d3360c258f21")
 	)
 	(junction
+		(at 21.59 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4507c55b-e931-4a14-aad7-d14e4f78d15a")
+	)
+	(junction
 		(at 205.74 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4497,6 +4709,18 @@
 		(uuid "7b59a4b5-b66d-4947-9705-15284b3bd75f")
 	)
 	(junction
+		(at 55.88 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7cfc3fd6-3881-499c-9fef-b2ed5a7a1e2e")
+	)
+	(junction
+		(at 44.45 176.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7e440027-cb36-43e0-828a-aa344140ff89")
+	)
+	(junction
 		(at 196.85 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4507,6 +4731,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8b8e40b7-7b2b-4bb2-bb1c-a605a17a3972")
+	)
+	(junction
+		(at 21.59 162.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "94feb46c-1d38-4de4-adc8-663a1c7dd3d6")
 	)
 	(junction
 		(at 210.82 140.97)
@@ -4533,6 +4763,12 @@
 		(uuid "ac0ba5ae-a8b7-4cbf-8fb0-5b3d03788309")
 	)
 	(junction
+		(at 44.45 165.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "af9eb64f-a8ac-4840-8498-ce95afb20447")
+	)
+	(junction
 		(at 229.87 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4543,6 +4779,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b8a7d6e0-2a96-43ee-bc92-7809e72cf5ee")
+	)
+	(junction
+		(at 55.88 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bb3bd85f-2aba-44d4-bf0d-3772896e8b26")
 	)
 	(junction
 		(at 241.3 55.88)
@@ -4575,6 +4817,12 @@
 		(uuid "ed9cc763-e077-41ce-b936-832b36992ca9")
 	)
 	(junction
+		(at 39.37 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f057fcd2-28a8-49cc-a44c-5a0b5826fc54")
+	)
+	(junction
 		(at 252.73 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4605,16 +4853,6 @@
 			(type default)
 		)
 		(uuid "03ddfcbb-43be-4eed-b8e8-42d047bacd0d")
-	)
-	(wire
-		(pts
-			(xy 59.69 68.58) (xy 78.74 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "04215379-cce8-4a6c-9358-48838bef1edf")
 	)
 	(wire
 		(pts
@@ -4735,6 +4973,16 @@
 			(type default)
 		)
 		(uuid "1829c1d8-d58f-4502-ac8d-2801ca2f3664")
+	)
+	(wire
+		(pts
+			(xy 31.75 162.56) (xy 34.29 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b12593f-4e32-486c-a666-9cf61333d619")
 	)
 	(wire
 		(pts
@@ -4878,6 +5126,16 @@
 	)
 	(wire
 		(pts
+			(xy 27.94 130.81) (xy 21.59 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37d97516-1927-401a-b5e2-0da1afaa1538")
+	)
+	(wire
+		(pts
 			(xy 78.74 19.05) (xy 144.78 19.05)
 		)
 		(stroke
@@ -4968,6 +5226,16 @@
 	)
 	(wire
 		(pts
+			(xy 44.45 176.53) (xy 44.45 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "478b81f3-5e2a-40c0-9509-31ba592fb1a5")
+	)
+	(wire
+		(pts
 			(xy 105.41 165.1) (xy 107.95 165.1)
 		)
 		(stroke
@@ -5008,6 +5276,16 @@
 	)
 	(wire
 		(pts
+			(xy 34.29 162.56) (xy 34.29 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50128510-3c51-4d8a-b92d-2e46d0476e4e")
+	)
+	(wire
+		(pts
 			(xy 40.64 81.28) (xy 60.96 81.28)
 		)
 		(stroke
@@ -5018,6 +5296,36 @@
 	)
 	(wire
 		(pts
+			(xy 45.72 165.1) (xy 44.45 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "524de983-39e5-4acf-b141-ba84ae40b276")
+	)
+	(wire
+		(pts
+			(xy 78.74 68.58) (xy 60.96 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52a204e0-d260-40e8-8a27-7071a30f5285")
+	)
+	(wire
+		(pts
+			(xy 31.75 152.4) (xy 39.37 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5573ba49-996b-4fe9-ae84-1d3ca5099fe9")
+	)
+	(wire
+		(pts
 			(xy 196.85 133.35) (xy 200.66 133.35)
 		)
 		(stroke
@@ -5025,6 +5333,16 @@
 			(type default)
 		)
 		(uuid "55a39f0e-67e3-4666-8400-4fe4401fa252")
+	)
+	(wire
+		(pts
+			(xy 44.45 187.96) (xy 21.59 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5631ed6c-5bc5-47e8-9472-b86f17ce71b9")
 	)
 	(wire
 		(pts
@@ -5045,6 +5363,16 @@
 			(type default)
 		)
 		(uuid "56f7685e-49bb-4b8f-8fe4-042fafaa6d53")
+	)
+	(wire
+		(pts
+			(xy 44.45 165.1) (xy 44.45 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "579aecb9-c699-476e-9f40-a65704d983bf")
 	)
 	(wire
 		(pts
@@ -5088,16 +5416,6 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 71.12) (xy 59.69 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5cfdac25-6ce8-4e6f-9cff-c62f5a92c8d6")
-	)
-	(wire
-		(pts
 			(xy 172.72 52.07) (xy 172.72 39.37)
 		)
 		(stroke
@@ -5115,6 +5433,16 @@
 			(type default)
 		)
 		(uuid "61bb2e72-ab13-4941-ab04-18661e6f4cb4")
+	)
+	(wire
+		(pts
+			(xy 55.88 130.81) (xy 55.88 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63a8207a-692a-4de5-807c-569fa969cca9")
 	)
 	(wire
 		(pts
@@ -5148,6 +5476,16 @@
 	)
 	(wire
 		(pts
+			(xy 21.59 152.4) (xy 21.59 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "675f0d6b-d3e3-48e0-adca-f893f587a2ed")
+	)
+	(wire
+		(pts
 			(xy 40.64 91.44) (xy 62.23 91.44)
 		)
 		(stroke
@@ -5168,13 +5506,23 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 101.6) (xy 63.5 76.2)
+			(xy 39.37 130.81) (xy 44.45 130.81)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6e00dfe6-3096-4c9f-84fb-7548d558e22f")
+		(uuid "721e694d-4c2b-4048-840e-d4a7eb1a9441")
+	)
+	(wire
+		(pts
+			(xy 78.74 76.2) (xy 64.77 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "72ec1be8-aeb8-42f8-8015-57870ba6ef1f")
 	)
 	(wire
 		(pts
@@ -5195,6 +5543,16 @@
 			(type default)
 		)
 		(uuid "74dff176-1836-49d9-acb6-60898e291fb7")
+	)
+	(wire
+		(pts
+			(xy 78.74 66.04) (xy 59.69 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75288f2f-e2c3-45f0-b71b-588fc5bc3d1a")
 	)
 	(wire
 		(pts
@@ -5278,6 +5636,16 @@
 	)
 	(wire
 		(pts
+			(xy 39.37 130.81) (xy 39.37 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "802adbc6-0c0b-4ad8-b38d-fd27bd0874f8")
+	)
+	(wire
+		(pts
 			(xy 203.2 140.97) (xy 210.82 140.97)
 		)
 		(stroke
@@ -5318,13 +5686,13 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 76.2) (xy 78.74 76.2)
+			(xy 59.69 66.04) (xy 59.69 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8add51ba-9307-488b-80c5-063ba94cda96")
+		(uuid "8b211d16-7327-400d-9b3f-d2439cfd09a1")
 	)
 	(wire
 		(pts
@@ -5358,23 +5726,13 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 81.28) (xy 60.96 71.12)
+			(xy 60.96 68.58) (xy 60.96 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "922ede01-998c-46dc-8639-b56c91160334")
-	)
-	(wire
-		(pts
-			(xy 144.78 60.96) (xy 162.56 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "92fab37f-964a-4d99-983c-7b00b3fa23a1")
 	)
 	(wire
 		(pts
@@ -5468,6 +5826,16 @@
 	)
 	(wire
 		(pts
+			(xy 62.23 71.12) (xy 62.23 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0c10a08-29d2-4853-92a0-b59e47b778bb")
+	)
+	(wire
+		(pts
 			(xy 40.64 71.12) (xy 59.69 71.12)
 		)
 		(stroke
@@ -5498,6 +5866,16 @@
 	)
 	(wire
 		(pts
+			(xy 39.37 146.05) (xy 39.37 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a91592d3-a8f8-44c4-a147-25a6b865bd83")
+	)
+	(wire
+		(pts
 			(xy 30.48 77.47) (xy 30.48 87.63)
 		)
 		(stroke
@@ -5505,6 +5883,26 @@
 			(type default)
 		)
 		(uuid "a9ac49e4-d063-4b9d-9cef-82ce098254b8")
+	)
+	(wire
+		(pts
+			(xy 78.74 73.66) (xy 63.5 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9cd65ce-6787-42ce-b329-d12fb4d3e1f3")
+	)
+	(wire
+		(pts
+			(xy 63.5 73.66) (xy 63.5 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aaa0d7e4-6f9c-47ce-b403-9f6a10056d4a")
 	)
 	(wire
 		(pts
@@ -5555,6 +5953,16 @@
 			(type default)
 		)
 		(uuid "b3d26e4f-18df-4cb6-b9a9-4bb1178a88d6")
+	)
+	(wire
+		(pts
+			(xy 39.37 152.4) (xy 39.37 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b628125d-8027-4891-b877-3dafea3a5b6b")
 	)
 	(wire
 		(pts
@@ -5668,6 +6076,16 @@
 	)
 	(wire
 		(pts
+			(xy 38.1 130.81) (xy 39.37 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5b95717-ac40-4170-aa99-9cac8220fc60")
+	)
+	(wire
+		(pts
 			(xy 170.18 52.07) (xy 172.72 52.07)
 		)
 		(stroke
@@ -5685,16 +6103,6 @@
 			(type default)
 		)
 		(uuid "c86a9be5-0390-47cd-8ec1-dcaed388ac17")
-	)
-	(wire
-		(pts
-			(xy 162.56 60.96) (xy 162.56 181.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cadf9f38-6082-4b0a-a9c0-e06464ac9e00")
 	)
 	(wire
 		(pts
@@ -5728,16 +6136,6 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 73.66) (xy 78.74 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d0303a96-707f-4291-aa33-acfe6d03be1e")
-	)
-	(wire
-		(pts
 			(xy 196.85 132.08) (xy 196.85 133.35)
 		)
 		(stroke
@@ -5758,6 +6156,16 @@
 	)
 	(wire
 		(pts
+			(xy 55.88 152.4) (xy 55.88 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d95ed140-b004-417d-a09a-807c46834269")
+	)
+	(wire
+		(pts
 			(xy 212.09 88.9) (xy 212.09 90.17)
 		)
 		(stroke
@@ -5765,6 +6173,26 @@
 			(type default)
 		)
 		(uuid "d9c95568-ca6d-4628-bffd-8bb7b98b7533")
+	)
+	(wire
+		(pts
+			(xy 21.59 130.81) (xy 21.59 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da149b9b-9c2c-4824-886e-748ce71bf699")
+	)
+	(wire
+		(pts
+			(xy 55.88 130.81) (xy 54.61 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da743194-858d-4aed-bdbd-9fa6be4b3c99")
 	)
 	(wire
 		(pts
@@ -5798,6 +6226,16 @@
 	)
 	(wire
 		(pts
+			(xy 44.45 176.53) (xy 64.77 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1fc6bdb-b774-436c-9763-4d0a91232ced")
+	)
+	(wire
+		(pts
 			(xy 191.77 100.33) (xy 191.77 99.06)
 		)
 		(stroke
@@ -5828,16 +6266,6 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 91.44) (xy 62.23 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e64094c5-1b93-4211-b352-80e50351546b")
-	)
-	(wire
-		(pts
 			(xy 105.41 175.26) (xy 107.95 175.26)
 		)
 		(stroke
@@ -5845,6 +6273,16 @@
 			(type default)
 		)
 		(uuid "e7b5c7ac-ee3a-4b01-8f2c-415d06b08f55")
+	)
+	(wire
+		(pts
+			(xy 78.74 71.12) (xy 62.23 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9140d77-285c-4178-a8d5-3d24279de6bf")
 	)
 	(wire
 		(pts
@@ -5908,6 +6346,16 @@
 	)
 	(wire
 		(pts
+			(xy 64.77 76.2) (xy 64.77 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f485bd62-b969-4121-bfe2-78e2ec996e5e")
+	)
+	(wire
+		(pts
 			(xy 267.97 68.58) (xy 252.73 68.58)
 		)
 		(stroke
@@ -5935,6 +6383,16 @@
 			(type default)
 		)
 		(uuid "f6f9bc68-1e82-46c6-81ef-6507537d7012")
+	)
+	(wire
+		(pts
+			(xy 21.59 187.96) (xy 21.59 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f83ed232-2883-41bf-a40b-2be35b41fa92")
 	)
 	(wire
 		(pts
@@ -5978,13 +6436,13 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 71.12) (xy 78.74 71.12)
+			(xy 39.37 152.4) (xy 45.72 152.4)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fd1650ce-024c-4bfe-ae1d-04494670fa63")
+		(uuid "ff39d552-a67b-432f-be04-acb5b3ccb9bf")
 	)
 	(wire
 		(pts
@@ -6027,6 +6485,16 @@
 			)
 		)
 		(uuid "7f001903-a50c-495c-b9fb-69e4e55474f0")
+	)
+	(text "https://github.com/asciiscry3r/brainmachine/tree/main/sketch_dec12a"
+		(exclude_from_sim no)
+		(at 217.17 174.244 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "bd3252fa-812c-4eb2-b696-36483f851bed")
 	)
 	(text "Klimenko Maxim Sergievich"
 		(exclude_from_sim no)
@@ -6071,28 +6539,6 @@
 		(uuid "74b3981d-be43-4ebf-af3e-d07a82d2ea0f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 196.85 165.4239 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "OCR0A = ((-t & 4095) * (255 & t * (t & t >> 13)) >> 12) + (127 & t * (234 & t >> 8 & t >> 3) >> (3 & t >> 14)); WIP"
-		(shape input)
-		(at 162.56 181.61 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ad864e31-c9f6-4b8d-bffd-c064b8b329f5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 31.91 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6252,6 +6698,95 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Elektuur:C")
+		(at 39.37 140.97 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "125f6726-71ff-4942-9018-355047f2f385")
+		(property "Reference" "C6"
+			(at 43.18 139.6999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1 mkF"
+			(at 43.18 142.2399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "capacitor, non-polarized/bipolar"
+			(at 39.37 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 38.1 137.795 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "V"
+			(at 38.735 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9bb9a786-8ad9-4884-b021-34ff4afd01fa")
+		)
+		(pin "2"
+			(uuid "97d0dc9c-8c51-4ba9-b845-48483366233e")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -7336,6 +7871,93 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_Elektuur:R")
+		(at 26.67 152.4 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "30020339-5ab1-4fd1-94e7-03e12e10b1f9")
+		(property "Reference" "R24"
+			(at 26.67 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330 Om"
+			(at 26.67 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 26.67 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 26.67 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "resistor"
+			(at 26.67 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 23.495 155.575 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 29.845 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "992f8d04-c0b5-4599-8ecf-1273f9cc79ee")
+		)
+		(pin "1"
+			(uuid "8067dc06-fd79-4549-ad11-1be4fa76b784")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 78.74 142.24 0)
 		(unit 1)
@@ -7485,6 +8107,72 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 55.88 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "46259e6b-de49-4b4b-b316-bd3e44146f87")
+		(property "Reference" "#PWR09"
+			(at 55.88 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 55.88 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 55.88 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 55.88 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 55.88 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "174d1c50-19fb-4b6c-aa4a-b74dcfc48f7d")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -7970,6 +8658,93 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_Elektuur:R")
+		(at 50.8 165.1 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "58a3edde-6489-4976-8eb6-4cd1d04883f9")
+		(property "Reference" "R27"
+			(at 50.8 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1.2 KOm"
+			(at 50.8 161.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "resistor"
+			(at 50.8 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 53.975 161.925 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 47.625 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "41a9563b-c000-42e7-898d-52c4dc709a90")
+		)
+		(pin "1"
+			(uuid "bf7a2625-b04b-4623-9cf1-d48d7f3ea8ff")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "R27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED")
 		(at 111.76 165.1 0)
 		(mirror y)
@@ -8210,6 +8985,74 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Microphone_Condenser")
+		(at 33.02 130.81 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "694960b4-1228-4e43-a4a4-6fbcdde8a739")
+		(property "Reference" "MK1"
+			(at 33.7185 123.19 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Microphone_Condenser"
+			(at 33.7185 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 35.56 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Condenser microphone"
+			(at 33.02 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "04a7244f-e611-488d-8db1-2e5c615527e3")
+		)
+		(pin "1"
+			(uuid "4a04d040-f6ba-4d38-88ed-fb12323ace8d")
+		)
+		(instances
+			(project ""
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "MK1")
 					(unit 1)
 				)
 			)
@@ -8723,6 +9566,182 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_Elektuur:R")
+		(at 50.8 152.4 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "818579d0-4af5-4760-aac6-e706ea292a58")
+		(property "Reference" "R26"
+			(at 50.8 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2 KOm"
+			(at 50.8 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "resistor"
+			(at 50.8 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 47.625 155.575 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 53.975 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e3f6a08d-2b9f-406f-af80-070283a3d763")
+		)
+		(pin "1"
+			(uuid "9c8fba1d-17aa-4d83-b6e0-39f84f2d9b08")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "R26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Elektuur:C")
+		(at 44.45 182.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8d624c42-99b1-4160-be3c-cda98105a545")
+		(property "Reference" "C8"
+			(at 48.26 181.6099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1 mkF"
+			(at 48.26 184.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "capacitor, non-polarized/bipolar"
+			(at 44.45 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 43.18 179.705 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "V"
+			(at 43.815 186.055 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9702925a-b8d4-4dfd-971c-e303d3bcd900")
+		)
+		(pin "2"
+			(uuid "eeb84c69-3209-4004-89b5-01a70988e208")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 30.48 67.31 0)
 		(unit 1)
@@ -8856,6 +9875,80 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "RV4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:2N2219")
+		(at 39.37 162.56 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9153d573-65c5-418d-881a-156f9985700c")
+		(property "Reference" "Q3"
+			(at 39.37 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2N5551"
+			(at 39.37 171.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-39-3"
+			(at 37.465 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.onsemi.com/pub_link/Collateral/2N2219-D.PDF"
+			(at 39.37 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "800mA Ic, 50V Vce, NPN Transistor, TO-39"
+			(at 39.37 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "dc4a9ca6-bf1f-433b-8626-8a93ce14f0aa")
+		)
+		(pin "1"
+			(uuid "c8d61a0d-23d1-44a2-bbed-7b3db5f12f1c")
+		)
+		(pin "3"
+			(uuid "fa7853f8-f848-4cbf-a358-d04f6fd762ea")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -9114,6 +10207,93 @@
 	)
 	(symbol
 		(lib_id "PCM_Elektuur:R")
+		(at 201.93 99.06 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9e2f89de-d136-4adb-ac93-aa8902d8b28e")
+		(property "Reference" "R13"
+			(at 201.93 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2 KOm"
+			(at 201.93 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 201.93 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.93 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "resistor"
+			(at 201.93 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 198.755 102.235 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 205.105 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e30e6931-83d3-41d0-a75c-6833d5f16ef9")
+		)
+		(pin "1"
+			(uuid "73811bf3-a266-4615-ab68-aa6c414799d6")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Elektuur:R")
 		(at 267.97 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9285,6 +10465,72 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 21.59 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a44ab970-f1c3-4f8e-a62d-12884a7f2cfe")
+		(property "Reference" "#PWR010"
+			(at 21.59 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 21.59 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 21.59 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 21.59 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 21.59 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8c842a18-71a2-46e7-a5a1-b57ad64b0c94")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -9682,6 +10928,93 @@
 			(project ""
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Elektuur:R")
+		(at 49.53 130.81 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d467e8fe-d21d-4224-96fc-c77a2be4a76c")
+		(property "Reference" "R28"
+			(at 49.53 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2 KOm"
+			(at 49.53 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "resistor"
+			(at 49.53 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 46.355 133.985 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 52.705 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7acd12fc-a338-484f-bc09-7a82a157b94a")
+		)
+		(pin "1"
+			(uuid "da179aaa-32fc-4262-8954-64d85c871393")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "R28")
 					(unit 1)
 				)
 			)
@@ -10232,94 +11565,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_Elektuur:R")
-		(at 201.93 99.06 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f152c3c0-5e36-459b-a03e-41fc0df8649e")
-		(property "Reference" "R13"
-			(at 201.93 92.71 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2 KOm"
-			(at 201.93 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 201.93 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 201.93 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "resistor"
-			(at 201.93 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Indicator" "+"
-			(at 198.755 102.235 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rating" "W"
-			(at 205.105 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "545a75a4-6b3c-48aa-910a-1e35b06a38b8")
-		)
-		(pin "1"
-			(uuid "0fa15fa2-a9cb-484e-88b9-1f65785b2ea2")
-		)
-		(instances
-			(project ""
-				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
-					(reference "R13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:Earth")
 		(at 238.76 106.68 0)
 		(unit 1)
@@ -10380,6 +11625,182 @@
 			(project ""
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Elektuur:R")
+		(at 26.67 162.56 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fbd538db-b714-4abd-9629-acc45d96243f")
+		(property "Reference" "R25"
+			(at 26.67 156.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "200 Om"
+			(at 26.67 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 26.67 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 26.67 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "resistor"
+			(at 26.67 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 23.495 165.735 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 29.845 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b47ffb09-b014-489e-883e-7c000a813da4")
+		)
+		(pin "1"
+			(uuid "dc04a00f-3370-4d73-90f4-2821d3aa2bd9")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Elektuur:R")
+		(at 44.45 171.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe30b6f4-7a6e-476a-92a0-c73b13d90bf1")
+		(property "Reference" "R29"
+			(at 46.99 170.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7 Om"
+			(at 46.99 172.7199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "resistor"
+			(at 44.45 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 41.275 168.275 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 46.99 174.625 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2874a3ff-f6a9-4e60-80de-498b267b0167")
+		)
+		(pin "1"
+			(uuid "1f2323f8-29df-40f4-83dc-e021073225b5")
+		)
+		(instances
+			(project ""
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "R29")
 					(unit 1)
 				)
 			)
