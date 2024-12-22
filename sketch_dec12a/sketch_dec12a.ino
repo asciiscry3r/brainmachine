@@ -59,10 +59,6 @@ in many places.
 #define lefttEarLow 10  // Define pinout for left ear
 //#define wakePin 2       // the input pin where the pushbutton is connected.
 
-#define SAMPLE_MAX (65535.0)
-#define SAMPLE_FREQUENCY (8000.0)
-#define TIMER1_FREQUENCY 40
-#define UPDATE_RATE 8000
 
 /***************************************************
 BRAINWAVE TABLE
@@ -197,15 +193,6 @@ void setup() {
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
   pinMode(buttonPin, INPUT);     // Pin input at wakePin
-  //pinMode(13, OUTPUT);
-  //digitalWrite(13, LOW);
-  //pinMode(12, OUTPUT);
-  //digitalWrite(12, LOW);
-  //randomSeed(analogRead(0));
-  //randomSeed(analogRead(1));
-  //randomSeed(analogRead(2));
-  //randomSeed(analogRead(3));
-  randomSeed(analogRead(4));
 }
 
 
@@ -214,36 +201,34 @@ void setup() {
 ***************************************************/
 
 void loop() {
-  randomSeed(analogRead(4) + analogRead(3) + analogRead(0) + analogRead(2) + analogRead(1));
-  buttonState = digitalRead(buttonPin);
+  checkbuttonstate();
   switch (buttonState) {
     case LOW:
       delay(2000);
       rightEar.stop();
       leftEar.stop();
       runbrainprogram();
-      break;
+      return;
     default:
+      randomSeed(analogRead(4) + analogRead(3) + analogRead(0) + analogRead(2) + analogRead(1));
       analogWrite(rightEyeRed, 255);  // common anode -
       analogWrite(leftEyeRed, 255);   // HIGH means 'off'
       runrandomnoise();
-      buttonState = digitalRead(buttonPin);
-      //OCR0A = (analogRead(0) * randNumber);
-      //OCR1A = (analogRead(1) * randNumber);
-      //randNumber = random(80);
-      //while (buttonState == HIGH) {
-      //OCR1A += (TIMER1_FREQUENCY / UPDATE_RATE);
-      //OCR0A += randNumber;
-      //t++;
-      //OCR0A = ((-t & 4095) * (255 & t * (t & t >> 13)) >> 12) + (127 & t * (234 & t >> 8 & t >> 3) >> (3 & t >> 14));  //OC0A/P13 by tejeez;
-      //}
-      break;
+      checkbuttonstate();
+
+      return;
   }
   //rightEar.stop();
   //leftEar.stop();
   //analogWrite(rightEyeRed, 255);  // common anode -
   //analogWrite(leftEyeRed, 255);
   //sleepNow();
+}
+
+
+void checkbuttonstate() {
+  buttonState = digitalRead(buttonPin);
+  return buttonState;
 }
 
 
@@ -343,7 +328,7 @@ void do_brainwave_element(int index) {
   switch (brainChr) {
     case 'b':
       // Beta
-      buttonState = digitalRead(buttonPin);
+      checkbuttonstate();
       rightEar.play(centralTone - (binauralBeat[0] / 2));
       leftEar.play(centralTone + (binauralBeat[0] / 2));
       // stoptoneandleds(buttonState);
@@ -354,7 +339,7 @@ void do_brainwave_element(int index) {
 
     case 'B':
       // Beta - with alternating blinks
-      buttonState = digitalRead(buttonPin);
+      checkbuttonstate();
       rightEar.play(centralTone - (binauralBeat[0] / 2));
       leftEar.play(centralTone + (binauralBeat[0] / 2));
       // stoptoneandleds(buttonState);
@@ -365,7 +350,7 @@ void do_brainwave_element(int index) {
 
     case 'a':
       // Alpha
-      buttonState = digitalRead(buttonPin);
+      checkbuttonstate();
       rightEar.play(centralTone - (binauralBeat[1] / 2));
       leftEar.play(centralTone + (binauralBeat[1] / 2));
       // stoptoneandleds(buttonState);
@@ -376,7 +361,7 @@ void do_brainwave_element(int index) {
 
     case 'A':
       // Alpha
-      buttonState = digitalRead(buttonPin);
+      checkbuttonstate();
       rightEar.play(centralTone - (binauralBeat[1] / 2));
       leftEar.play(centralTone + (binauralBeat[1] / 2));
       // stoptoneandleds(buttonState);
@@ -387,7 +372,7 @@ void do_brainwave_element(int index) {
 
     case 't':
       // Theta
-      buttonState = digitalRead(buttonPin);
+      checkbuttonstate();
       // start Timer 1 with the correct Offset Frequency for a binaural beat for the Brainwave Type
       //   to Right ear speaker through output OC1A (PB3, pin 15)
       rightEar.play(centralTone - (binauralBeat[2] / 2));
@@ -400,7 +385,7 @@ void do_brainwave_element(int index) {
 
     case 'T':
       // Theta
-      buttonState = digitalRead(buttonPin);
+      checkbuttonstate();
       // start Timer 1 with the correct Offset Frequency for a binaural beat for the Brainwave Type
       //   to Right ear speaker through output OC1A (PB3, pin 15)
       rightEar.play(centralTone - (binauralBeat[2] / 2));
@@ -413,7 +398,7 @@ void do_brainwave_element(int index) {
 
     case 'd':
       // Delta
-      buttonState = digitalRead(buttonPin);
+      checkbuttonstate();
       rightEar.play(centralTone - (binauralBeat[3] / 2));
       leftEar.play(centralTone + (binauralBeat[3] / 2));
       // stoptoneandleds(buttonState);
@@ -425,7 +410,7 @@ void do_brainwave_element(int index) {
 
     case 'D':
       // Delta
-      buttonState = digitalRead(buttonPin);
+      checkbuttonstate();
       rightEar.play(centralTone - (binauralBeat[3] / 2));
       leftEar.play(centralTone + (binauralBeat[3] / 2));
       // stoptoneandleds(buttonState);
@@ -437,7 +422,7 @@ void do_brainwave_element(int index) {
 
     case 'g':
       // Gamma
-      buttonState = digitalRead(buttonPin);
+      checkbuttonstate();
       rightEar.play(centralTone - (binauralBeat[4] / 2));
       leftEar.play(centralTone + (binauralBeat[4] / 2));
       // stoptoneandleds(buttonState);
@@ -448,7 +433,7 @@ void do_brainwave_element(int index) {
 
     case 'G':
       // Gamma
-      buttonState = digitalRead(buttonPin);
+      checkbuttonstate();
       rightEar.play(centralTone - (binauralBeat[4] / 2));
       leftEar.play(centralTone + (binauralBeat[4] / 2));
       // stoptoneandleds(buttonState);
