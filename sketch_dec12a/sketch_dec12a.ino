@@ -159,6 +159,8 @@ Tone rightEar;
 Tone leftEar;
 float centralTone = 440.0;  //We're starting at this tone and spreading the binaural beat from there.
 
+long randNumber;
+
 //Button States below: Still Diagnostic - These values aren't used yet...
 int val = 0;      // val will be used to store the state of the input pin.
 int old_val = 0;  // This variable stores the previous value of "val".
@@ -172,6 +174,7 @@ unsigned long int offTime = 0;
 const int buttonPin = 2;  // the number of the pushbutton pin
 // variables will change:
 int buttonState = 0;  // variable for reading the pushbutton status
+
 
 /***************************************************
   SETUP defines pins and tones.
@@ -194,10 +197,14 @@ void setup() {
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
   pinMode(buttonPin, INPUT);     // Pin input at wakePin
-  pinMode(13, OUTPUT);
-  digitalWrite(13, LOW);
-  pinMode(12, OUTPUT);
-  digitalWrite(12, LOW);
+                                 //  pinMode(13, OUTPUT);
+                                 //  digitalWrite(13, LOW);
+                                 //  pinMode(12, OUTPUT);
+                                 //  digitalWrite(12, LOW);
+  randomSeed(analogRead(0));
+  randomSeed(analogRead(1));
+  randomSeed(analogRead(2));
+  randomSeed(analogRead(3));
 }
 
 
@@ -206,32 +213,55 @@ void setup() {
 ***************************************************/
 
 void loop() {
-  int j = 0;
   int t = 0;
-//CHECK:
   buttonState = digitalRead(buttonPin);
-  if (buttonState == LOW) {
-    //OCR0A = 0;
-    // OCR1A =0
-    delay(2000);                                             // пасиб/thanks
-    while (pgm_read_byte(&brainwaveTab[j].bwType) != '0') {  // '0' signifies end of table
-      do_brainwave_element(j);
-      j++;
-      //goto CHECK;
-    }
-  //else {
-  //OCR1A += (TIMER1_FREQUENCY / UPDATE_RATE);
-  //t++;
-  //OCR0A = ((-t & 4095) * (255 & t * (t & t >> 13)) >> 12) + (127 & t * (234 & t >> 8 & t >> 3) >> (3 & t >> 14));  //OC0A/P13 by tejeez
-  //goto CHECK;
+  switch (buttonState) {
+    case LOW:
+      delay(2000);
+      rightEar.stop();
+      leftEar.stop();
+      runbrainprogram();
+      break;
+    default:
+      analogWrite(rightEyeRed, 255);  // common anode -
+      analogWrite(leftEyeRed, 255);   // HIGH means 'off'
+      runrandomnoise();
+      buttonState = digitalRead(buttonPin);
+      //OCR0A = 0;
+      //OCR1A = 0;
+      //while (buttonState == HIGH) {
+      //OCR1A += (TIMER1_FREQUENCY / UPDATE_RATE);
+      //t++;
+      //OCR0A = ((-t & 4095) * (255 & t * (t & t >> 13)) >> 12) + (127 & t * (234 & t >> 8 & t >> 3) >> (3 & t >> 14));  //OC0A/P13 by tejeez;
+      //}
+      break;
   }
-  // Shut down everything and put the CPU to sleep
-  analogWrite(rightEyeRed, 255);  // common anode -
-  analogWrite(leftEyeRed, 255);   // HIGH means 'off'
-  rightEar.stop();
-  leftEar.stop();
+  //rightEar.stop();
+  //leftEar.stop();
+  //analogWrite(rightEyeRed, 255);  // common anode -
+  //analogWrite(leftEyeRed, 255); 
+  //sleepNow();
+}
 
-  sleepNow();
+
+void runrandomnoise() {
+  randNumber = random(80);
+  rightEar.play(randNumber);
+  randNumber = random(80);
+  leftEar.play(randNumber);
+}
+
+
+void runbrainprogram() {
+  int j = 0;
+  while (pgm_read_byte(&brainwaveTab[j].bwType) != '0') {  // '0' signifies end of table
+    do_brainwave_element(j);
+    j++;
+    analogWrite(rightEyeRed, 255);  // common anode -
+    analogWrite(leftEyeRed, 255);   // HIGH means 'off'
+    rightEar.stop();
+    leftEar.stop();
+  }
 }
 
 /***************************************************
