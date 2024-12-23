@@ -57,7 +57,8 @@ in many places.
 #define leftEyeRed 6    // Define pinout for left eye
 #define rightEarLow 9   // Define pinout for left ear
 #define lefttEarLow 10  // Define pinout for left ear
-//#define wakePin 2       // the input pin where the pushbutton is connected.
+#define PWM1 8          // PWM
+#define PWM2 7          // PWM
 
 
 /***************************************************
@@ -193,6 +194,8 @@ void setup() {
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
   pinMode(buttonPin, INPUT);     // Pin input at wakePin
+  pinMode(PWM1, OUTPUT);         // Pin output PWM
+  pinMode(PWM2, OUTPUT);         // Pin output PWM
 }
 
 
@@ -202,6 +205,7 @@ void setup() {
 
 void loop() {
   checkbuttonstate();
+  runrandompwm();
   switch (buttonState) {
     case LOW:
       delay(2000);
@@ -210,12 +214,10 @@ void loop() {
       runbrainprogram();
       return;
     default:
-      randomSeed(analogRead(4) + analogRead(3) + analogRead(0) + analogRead(2) + analogRead(1));
       analogWrite(rightEyeRed, 255);  // common anode -
       analogWrite(leftEyeRed, 255);   // HIGH means 'off'
       runrandomnoise();
       checkbuttonstate();
-
       return;
   }
   //rightEar.stop();
@@ -232,7 +234,19 @@ void checkbuttonstate() {
 }
 
 
+void runrandompwm() {
+  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A1));
+
+  randNumber = random(80);
+  analogWrite(PWM1, randNumber);
+  randNumber = random(80);
+  analogWrite(PWM2, randNumber);
+}
+
+
 void runrandomnoise() {
+  randomSeed(analogRead(A2) + analogRead(A1) + analogRead(A0));
+
   randNumber = random(80);
   rightEar.play(randNumber);
   randNumber = random(80);
