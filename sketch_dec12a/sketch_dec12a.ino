@@ -59,7 +59,7 @@ in many places.
 #define lefttEarLow 10  // Define pinout for left ear
 #define PWM1 8          // PWM
 #define PWM2 7          // PWM
-
+#define PWM3 4          // PWM
 
 /***************************************************
 BRAINWAVE TABLE
@@ -196,6 +196,7 @@ void setup() {
   pinMode(buttonPin, INPUT);     // Pin input at wakePin
   pinMode(PWM1, OUTPUT);         // Pin output PWM
   pinMode(PWM2, OUTPUT);         // Pin output PWM
+  pinMode(PWM3, OUTPUT);         // Pin output PWM
 }
 
 
@@ -207,24 +208,23 @@ void loop() {
   checkbuttonstate();
   runrandompwm();
   switch (buttonState) {
-    case LOW:
-      delay(2000);
-      rightEar.stop();
-      leftEar.stop();
-      runbrainprogram();
-      return;
+    case HIGH: // without resistor
+      {
+        delay(2000);
+        rightEar.stop();
+        leftEar.stop();
+        runbrainprogram();
+      }
+      break;
     default:
-      analogWrite(rightEyeRed, 255);  // common anode -
-      analogWrite(leftEyeRed, 255);   // HIGH means 'off'
-      runrandomnoise();
-      checkbuttonstate();
-      return;
+      {
+        analogWrite(rightEyeRed, 255);  // common anode -
+        analogWrite(leftEyeRed, 255);   // HIGH means 'off'
+        runrandomnoise();
+        checkbuttonstate();
+      }
+      break;
   }
-  //rightEar.stop();
-  //leftEar.stop();
-  //analogWrite(rightEyeRed, 255);  // common anode -
-  //analogWrite(leftEyeRed, 255);
-  //sleepNow();
 }
 
 
@@ -235,17 +235,28 @@ void checkbuttonstate() {
 
 
 void runrandompwm() {
-  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A1));
+  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1));
 
-  randNumber = random(80);
-  analogWrite(PWM1, randNumber);
-  randNumber = random(80);
-  analogWrite(PWM2, randNumber);
+  randNumber = random(50, 200);
+  //analogWrite(PWM1, randNumber);
+  digitalWrite(PWM1, HIGH);
+  delay(randNumber);
+  digitalWrite(PWM1, LOW);
+  randNumber = random(50, 200);
+  //analogWrite(PWM2, randNumber);
+  digitalWrite(PWM2, HIGH);
+  delay(randNumber);
+  digitalWrite(PWM2, LOW);
+  randNumber = random(50, 200);
+  //analogWrite(PWM2, randNumber);
+  digitalWrite(PWM3, HIGH);
+  delay(randNumber);
+  digitalWrite(PWM3, LOW);
 }
 
 
 void runrandomnoise() {
-  randomSeed(analogRead(A2) + analogRead(A1) + analogRead(A0));
+  randomSeed(analogRead(A2) + analogRead(A1) + analogRead(A0) + analogRead(A3) + analogRead(A4));
 
   randNumber = random(80);
   rightEar.play(randNumber);
