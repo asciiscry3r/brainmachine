@@ -57,9 +57,10 @@ in many places.
 #define leftEyeRed 6    // Define pinout for left eye
 #define rightEarLow 9   // Define pinout for left ear
 #define lefttEarLow 10  // Define pinout for left ear
-#define PWM1 8          // PWM
-#define PWM2 7          // PWM
-#define PWM3 4          // PWM
+#define PWM1Low 8          // PWM
+#define PWM2Low 11          // PWM
+#define PWM3Low 4          // PWM
+#define PWM4Low 3          // PWM
 
 /***************************************************
 BRAINWAVE TABLE
@@ -154,6 +155,10 @@ the user to choose a preferred frequency base.
 float binauralBeat[] = { 14.4, 11.1, 6.0, 2.2, 40.4 };  // For beta, alpha, gamma and delta beat differences.
 Tone rightEar;
 Tone leftEar;
+Tone PWM1;
+Tone PWM2;
+Tone PWM3;
+Tone PWM4;
 float centralTone = 440.0;  //We're starting at this tone and spreading the binaural beat from there.
 
 long randNumber;
@@ -180,7 +185,7 @@ int buttonState = 0;  // variable for reading the pushbutton status
   pin  5 - right ear
   pin  6 - left ear
   pin  9 - Left eye LED1
-  pin 10 - Right eye LED2
+  pin 10  - Right eye LED2
   pin 11 - Button input
   pin 5V - for common anode on LED's
   pin GND - ground for tones
@@ -189,14 +194,19 @@ int buttonState = 0;  // variable for reading the pushbutton status
 
 
 void setup() {
-  rightEar.begin(rightEarLow);   // Tone rightEar begins at pin output rightEarLow
-  leftEar.begin(lefttEarLow);    // Tone leftEar begins at pin output leftEarLow
+  rightEar.begin(rightEarLow);  // Tone rightEar begins at pin output rightEarLow
+  leftEar.begin(lefttEarLow);   // Tone leftEar begins at pin output leftEarLow
+  PWM1.begin(PWM1Low);
+  PWM2.begin(PWM2Low);
+  PWM3.begin(PWM3Low);
+  PWM4.begin(PWM4Low);
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
-  pinMode(buttonPin, INPUT);     // Pin input at wakePin
-  pinMode(PWM1, OUTPUT);         // Pin output PWM
-  pinMode(PWM2, OUTPUT);         // Pin output PWM
-  pinMode(PWM3, OUTPUT);         // Pin output PWM
+  //pinMode(buttonPin, INPUT);     // Pin input at wakePin
+  //pinMode(PWM1, OUTPUT);         // Pin output PWM
+  //pinMode(PWM2, OUTPUT);         // Pin output PWM
+  //pinMode(PWM3, OUTPUT);         // Pin output PWM
+  //pinMode(PWM4, OUTPUT);         // Pin output PWM
 }
 
 
@@ -208,7 +218,7 @@ void loop() {
   checkbuttonstate();
   runrandompwm();
   switch (buttonState) {
-    case HIGH: // without resistor
+    case LOW:
       {
         delay(2000);
         rightEar.stop();
@@ -236,32 +246,55 @@ void checkbuttonstate() {
 
 void runrandompwm() {
   randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1));
-
-  randNumber = random(50, 200);
+  //analogWrite(PWM1, 0);
+  randNumber = random(0, 255);
   //analogWrite(PWM1, randNumber);
-  digitalWrite(PWM1, HIGH);
-  delay(randNumber);
-  digitalWrite(PWM1, LOW);
-  randNumber = random(50, 200);
+  PWM1.play(randNumber);
+
+  randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4));
+  //analogWrite(PWM2, 0);
+  randNumber = random(0, 255);
   //analogWrite(PWM2, randNumber);
-  digitalWrite(PWM2, HIGH);
-  delay(randNumber);
-  digitalWrite(PWM2, LOW);
-  randNumber = random(50, 200);
-  //analogWrite(PWM2, randNumber);
-  digitalWrite(PWM3, HIGH);
-  delay(randNumber);
-  digitalWrite(PWM3, LOW);
+  PWM2.play(randNumber);
+
+  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1));
+  //analogWrite(PWM3, 0);
+  randNumber = random(0, 255);
+  //analogWrite(PWM3, randNumber);
+  PWM3.play(randNumber);
+
+  randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4));
+  //analogWrite(PWM4, 0);
+  randNumber = random(0, 255);
+  //analogWrite(PWM4, randNumber);
+  PWM4.play(randNumber);
 }
 
 
 void runrandomnoise() {
-  randomSeed(analogRead(A2) + analogRead(A1) + analogRead(A0) + analogRead(A3) + analogRead(A4));
+  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A4) + analogRead(A3) + analogRead(A1));
 
   randNumber = random(80);
   rightEar.play(randNumber);
+  analogWrite(rightEyeRed, 0);   // common anode -
+  analogWrite(leftEyeRed, 255);  // LOW means 'on'
+  // turn on LEDs
+  delay(1);  //   for onTime
+
+  analogWrite(rightEyeRed, 255);  // common anode -
+  analogWrite(leftEyeRed, 0);     // HIGH means 'off'
+
+  randomSeed(analogRead(A4) + analogRead(A1) + analogRead(A0) + analogRead(A3) + analogRead(A2));
+
   randNumber = random(80);
   leftEar.play(randNumber);
+  analogWrite(rightEyeRed, 0);   // common anode -
+  analogWrite(leftEyeRed, 255);  // LOW means 'on'
+  // turn on LEDs
+  delay(1);  //   for onTime
+
+  analogWrite(rightEyeRed, 255);  // common anode -
+  analogWrite(leftEyeRed, 0);     // HIGH means 'off'
 }
 
 
