@@ -46,6 +46,7 @@ LIBRARIES - Define necessary libraries here.
 #include <Tone.h>          // Include the arduino tone library
 #include <avr/sleep.h>     // A library to control the sleep mode
 #include <avr/power.h>     // A library to control power
+//#include "WatchDog.h"
 
 /***************************************************
 GLOBALS
@@ -63,8 +64,8 @@ in many places.
 #define PWM4Low 3       // PWM
 #define PWM5Low 7       // PWM
 #define PWM6Low 1       // PWM
-#define PWM7Low 12       // PWM
-#define PWM8Low 13       // PWM
+#define PWM7Low 12      // PWM
+//define PWM8Low 13       // PWM
 
 /***************************************************
 BRAINWAVE TABLE
@@ -166,7 +167,7 @@ Tone PWM4;
 Tone PWM5;
 Tone PWM6;
 Tone PWM7;
-Tone PWM8;
+//Tone PWM8;
 float centralTone = 440.0;  //We're starting at this tone and spreading the binaural beat from there.
 
 long randNumber;
@@ -185,6 +186,11 @@ const int buttonPin = 2;  // the number of the pushbutton pin
 // variables will change:
 int buttonState = 0;  // variable for reading the pushbutton status
 
+const byte LED_PIN = 13;
+
+int cmd;
+
+unsigned long timeNow = 0;
 
 /***************************************************
   SETUP defines pins and tones.
@@ -211,7 +217,7 @@ void setup() {
   PWM5.begin(PWM5Low);
   PWM6.begin(PWM6Low);
   PWM7.begin(PWM7Low);
-  PWM8.begin(PWM8Low);
+  //PWM8.begin(PWM8Low);
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
   //pinMode(buttonPin, INPUT);     // Pin input at wakePin
@@ -221,6 +227,9 @@ void setup() {
   //pinMode(PWM7Low, OUTPUT);  // Pin output PWM--
   //pinMode(PWM8Low, OUTPUT);  // Pin output PWM
   //pinMode(PWM4, OUTPUT);         // Pin output PWM
+  pinMode(LED_PIN, OUTPUT);
+  //WatchDog::init(blinkISR, 500);
+  //printMenu();
 }
 
 
@@ -229,6 +238,7 @@ void setup() {
 ***************************************************/
 
 void loop() {
+  //WatchDog::start();
   analogReference(EXTERNAL);
   checkbuttonstate();
   //analogWrite(PWM5Low, 255);  // common anode -
@@ -255,6 +265,11 @@ void loop() {
 }
 
 
+void blinkISR() {                                         // watchdog timer interrupt service routine    
+    digitalWrite(LED_PIN, !digitalRead(LED_PIN));
+}
+
+
 void checkbuttonstate() {
   buttonState = digitalRead(buttonPin);
   return buttonState;
@@ -267,48 +282,43 @@ void runrandompwm() {
   randNumber = random(0, 255);
   //analogWrite(PWM1, randNumber);
   PWM1.play(randNumber);
-
+  delay(1);
   randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM2, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM2, randNumber);
   PWM2.play(randNumber);
-
+  delay(1);
   randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM3, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM3, randNumber);
   PWM3.play(randNumber);
-
+  delay(1);
   randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4) + analogRead(A5) + analogRead(A6));
   //analogWrite(PWM4, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM4, randNumber);
   PWM4.play(randNumber);
-
+  delay(1);
   randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5) + analogRead(A6));
   //analogWrite(PWM1, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM1, randNumber);
   PWM5.play(randNumber);
-
+  delay(1);
   randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM2, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM2, randNumber);
   PWM6.play(randNumber);
-
+  delay(1);
   randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM3, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM3, randNumber);
   PWM7.play(randNumber);
-
-  randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4) + analogRead(A5) + analogRead(A6));
-  //analogWrite(PWM4, 0);
-  randNumber = random(0, 255);
-  //analogWrite(PWM4, randNumber);
-  PWM8.play(randNumber);
+  delay(1);
 }
 
 
