@@ -57,10 +57,12 @@ in many places.
 #define leftEyeRed 6    // Define pinout for left eye
 #define rightEarLow 9   // Define pinout for left ear
 #define lefttEarLow 10  // Define pinout for left ear
-#define PWM1Low 8          // PWM
-#define PWM2Low 11          // PWM
-#define PWM3Low 4          // PWM
-#define PWM4Low 3          // PWM
+#define PWM1Low 8       // PWM
+#define PWM2Low 11      // PWM
+#define PWM3Low 4       // PWM
+#define PWM4Low 3       // PWM
+#define PWM5Low 7       // PWM
+#define PWM6Low 1       // PWM
 
 /***************************************************
 BRAINWAVE TABLE
@@ -204,8 +206,8 @@ void setup() {
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
   //pinMode(buttonPin, INPUT);     // Pin input at wakePin
   //pinMode(PWM1, OUTPUT);         // Pin output PWM
-  //pinMode(PWM2, OUTPUT);         // Pin output PWM
-  //pinMode(PWM3, OUTPUT);         // Pin output PWM
+  pinMode(PWM5Low, OUTPUT);         // Pin output PWM--
+  pinMode(PWM6Low, OUTPUT);         // Pin output PWM
   //pinMode(PWM4, OUTPUT);         // Pin output PWM
 }
 
@@ -216,6 +218,8 @@ void setup() {
 
 void loop() {
   checkbuttonstate();
+  analogWrite(PWM5Low, 255);  // common anode -
+  analogWrite(PWM6Low, 255);   // HIGH means 'off'
   runrandompwm();
   switch (buttonState) {
     case LOW:
@@ -245,25 +249,25 @@ void checkbuttonstate() {
 
 
 void runrandompwm() {
-  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1));
+  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5) + analogRead(A6));
   //analogWrite(PWM1, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM1, randNumber);
   PWM1.play(randNumber);
 
-  randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4));
+  randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM2, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM2, randNumber);
   PWM2.play(randNumber);
 
-  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1));
+  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM3, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM3, randNumber);
   PWM3.play(randNumber);
 
-  randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4));
+  randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4) + analogRead(A5) + analogRead(A6));
   //analogWrite(PWM4, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM4, randNumber);
@@ -272,7 +276,7 @@ void runrandompwm() {
 
 
 void runrandomnoise() {
-  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A4) + analogRead(A3) + analogRead(A1));
+  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A4) + analogRead(A3) + analogRead(A1) + analogRead(A5) + analogRead(A6));
 
   randNumber = random(80);
   rightEar.play(randNumber);
@@ -284,7 +288,7 @@ void runrandomnoise() {
   analogWrite(rightEyeRed, 255);  // common anode -
   analogWrite(leftEyeRed, 0);     // HIGH means 'off'
 
-  randomSeed(analogRead(A4) + analogRead(A1) + analogRead(A0) + analogRead(A3) + analogRead(A2));
+  randomSeed(analogRead(A4) + analogRead(A1) + analogRead(A0) + analogRead(A3) + analogRead(A2) + analogRead(A6) + analogRead(A5));
 
   randNumber = random(80);
   leftEar.play(randNumber);
