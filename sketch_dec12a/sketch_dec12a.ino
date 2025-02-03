@@ -99,7 +99,6 @@ Tone SIGNAL4;
 Tone SIGNAL5;
 Tone SIGNAL6;
 Tone SIGNAL7;
-Tone SIGNAL8;
 float centralTone = 440.0;  //We're starting at this tone and spreading the binaural beat from there.
 
 long randNumber;
@@ -112,7 +111,7 @@ unsigned long int offTime = 0;
 const int buttonPin = 2;  // the number of the pushbutton pin
 // variables will change:
 int buttonState = 0;  // variable for reading the pushbutton status
-
+int ledState = LOW;
 
 void setup() {
   rightEar.begin(rightEarLow);  // Tone rightEar begins at pin output rightEarLow
@@ -124,7 +123,6 @@ void setup() {
   SIGNAL5.begin(SIGNAL5Low);
   SIGNAL6.begin(SIGNAL6Low);
   SIGNAL7.begin(SIGNAL7Low);
-  SIGNAL8.begin(SIGNAL8Low);
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
 }
@@ -152,6 +150,7 @@ void loop() {
   }
   checkbuttonstate();
   delay_one_tenth_ms(10);
+  digitalWrite(SIGNAL8Low, ledState = ledState ? LOW: HIGH);
 }
 
 
