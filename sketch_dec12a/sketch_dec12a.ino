@@ -27,14 +27,14 @@ And to access brainwaveTab[3].bwDuration, which is a double-word, this is how to
 #define leftEyeRed 6    // Define pinout for left eye
 #define rightEarLow 9   // Define pinout for left ear
 #define lefttEarLow 10  // Define pinout for left ear
-#define PWM1Low 8       // PWM
-#define PWM2Low 11      // PWM
-#define PWM3Low 4       // PWM
-#define PWM4Low 3       // PWM
-#define PWM5Low 7       // PWM
-#define PWM6Low 1       // PWM
-#define PWM7Low 12      // PWM
-#define PWM8Low 13      // PWM
+#define SIGNAL1Low 8       // SIGNAL
+#define SIGNAL2Low 11      // SIGNAL
+#define SIGNAL3Low 4       // SIGNAL
+#define SIGNAL4Low 3       // SIGNAL
+#define SIGNAL5Low 7       // SIGNAL
+#define SIGNAL6Low 1       // SIGNAL
+#define SIGNAL7Low 12      // SIGNAL
+#define SIGNAL8Low 13      // SIGNAL
 
 
 struct brainwaveElement {
@@ -92,14 +92,14 @@ struct brainwaveElement {
 float binauralBeat[] = { 14.4, 11.1, 6.0, 2.2, 40.4 };  // For beta, alpha, gamma and delta beat differences.
 Tone rightEar;
 Tone leftEar;
-Tone PWM1;
-Tone PWM2;
-Tone PWM3;
-Tone PWM4;
-Tone PWM5;
-Tone PWM6;
-Tone PWM7;
-Tone PWM8;
+Tone SIGNAL1;
+Tone SIGNAL2;
+Tone SIGNAL3;
+Tone SIGNAL4;
+Tone SIGNAL5;
+Tone SIGNAL6;
+Tone SIGNAL7;
+Tone SIGNAL8;
 float centralTone = 440.0;  //We're starting at this tone and spreading the binaural beat from there.
 
 long randNumber;
@@ -117,14 +117,14 @@ int buttonState = 0;  // variable for reading the pushbutton status
 void setup() {
   rightEar.begin(rightEarLow);  // Tone rightEar begins at pin output rightEarLow
   leftEar.begin(lefttEarLow);   // Tone leftEar begins at pin output leftEarLow
-  PWM1.begin(PWM1Low);
-  PWM2.begin(PWM2Low);
-  PWM3.begin(PWM3Low);
-  PWM4.begin(PWM4Low);
-  PWM5.begin(PWM5Low);
-  PWM6.begin(PWM6Low);
-  PWM7.begin(PWM7Low);
-  PWM8.begin(PWM8Low);
+  SIGNAL1.begin(SIGNAL1Low);
+  SIGNAL2.begin(SIGNAL2Low);
+  SIGNAL3.begin(SIGNAL3Low);
+  SIGNAL4.begin(SIGNAL4Low);
+  SIGNAL5.begin(SIGNAL5Low);
+  SIGNAL6.begin(SIGNAL6Low);
+  SIGNAL7.begin(SIGNAL7Low);
+  SIGNAL8.begin(SIGNAL8Low);
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
 }
@@ -163,52 +163,52 @@ void checkbuttonstate() {
 
 void runrandomsignals() {
   randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5) + analogRead(A6));
-  //analogWrite(PWM1, 0);
+  //analogWrite(SIGNAL1, 0);
   randNumber = random(0, 255);
-  //analogWrite(PWM1, randNumber);
+  //analogWrite(SIGNAL1, randNumber);
   delay_one_tenth_ms(10);
-  PWM1.play(randNumber);
+  SIGNAL1.play(randNumber);
   randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
-  //analogWrite(PWM2, 0);
+  //analogWrite(SIGNAL2, 0);
   randNumber = random(0, 255);
-  //analogWrite(PWM2, randNumber);
+  //analogWrite(SIGNAL2, randNumber);
   delay_one_tenth_ms(10);
-  PWM2.play(randNumber);
+  SIGNAL2.play(randNumber);
   randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
-  //analogWrite(PWM3, 0);
+  //analogWrite(SIGNAL3, 0);
   randNumber = random(0, 255);
-  //analogWrite(PWM3, randNumber);
+  //analogWrite(SIGNAL3, randNumber);
   delay_one_tenth_ms(10);
 
-  PWM3.play(randNumber);
+  SIGNAL3.play(randNumber);
   randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4) + analogRead(A5) + analogRead(A6));
-  //analogWrite(PWM4, 0);
+  //analogWrite(SIGNAL4, 0);
   randNumber = random(0, 255);
-  //analogWrite(PWM4, randNumber);
+  //analogWrite(SIGNAL4, randNumber);
   delay_one_tenth_ms(10);
 
-  PWM4.play(randNumber);
+  SIGNAL4.play(randNumber);
   randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5) + analogRead(A6));
-  //analogWrite(PWM1, 0);
+  //analogWrite(SIGNAL1, 0);
   randNumber = random(0, 255);
-  //analogWrite(PWM1, randNumber);
+  //analogWrite(SIGNAL1, randNumber);
   delay_one_tenth_ms(10);
 
-  PWM5.play(randNumber);
+  SIGNAL5.play(randNumber);
   randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
-  //analogWrite(PWM2, 0);
+  //analogWrite(SIGNAL2, 0);
   randNumber = random(0, 255);
-  //analogWrite(PWM2, randNumber);
+  //analogWrite(SIGNAL2, randNumber);
   delay_one_tenth_ms(10);
 
-  PWM6.play(randNumber);
+  SIGNAL6.play(randNumber);
   randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
-  //analogWrite(PWM3, 0);
+  //analogWrite(SIGNAL3, 0);
   randNumber = random(0, 255);
-  //analogWrite(PWM3, randNumber);
+  //analogWrite(SIGNAL3, randNumber);
   delay_one_tenth_ms(10);
 
-  PWM7.play(randNumber);
+  SIGNAL7.play(randNumber);
 }
 
 
