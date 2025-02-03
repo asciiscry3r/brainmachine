@@ -63,6 +63,8 @@ in many places.
 #define PWM4Low 3       // PWM
 #define PWM5Low 7       // PWM
 #define PWM6Low 1       // PWM
+#define PWM7Low 12       // PWM
+#define PWM8Low 13       // PWM
 
 /***************************************************
 BRAINWAVE TABLE
@@ -161,6 +163,10 @@ Tone PWM1;
 Tone PWM2;
 Tone PWM3;
 Tone PWM4;
+Tone PWM5;
+Tone PWM6;
+Tone PWM7;
+Tone PWM8;
 float centralTone = 440.0;  //We're starting at this tone and spreading the binaural beat from there.
 
 long randNumber;
@@ -202,12 +208,18 @@ void setup() {
   PWM2.begin(PWM2Low);
   PWM3.begin(PWM3Low);
   PWM4.begin(PWM4Low);
+  PWM5.begin(PWM5Low);
+  PWM6.begin(PWM6Low);
+  PWM7.begin(PWM7Low);
+  PWM8.begin(PWM8Low);
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
   //pinMode(buttonPin, INPUT);     // Pin input at wakePin
   //pinMode(PWM1, OUTPUT);         // Pin output PWM
-  pinMode(PWM5Low, OUTPUT);         // Pin output PWM--
-  pinMode(PWM6Low, OUTPUT);         // Pin output PWM
+  //pinMode(PWM5Low, OUTPUT);  // Pin output PWM--
+  //pinMode(PWM6Low, OUTPUT);  // Pin output PWM
+  //pinMode(PWM7Low, OUTPUT);  // Pin output PWM--
+  //pinMode(PWM8Low, OUTPUT);  // Pin output PWM
   //pinMode(PWM4, OUTPUT);         // Pin output PWM
 }
 
@@ -217,9 +229,10 @@ void setup() {
 ***************************************************/
 
 void loop() {
+  analogReference(EXTERNAL);
   checkbuttonstate();
-  analogWrite(PWM5Low, 255);  // common anode -
-  analogWrite(PWM6Low, 255);   // HIGH means 'off'
+  //analogWrite(PWM5Low, 255);  // common anode -
+  //analogWrite(PWM6Low, 255);  // HIGH means 'off'
   runrandompwm();
   switch (buttonState) {
     case LOW:
@@ -232,8 +245,8 @@ void loop() {
       break;
     default:
       {
-        analogWrite(rightEyeRed, 255);  // common anode -
-        analogWrite(leftEyeRed, 255);   // HIGH means 'off'
+        //analogWrite(rightEyeRed, 255);  // common anode -
+        //analogWrite(leftEyeRed, 255);   // HIGH means 'off'
         runrandomnoise();
         checkbuttonstate();
       }
@@ -272,6 +285,30 @@ void runrandompwm() {
   randNumber = random(0, 255);
   //analogWrite(PWM4, randNumber);
   PWM4.play(randNumber);
+
+  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5) + analogRead(A6));
+  //analogWrite(PWM1, 0);
+  randNumber = random(0, 255);
+  //analogWrite(PWM1, randNumber);
+  PWM5.play(randNumber);
+
+  randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
+  //analogWrite(PWM2, 0);
+  randNumber = random(0, 255);
+  //analogWrite(PWM2, randNumber);
+  PWM6.play(randNumber);
+
+  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
+  //analogWrite(PWM3, 0);
+  randNumber = random(0, 255);
+  //analogWrite(PWM3, randNumber);
+  PWM7.play(randNumber);
+
+  randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4) + analogRead(A5) + analogRead(A6));
+  //analogWrite(PWM4, 0);
+  randNumber = random(0, 255);
+  //analogWrite(PWM4, randNumber);
+  PWM8.play(randNumber);
 }
 
 
