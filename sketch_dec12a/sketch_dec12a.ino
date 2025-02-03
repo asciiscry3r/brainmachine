@@ -1,26 +1,3 @@
-/***************************************************
-Sketch: Sound & Light Machine for Arduino
-Author: Chris Sparnicht - http://low.li
-Creation Date: 2011.01.31
-Last Modification Date: 2011.02.12
-License: Creative Commons 2.5 Attrib. & Share Alike
-
-Derivation and Notes:
-Make sure you have audio stereo 10K Ohm potentiometer to reduce
-the volume of the audio with your headset. If you don't, 
-you might damage your ear drums, your arduino or your headset.
-
-Included with this sketch is a png diagram.
-
-This arduino sketch is based on the original Sound & Light Machine 
-by - Mitch Altman - 19-Mar-07 as featured in Make Magazine 10.
-http://makezine.com/10/brainwave/
-
-See notes in code below for how I adapted Mitch Altman's version for Arduino
-
-The sleep coding comes partially from here:
-http://www.arduino.cc/playground/Learning/ArduinoSleepCode
-***************************************************/
 
 /***************************************************
 SOME INFORMATION ABOUT PROGMEM:
@@ -39,21 +16,13 @@ And to access brainwaveTab[3].bwDuration, which is a double-word, this is how to
      pgm_read_dword( &brainwaveTab[3].bwDuration );
  ***************************************************/
 
-/***************************************************
-LIBRARIES - Define necessary libraries here.
-***************************************************/
+
 #include <avr/pgmspace.h>  // for arrays - PROGMEM
 #include <Tone.h>          // Include the arduino tone library
 #include <avr/sleep.h>     // A library to control the sleep mode
 #include <avr/power.h>     // A library to control power
-//#include "WatchDog.h"
 
-/***************************************************
-GLOBALS
-We isolate calls to pins with these globals so we can change 
-which pin we'll use i one please, rather than having to search and replace
-in many places.
-***************************************************/
+
 #define rightEyeRed 5   // Define pinout for right eye
 #define leftEyeRed 6    // Define pinout for left eye
 #define rightEarLow 9   // Define pinout for left ear
@@ -65,20 +34,9 @@ in many places.
 #define PWM5Low 7       // PWM
 #define PWM6Low 1       // PWM
 #define PWM7Low 12      // PWM
-//define PWM8Low 13       // PWM
+#define PWM8Low 13      // PWM
 
-/***************************************************
-BRAINWAVE TABLE
-See 'Some information about PROGMEM' above.
-Table of values for meditation start with 
-lots of Beta (awake / conscious)
-add Alpha (dreamy / trancy to connect with 
-      subconscious Theta that'll be coming up)
-reduce Beta (less conscious)
-start adding Theta (more subconscious)
-pulse in some Delta (creativity)
-and then reverse the above to come up refreshed
-***************************************************/
+
 struct brainwaveElement {
   char bwType;  // 'a' for Alpha, 'b' for Beta, 't' for Theta,'d' for Delta or 'g' for gamma ('0' signifies last entry in table
   // A, B, T, D and G offer alternating flash instead of concurrent flash.
@@ -131,32 +89,6 @@ struct brainwaveElement {
 };
 
 
-/***************************************************
-VARIABLES for tone generator
-The difference in Hz between two close tones can 
-cause a 'beat'. The brain recognizes a pulse
-between the right ear and the left ear due 
-to the difference between the two tones.
-Instead of assuming that one ear will always 
-have a specific tone, we assume a central tone
-and create tones on the fly half the beat up 
-and down from the central tone.
-If we set a central tone of 200, we can expect 
-the following tones to be generated:
-Hz:      R Ear    L Ear    Beat 
-Beta:    192.80   207.20   14.4
-Alpha:   194.45   205.55   11.1
-Theta:   197.00   203.00    6.0
-Delta:   198.90   201.10    2.2
-
-You can use any central tone you like. I think a 
-lower tone between 100 and 220 is easier on the ears
-than higher tones for a meditation or relaxation.
-Others prefer something around 440 (A above Middle C).
-Isolating the central tone makes it easy for
-the user to choose a preferred frequency base.
-
-***************************************************/
 float binauralBeat[] = { 14.4, 11.1, 6.0, 2.2, 40.4 };  // For beta, alpha, gamma and delta beat differences.
 Tone rightEar;
 Tone leftEar;
@@ -167,15 +99,10 @@ Tone PWM4;
 Tone PWM5;
 Tone PWM6;
 Tone PWM7;
-//Tone PWM8;
+Tone PWM8;
 float centralTone = 440.0;  //We're starting at this tone and spreading the binaural beat from there.
 
 long randNumber;
-
-//Button States below: Still Diagnostic - These values aren't used yet...
-int val = 0;      // val will be used to store the state of the input pin.
-int old_val = 0;  // This variable stores the previous value of "val".
-int state = 0;    // 0 = LED off while 1 = LED on
 
 //Blink statuses for function 'blink_LEDs' and 'alt_blink_LEDS
 unsigned long int duration = 0;
@@ -185,26 +112,6 @@ unsigned long int offTime = 0;
 const int buttonPin = 2;  // the number of the pushbutton pin
 // variables will change:
 int buttonState = 0;  // variable for reading the pushbutton status
-
-const byte LED_PIN = 13;
-
-int cmd;
-
-unsigned long timeNow = 0;
-
-/***************************************************
-  SETUP defines pins and tones.
-  Arduino pins we'll use:
-  pin  2 - on/off switch
-  pin  5 - right ear
-  pin  6 - left ear
-  pin  9 - Left eye LED1
-  pin 10  - Right eye LED2
-  pin 11 - Button input
-  pin 5V - for common anode on LED's
-  pin GND - ground for tones
-*/
-
 
 
 void setup() {
@@ -217,33 +124,16 @@ void setup() {
   PWM5.begin(PWM5Low);
   PWM6.begin(PWM6Low);
   PWM7.begin(PWM7Low);
-  //PWM8.begin(PWM8Low);
+  PWM8.begin(PWM8Low);
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
-  //pinMode(buttonPin, INPUT);     // Pin input at wakePin
-  //pinMode(PWM1, OUTPUT);         // Pin output PWM
-  //pinMode(PWM5Low, OUTPUT);  // Pin output PWM--
-  //pinMode(PWM6Low, OUTPUT);  // Pin output PWM
-  //pinMode(PWM7Low, OUTPUT);  // Pin output PWM--
-  //pinMode(PWM8Low, OUTPUT);  // Pin output PWM
-  //pinMode(PWM4, OUTPUT);         // Pin output PWM
-  pinMode(LED_PIN, OUTPUT);
-  //WatchDog::init(blinkISR, 500);
-  //printMenu();
 }
 
 
-/***************************************************
-   MAIN LOOP - tells our program what to do.
-***************************************************/
-
 void loop() {
-  //WatchDog::start();
   analogReference(EXTERNAL);
   checkbuttonstate();
-  //analogWrite(PWM5Low, 255);  // common anode -
-  //analogWrite(PWM6Low, 255);  // HIGH means 'off'
-  runrandompwm();
+  runrandomsignals();
   switch (buttonState) {
     case LOW:
       {
@@ -255,18 +145,12 @@ void loop() {
       break;
     default:
       {
-        //analogWrite(rightEyeRed, 255);  // common anode -
-        //analogWrite(leftEyeRed, 255);   // HIGH means 'off'
         runrandomnoise();
         checkbuttonstate();
       }
       break;
   }
-}
-
-
-void blinkISR() {                                         // watchdog timer interrupt service routine    
-    digitalWrite(LED_PIN, !digitalRead(LED_PIN));
+  checkbuttonstate();
 }
 
 
@@ -276,49 +160,42 @@ void checkbuttonstate() {
 }
 
 
-void runrandompwm() {
+void runrandomsignals() {
   randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5) + analogRead(A6));
   //analogWrite(PWM1, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM1, randNumber);
   PWM1.play(randNumber);
-  delay(1);
   randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM2, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM2, randNumber);
   PWM2.play(randNumber);
-  delay(1);
   randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM3, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM3, randNumber);
   PWM3.play(randNumber);
-  delay(1);
   randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4) + analogRead(A5) + analogRead(A6));
   //analogWrite(PWM4, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM4, randNumber);
   PWM4.play(randNumber);
-  delay(1);
   randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5) + analogRead(A6));
   //analogWrite(PWM1, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM1, randNumber);
   PWM5.play(randNumber);
-  delay(1);
   randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM2, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM2, randNumber);
   PWM6.play(randNumber);
-  delay(1);
   randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM3, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM3, randNumber);
   PWM7.play(randNumber);
-  delay(1);
 }
 
 
@@ -330,7 +207,6 @@ void runrandomnoise() {
   analogWrite(rightEyeRed, 0);   // common anode -
   analogWrite(leftEyeRed, 255);  // LOW means 'on'
   // turn on LEDs
-  delay(1);  //   for onTime
 
   analogWrite(rightEyeRed, 255);  // common anode -
   analogWrite(leftEyeRed, 0);     // HIGH means 'off'
@@ -342,7 +218,6 @@ void runrandomnoise() {
   analogWrite(rightEyeRed, 0);   // common anode -
   analogWrite(leftEyeRed, 255);  // LOW means 'on'
   // turn on LEDs
-  delay(1);  //   for onTime
 
   analogWrite(rightEyeRed, 255);  // common anode -
   analogWrite(leftEyeRed, 0);     // HIGH means 'off'
@@ -376,16 +251,6 @@ void delay_one_tenth_ms(unsigned long int ms) {
   }
 }
 
-/***************************************************
-This function blinks the LEDs 
-(connected to Pin 6, Pin 5 - 
-for Left eye, Right eye, respectively)
-and keeps them blinking for the Duration specified 
-(Duration given in 1/10 millisecs).
-This function also acts as a delay for the Duration specified.
-In this particular instance, digitalWrites are set 
-for common anode, so "on" = LOW and "off" = HIGH.
-***************************************************/
 
 void blink_LEDs(unsigned long int duration, unsigned long int onTime, unsigned long int offTime) {
   for (int i = 0; i < (duration / (onTime + offTime)); i++) {
@@ -414,22 +279,7 @@ void alt_blink_LEDs(unsigned long int duration, unsigned long int onTime, unsign
     delay_one_tenth_ms(offTime);    //   for offTime
   }
 }
-/***************************************************
-This function starts with a central audio frequency and
-splits the difference between two tones
-to create a binaural beat (between Left and Right ears) 
-for a Brainwave Element.
-(See notes above for beat creation method.)
-***************************************************/
-//void stoptoneandleds(int buttonState) {
-//  if (buttonState == LOW) {
-//    rightEar.stop();
-//    leftEar.stop();
-//    analogWrite(rightEyeRed, 255);  // common anode -
-//    analogWrite(leftEyeRed, 255);   // HIGH means 'off'
-//    sleepNow();
-//  }
-//}
+
 
 void do_brainwave_element(int index) {
   char brainChr = pgm_read_byte(&brainwaveTab[index].bwType);
@@ -559,9 +409,6 @@ void do_brainwave_element(int index) {
 }
 
 
-/***************************************************
-SLEEP function
-***************************************************/
 void sleepNow()  // here we put the arduino to sleep
 {
   /* Now is the time to set the sleep mode. In the Atmega8 datasheet
