@@ -151,6 +151,7 @@ void loop() {
       break;
   }
   checkbuttonstate();
+  delay_one_tenth_ms(10);
 }
 
 
@@ -165,36 +166,48 @@ void runrandomsignals() {
   //analogWrite(PWM1, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM1, randNumber);
+  delay_one_tenth_ms(10);
   PWM1.play(randNumber);
   randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM2, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM2, randNumber);
+  delay_one_tenth_ms(10);
   PWM2.play(randNumber);
   randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM3, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM3, randNumber);
+  delay_one_tenth_ms(10);
+
   PWM3.play(randNumber);
   randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4) + analogRead(A5) + analogRead(A6));
   //analogWrite(PWM4, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM4, randNumber);
+  delay_one_tenth_ms(10);
+
   PWM4.play(randNumber);
   randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5) + analogRead(A6));
   //analogWrite(PWM1, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM1, randNumber);
+  delay_one_tenth_ms(10);
+
   PWM5.play(randNumber);
   randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM2, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM2, randNumber);
+  delay_one_tenth_ms(10);
+
   PWM6.play(randNumber);
   randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
   //analogWrite(PWM3, 0);
   randNumber = random(0, 255);
   //analogWrite(PWM3, randNumber);
+  delay_one_tenth_ms(10);
+
   PWM7.play(randNumber);
 }
 
@@ -210,6 +223,8 @@ void runrandomnoise() {
 
   analogWrite(rightEyeRed, 255);  // common anode -
   analogWrite(leftEyeRed, 0);     // HIGH means 'off'
+  delay_one_tenth_ms(10);
+
 
   randomSeed(analogRead(A4) + analogRead(A1) + analogRead(A0) + analogRead(A3) + analogRead(A2) + analogRead(A6) + analogRead(A5));
 
@@ -221,6 +236,7 @@ void runrandomnoise() {
 
   analogWrite(rightEyeRed, 255);  // common anode -
   analogWrite(leftEyeRed, 0);     // HIGH means 'off'
+  delay_one_tenth_ms(10);
 }
 
 
