@@ -27,14 +27,14 @@ And to access brainwaveTab[3].bwDuration, which is a double-word, this is how to
 #define leftEyeRed 6    // Define pinout for left eye
 #define rightEarLow 9   // Define pinout for left ear
 #define lefttEarLow 10  // Define pinout for left ear
-#define SIGNAL1Low 8       // SIGNAL
-#define SIGNAL2Low 11      // SIGNAL
-#define SIGNAL3Low 4       // SIGNAL
-#define SIGNAL4Low 3       // SIGNAL
-#define SIGNAL5Low 7       // SIGNAL
-#define SIGNAL6Low 1       // SIGNAL
-#define SIGNAL7Low 12      // SIGNAL
-#define SIGNAL8Low 13      // SIGNAL
+#define SIGNAL1Low 8    // SIGNAL only PWM
+#define SIGNAL2Low 11   // SIGNAL
+#define SIGNAL3Low 4    // SIGNAL only PWM
+#define SIGNAL4Low 3    // SIGNAL
+#define SIGNAL5Low 7    // SIGNAL only PWM
+#define SIGNAL6Low 1    // SIGNAL only PWM
+#define SIGNAL7Low 12   // SIGNAL only PWM
+#define SIGNAL8Low 13   // SIGNAL only PWM
 
 
 struct brainwaveElement {
@@ -92,13 +92,13 @@ struct brainwaveElement {
 float binauralBeat[] = { 14.4, 11.1, 6.0, 2.2, 40.4 };  // For beta, alpha, gamma and delta beat differences.
 Tone rightEar;
 Tone leftEar;
-Tone SIGNAL1;
+//Tone SIGNAL1;
 Tone SIGNAL2;
-Tone SIGNAL3;
+//Tone SIGNAL3;
 Tone SIGNAL4;
-Tone SIGNAL5;
-Tone SIGNAL6;
-Tone SIGNAL7;
+//Tone SIGNAL5;
+//Tone SIGNAL6;
+//Tone SIGNAL7;
 float centralTone = 440.0;  //We're starting at this tone and spreading the binaural beat from there.
 
 long randNumber;
@@ -111,18 +111,19 @@ unsigned long int offTime = 0;
 const int buttonPin = 2;  // the number of the pushbutton pin
 // variables will change:
 int buttonState = 0;  // variable for reading the pushbutton status
-int ledState = LOW;
 
 void setup() {
   rightEar.begin(rightEarLow);  // Tone rightEar begins at pin output rightEarLow
   leftEar.begin(lefttEarLow);   // Tone leftEar begins at pin output leftEarLow
-  SIGNAL1.begin(SIGNAL1Low);
+  pinMode(SIGNAL1Low, OUTPUT);
   SIGNAL2.begin(SIGNAL2Low);
-  SIGNAL3.begin(SIGNAL3Low);
+  pinMode(SIGNAL3Low, OUTPUT);
   SIGNAL4.begin(SIGNAL4Low);
-  SIGNAL5.begin(SIGNAL5Low);
-  SIGNAL6.begin(SIGNAL6Low);
-  SIGNAL7.begin(SIGNAL7Low);
+  pinMode(SIGNAL5Low, OUTPUT);
+  pinMode(SIGNAL6Low, OUTPUT);
+  pinMode(SIGNAL7Low, OUTPUT);
+  pinMode(SIGNAL8Low, OUTPUT);
+
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
 }
@@ -150,7 +151,6 @@ void loop() {
   }
   checkbuttonstate();
   delay_one_tenth_ms(10);
-  digitalWrite(SIGNAL8Low, ledState = ledState ? LOW: HIGH);
 }
 
 
@@ -166,7 +166,7 @@ void runrandomsignals() {
   randNumber = random(0, 255);
   //analogWrite(SIGNAL1, randNumber);
   delay_one_tenth_ms(10);
-  SIGNAL1.play(randNumber);
+  //SIGNAL1.play(randNumber);
   randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
   //analogWrite(SIGNAL2, 0);
   randNumber = random(0, 255);
@@ -179,7 +179,7 @@ void runrandomsignals() {
   //analogWrite(SIGNAL3, randNumber);
   delay_one_tenth_ms(10);
 
-  SIGNAL3.play(randNumber);
+  //SIGNAL3.play(randNumber);
   randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4) + analogRead(A5) + analogRead(A6));
   //analogWrite(SIGNAL4, 0);
   randNumber = random(0, 255);
@@ -193,21 +193,21 @@ void runrandomsignals() {
   //analogWrite(SIGNAL1, randNumber);
   delay_one_tenth_ms(10);
 
-  SIGNAL5.play(randNumber);
+  //SIGNAL5.play(randNumber);
   randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
   //analogWrite(SIGNAL2, 0);
   randNumber = random(0, 255);
   //analogWrite(SIGNAL2, randNumber);
   delay_one_tenth_ms(10);
 
-  SIGNAL6.play(randNumber);
+  //SIGNAL6.play(randNumber);
   randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
   //analogWrite(SIGNAL3, 0);
   randNumber = random(0, 255);
   //analogWrite(SIGNAL3, randNumber);
   delay_one_tenth_ms(10);
 
-  SIGNAL7.play(randNumber);
+  //SIGNAL7.play(randNumber);
 }
 
 
