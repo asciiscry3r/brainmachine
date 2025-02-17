@@ -115,10 +115,11 @@ int buttonState = 0;  // variable for reading the pushbutton status
 void setup() {
   rightEar.begin(rightEarLow);  // Tone rightEar begins at pin output rightEarLow
   leftEar.begin(lefttEarLow);   // Tone leftEar begins at pin output leftEarLow
-  pinMode(SIGNAL1Low, OUTPUT);
   SIGNAL2.begin(SIGNAL2Low);
-  pinMode(SIGNAL3Low, OUTPUT);
   SIGNAL4.begin(SIGNAL4Low);
+
+  pinMode(SIGNAL1Low, OUTPUT);
+  pinMode(SIGNAL3Low, OUTPUT);
   pinMode(SIGNAL5Low, OUTPUT);
   pinMode(SIGNAL6Low, OUTPUT);
   pinMode(SIGNAL7Low, OUTPUT);
@@ -162,52 +163,44 @@ void checkbuttonstate() {
 
 void runrandomsignals() {
   randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5));
-  //analogWrite(SIGNAL1, 0);
   randNumber = random(0, 255);
-  //analogWrite(SIGNAL1, randNumber);
   delay_one_tenth_ms(10);
-  //SIGNAL1.play(randNumber);
+  analogWrite(SIGNAL1Low, randNumber);
+
   randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A5));
-  //analogWrite(SIGNAL2, 0);
   randNumber = random(0, 255);
-  //analogWrite(SIGNAL2, randNumber);
   delay_one_tenth_ms(10);
   SIGNAL2.play(randNumber);
-  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A5));
-  //analogWrite(SIGNAL3, 0);
-  randNumber = random(0, 255);
-  //analogWrite(SIGNAL3, randNumber);
-  delay_one_tenth_ms(10);
 
-  //SIGNAL3.play(randNumber);
+  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A5));
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(10);
+  analogWrite(SIGNAL3Low, randNumber);
+
   randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4) + analogRead(A5));
-  //analogWrite(SIGNAL4, 0);
   randNumber = random(0, 255);
-  //analogWrite(SIGNAL4, randNumber);
   delay_one_tenth_ms(10);
-
   SIGNAL4.play(randNumber);
+
   randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5));
-  //analogWrite(SIGNAL1, 0);
   randNumber = random(0, 255);
-  //analogWrite(SIGNAL1, randNumber);
   delay_one_tenth_ms(10);
+  analogWrite(SIGNAL5Low, randNumber);
 
-  //SIGNAL5.play(randNumber);
   randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A5));
-  //analogWrite(SIGNAL2, 0);
   randNumber = random(0, 255);
-  //analogWrite(SIGNAL2, randNumber);
   delay_one_tenth_ms(10);
+  analogWrite(SIGNAL6Low, randNumber);
 
-  //SIGNAL6.play(randNumber);
   randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A5));
-  //analogWrite(SIGNAL3, 0);
   randNumber = random(0, 255);
-  //analogWrite(SIGNAL3, randNumber);
   delay_one_tenth_ms(10);
+  analogWrite(SIGNAL7Low, randNumber);
 
-  //SIGNAL7.play(randNumber);
+  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A5) + analogRead(A1) + analogRead(A2));
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(10);
+  analogWrite(SIGNAL8Low, randNumber);
 }
 
 
@@ -218,12 +211,12 @@ void runrandomnoise() {
   rightEar.play(randNumber);
   analogWrite(rightEyeRed, 0);   // common anode -
   analogWrite(leftEyeRed, 255);  // LOW means 'on'
+  delay_one_tenth_ms(10);
   // turn on LEDs
 
   analogWrite(rightEyeRed, 255);  // common anode -
   analogWrite(leftEyeRed, 0);     // HIGH means 'off'
   delay_one_tenth_ms(10);
-
 
   randomSeed(analogRead(A4) + analogRead(A1) + analogRead(A0) + analogRead(A3) + analogRead(A2) + analogRead(A5));
 
@@ -231,6 +224,7 @@ void runrandomnoise() {
   leftEar.play(randNumber);
   analogWrite(rightEyeRed, 0);   // common anode -
   analogWrite(leftEyeRed, 255);  // LOW means 'on'
+  delay_one_tenth_ms(10);
   // turn on LEDs
 
   analogWrite(rightEyeRed, 255);  // common anode -
@@ -251,9 +245,9 @@ void runbrainprogram() {
   }
 }
 
-/***************************************************
+/*************************************************************
 This function delays the specified number of 1/10 milliseconds
-***************************************************/
+**************************************************************/
 
 void delay_one_tenth_ms(unsigned long int ms) {
   unsigned long int timer;
