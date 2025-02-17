@@ -161,47 +161,47 @@ void checkbuttonstate() {
 
 
 void runrandomsignals() {
-  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5) + analogRead(A6));
+  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5));
   //analogWrite(SIGNAL1, 0);
   randNumber = random(0, 255);
   //analogWrite(SIGNAL1, randNumber);
   delay_one_tenth_ms(10);
   //SIGNAL1.play(randNumber);
-  randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
+  randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A5));
   //analogWrite(SIGNAL2, 0);
   randNumber = random(0, 255);
   //analogWrite(SIGNAL2, randNumber);
   delay_one_tenth_ms(10);
   SIGNAL2.play(randNumber);
-  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
+  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A5));
   //analogWrite(SIGNAL3, 0);
   randNumber = random(0, 255);
   //analogWrite(SIGNAL3, randNumber);
   delay_one_tenth_ms(10);
 
   //SIGNAL3.play(randNumber);
-  randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4) + analogRead(A5) + analogRead(A6));
+  randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4) + analogRead(A5));
   //analogWrite(SIGNAL4, 0);
   randNumber = random(0, 255);
   //analogWrite(SIGNAL4, randNumber);
   delay_one_tenth_ms(10);
 
   SIGNAL4.play(randNumber);
-  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5) + analogRead(A6));
+  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5));
   //analogWrite(SIGNAL1, 0);
   randNumber = random(0, 255);
   //analogWrite(SIGNAL1, randNumber);
   delay_one_tenth_ms(10);
 
   //SIGNAL5.play(randNumber);
-  randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A6) + analogRead(A5));
+  randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A5));
   //analogWrite(SIGNAL2, 0);
   randNumber = random(0, 255);
   //analogWrite(SIGNAL2, randNumber);
   delay_one_tenth_ms(10);
 
   //SIGNAL6.play(randNumber);
-  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A6) + analogRead(A5));
+  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A5));
   //analogWrite(SIGNAL3, 0);
   randNumber = random(0, 255);
   //analogWrite(SIGNAL3, randNumber);
@@ -212,7 +212,7 @@ void runrandomsignals() {
 
 
 void runrandomnoise() {
-  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A4) + analogRead(A3) + analogRead(A1) + analogRead(A5) + analogRead(A6));
+  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A4) + analogRead(A3) + analogRead(A1) + analogRead(A5));
 
   randNumber = random(80);
   rightEar.play(randNumber);
@@ -225,7 +225,7 @@ void runrandomnoise() {
   delay_one_tenth_ms(10);
 
 
-  randomSeed(analogRead(A4) + analogRead(A1) + analogRead(A0) + analogRead(A3) + analogRead(A2) + analogRead(A6) + analogRead(A5));
+  randomSeed(analogRead(A4) + analogRead(A1) + analogRead(A0) + analogRead(A3) + analogRead(A2) + analogRead(A5));
 
   randNumber = random(80);
   leftEar.play(randNumber);
