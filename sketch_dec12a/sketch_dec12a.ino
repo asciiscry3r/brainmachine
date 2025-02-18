@@ -23,18 +23,18 @@ And to access brainwaveTab[3].bwDuration, which is a double-word, this is how to
 #include <avr/power.h>     // A library to control power
 
 
-#define rightEyeRed 5   // Define pinout for right eye
-#define leftEyeRed 6    // Define pinout for left eye
-#define rightEarLow 9   // Define pinout for left ear
-#define lefttEarLow 10  // Define pinout for left ear
-#define SIGNAL1Low 8    // SIGNAL only PWM
+#define rightEyeRed 5   // Define pinout for right eye | SIGNAL
+#define leftEyeRed 6    // Define pinout for left eye | SIGNAL
+#define rightEarLow 9   // Define pinout for left ear | SIGNAL
+#define lefttEarLow 10  // Define pinout for left ear | SIGNAL
+#define SIGNAL1Low 8    // SIGNAL only Hight/Low PWM
 #define SIGNAL2Low 11   // SIGNAL
-#define SIGNAL3Low 4    // SIGNAL only PWM
+#define SIGNAL3Low 4    // SIGNAL only Hight/Low PWM
 #define SIGNAL4Low 3    // SIGNAL
-#define SIGNAL5Low 7    // SIGNAL only PWM
-#define SIGNAL6Low 1    // SIGNAL only PWM
-#define SIGNAL7Low 12   // SIGNAL only PWM
-#define SIGNAL8Low 13   // SIGNAL only PWM
+#define SIGNAL5Low 7    // SIGNAL only Hight/Low PWM
+#define SIGNAL6Low 1    // SIGNAL only Hight/Low PWM
+#define SIGNAL7Low 12   // SIGNAL only Hight/Low PWM
+#define SIGNAL8Low 13   // SIGNAL only Hight/Low PWM
 
 
 struct brainwaveElement {
@@ -127,6 +127,8 @@ void setup() {
 
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
+  
+  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5)); // previous is just experiment
 }
 
 
@@ -162,42 +164,34 @@ void checkbuttonstate() {
 
 
 void runrandomsignals() {
-  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5));
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
   analogWrite(SIGNAL1Low, randNumber);
 
-  randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A5));
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
   SIGNAL2.play(randNumber);
 
-  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A5));
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
   analogWrite(SIGNAL3Low, randNumber);
 
-  randomSeed(analogRead(A3) + analogRead(A0) + analogRead(A2) + analogRead(A1) + analogRead(A4) + analogRead(A5));
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
   SIGNAL4.play(randNumber);
 
-  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5));
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
   analogWrite(SIGNAL5Low, randNumber);
 
-  randomSeed(analogRead(A1) + analogRead(A3) + analogRead(A2) + analogRead(A0) + analogRead(A4) + analogRead(A5));
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
   analogWrite(SIGNAL6Low, randNumber);
 
-  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A2) + analogRead(A1) + analogRead(A5));
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
   analogWrite(SIGNAL7Low, randNumber);
 
-  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A3) + analogRead(A5) + analogRead(A1) + analogRead(A2));
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
   analogWrite(SIGNAL8Low, randNumber);
@@ -205,7 +199,6 @@ void runrandomsignals() {
 
 
 void runrandomnoise() {
-  randomSeed(analogRead(A0) + analogRead(A4) + analogRead(A4) + analogRead(A3) + analogRead(A1) + analogRead(A5));
 
   randNumber = random(80);
   rightEar.play(randNumber);
@@ -217,8 +210,6 @@ void runrandomnoise() {
   analogWrite(rightEyeRed, 255);  // common anode -
   analogWrite(leftEyeRed, 0);     // HIGH means 'off'
   delay_one_tenth_ms(10);
-
-  randomSeed(analogRead(A4) + analogRead(A1) + analogRead(A0) + analogRead(A3) + analogRead(A2) + analogRead(A5));
 
   randNumber = random(80);
   leftEar.play(randNumber);

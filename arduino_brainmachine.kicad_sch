@@ -4,6 +4,9 @@
 	(generator_version "8.0")
 	(uuid "16427a71-30ca-4ef8-b47f-54137aef95d2")
 	(paper "A4")
+	(title_block
+		(date "2025-02-18")
+	)
 	(lib_symbols
 		(symbol "Device:D_Zener"
 			(pin_numbers hide)
@@ -14781,9 +14784,47 @@
 			)
 		)
 	)
+	(sheet
+		(at 306.07 2.54)
+		(size 280.67 203.2)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "4e56b16d-58fe-4046-8da7-8b34f61b2ed5")
+		(property "Sheetname" "Untitled Sheet"
+			(at 306.07 1.8284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "untitled.kicad_sch"
+			(at 306.07 206.3246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(page "2")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
-			(page "1")
+			(page "2")
 		)
 	)
 )
