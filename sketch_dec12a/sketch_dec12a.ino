@@ -27,6 +27,7 @@ And to access brainwaveTab[3].bwDuration, which is a double-word, this is how to
 #define leftEyeRed 6    // Define pinout for left eye | SIGNAL
 #define rightEarLow 9   // Define pinout for left ear | SIGNAL
 #define lefttEarLow 10  // Define pinout for left ear | SIGNAL
+
 #define SIGNAL1Low 8    // SIGNAL only Hight/Low PWM
 #define SIGNAL2Low 11   // SIGNAL
 #define SIGNAL3Low 4    // SIGNAL only Hight/Low PWM
@@ -115,8 +116,8 @@ int buttonState = 0;  // variable for reading the pushbutton status
 void setup() {
   rightEar.begin(rightEarLow);  // Tone rightEar begins at pin output rightEarLow
   leftEar.begin(lefttEarLow);   // Tone leftEar begins at pin output leftEarLow
-  SIGNAL2.begin(SIGNAL2Low);
-  SIGNAL4.begin(SIGNAL4Low);
+  SIGNAL2.begin(SIGNAL2Low);    // Tone
+  SIGNAL4.begin(SIGNAL4Low);    // Tone
 
   pinMode(SIGNAL1Low, OUTPUT);
   pinMode(SIGNAL3Low, OUTPUT);
@@ -125,8 +126,8 @@ void setup() {
   pinMode(SIGNAL7Low, OUTPUT);
   pinMode(SIGNAL8Low, OUTPUT);
 
-  pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed
-  pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed
+  pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed | Tone
+  pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed  | Tone
   
   randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5)); // previous is just experiment
 }

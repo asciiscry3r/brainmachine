@@ -22,6 +22,8 @@ long randNumber;
 
 void setup() {
 
+  pinMode(SIGNAL0Low, OUTPUT);
+
   pinMode(SIGNAL1Low, OUTPUT);
   pinMode(SIGNAL2Low, OUTPUT);
   pinMode(SIGNAL3Low, OUTPUT);
@@ -35,13 +37,17 @@ void setup() {
   pinMode(SIGNAL11Low, OUTPUT);
   pinMode(SIGNAL12Low, OUTPUT);
 
-  randomSeed(analogRead(A0) + analogRead(A1));
+  randomSeed(analogRead(A0) + analogRead(A1) + analogRead(A2));
 }
 
 
 void loop() {
   analogReference(EXTERNAL);
   runrandomsignals();
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(10);
+  analogWrite(SIGNAL1Low, randNumber);
 
   delay_one_tenth_ms(10);
 }
@@ -79,6 +85,22 @@ void runrandomsignals() {
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
   analogWrite(SIGNAL8Low, randNumber);
+
+    randNumber = random(0, 255);
+  delay_one_tenth_ms(10);
+  analogWrite(SIGNAL9Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(10);
+  analogWrite(SIGNAL10Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(10);
+  analogWrite(SIGNAL11Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(10);
+  analogWrite(SIGNAL12Low, randNumber);
 }
 
 
