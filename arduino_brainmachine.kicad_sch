@@ -6175,6 +6175,12 @@
 		(uuid "0ddd8a0f-7576-4629-a91e-573e4fabc3bb")
 	)
 	(junction
+		(at 163.83 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "101ae97e-5c7b-4269-a0fa-cdcde1bcd527")
+	)
+	(junction
 		(at 144.78 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6325,12 +6331,6 @@
 		(uuid "4bc03745-7221-456e-a7e5-60b80684cd43")
 	)
 	(junction
-		(at 265.43 102.87)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4bcf4906-17a1-47aa-a923-dbd5d20d15ac")
-	)
-	(junction
 		(at 224.79 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6359,6 +6359,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "620b9433-6e83-45b4-9cfe-984c347f3af1")
+	)
+	(junction
+		(at 276.86 120.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "623fbd5c-99d4-4cd3-bc88-39d5d9674567")
 	)
 	(junction
 		(at 29.21 41.91)
@@ -6415,12 +6421,6 @@
 		(uuid "99be6e4e-40c1-4725-aa18-7d566c6fab5b")
 	)
 	(junction
-		(at 163.83 92.71)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9e3459f7-3451-425f-8183-5b04acaf22d8")
-	)
-	(junction
 		(at 40.64 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6467,12 +6467,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b592399d-fcda-4ad8-a07f-bb79febd86a4")
-	)
-	(junction
-		(at 266.7 116.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b6aab2ab-df9d-4f39-9127-ae41a6182e4a")
 	)
 	(junction
 		(at 19.05 151.13)
@@ -6587,6 +6581,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f84e6ad7-c75a-4ff6-b217-74c859e0827b")
+	)
+	(junction
+		(at 265.43 102.87)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8926cb5-749d-46ba-b250-117909d94e10")
 	)
 	(junction
 		(at 35.56 121.92)
@@ -6731,16 +6731,6 @@
 			(type default)
 		)
 		(uuid "07ba53bd-619b-43c0-8c79-a7e3be0125d0")
-	)
-	(wire
-		(pts
-			(xy 163.83 81.28) (xy 163.83 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "07c69f3a-0949-4d30-b48a-cb26dd92e892")
 	)
 	(wire
 		(pts
@@ -7024,13 +7014,13 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 113.03) (xy 275.59 116.84)
+			(xy 265.43 102.87) (xy 276.86 102.87)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "22e6167a-850f-41c1-b12d-3095058e07a1")
+		(uuid "221fea2a-9eff-482c-93e2-22dd035430b2")
 	)
 	(wire
 		(pts
@@ -7794,16 +7784,6 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 91.44) (xy 163.83 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6cf24258-53f0-4784-bca6-c71b55cb6e0d")
-	)
-	(wire
-		(pts
 			(xy 30.48 29.21) (xy 38.1 29.21)
 		)
 		(stroke
@@ -8474,6 +8454,16 @@
 	)
 	(wire
 		(pts
+			(xy 163.83 88.9) (xy 163.83 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9893256-0864-4381-b9ad-b206b7a48a5c")
+	)
+	(wire
+		(pts
 			(xy 19.05 62.23) (xy 16.51 62.23)
 		)
 		(stroke
@@ -9114,16 +9104,6 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 116.84) (xy 274.32 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eaffc348-88a7-473f-be10-ed42e6e91470")
-	)
-	(wire
-		(pts
 			(xy 163.83 92.71) (xy 163.83 97.79)
 		)
 		(stroke
@@ -9191,16 +9171,6 @@
 			(type default)
 		)
 		(uuid "f3ba1a91-7976-4beb-b9f4-2ecffccb4b4b")
-	)
-	(wire
-		(pts
-			(xy 275.59 102.87) (xy 265.43 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f418a7bf-688d-4882-b8b9-50915a89686c")
 	)
 	(wire
 		(pts
@@ -9744,95 +9714,6 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "C12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_Elektuur:R")
-		(at 163.83 76.2 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0e6ea7b4-7610-4b60-aa0a-b01b9ad6405e")
-		(property "Reference" "R40"
-			(at 166.37 74.9299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10kOm"
-			(at 166.37 77.4699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 163.83 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 163.83 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "resistor"
-			(at 163.83 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Indicator" "+"
-			(at 160.655 73.025 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rating" "W"
-			(at 166.37 79.375 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ac43da72-0c05-402c-bf2e-56607edc7183")
-		)
-		(pin "1"
-			(uuid "ce4eb713-268c-4fa4-a2d2-2917c09b733f")
-		)
-		(instances
-			(project "arduino_brainmachine"
-				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
-					(reference "R40")
 					(unit 1)
 				)
 			)
@@ -11958,7 +11839,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 163.83 87.63 270)
+		(at 163.83 74.93 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11967,7 +11848,7 @@
 		(fields_autoplaced yes)
 		(uuid "512c61a4-7eba-4f42-844f-1919c8bef79b")
 		(property "Reference" "D5"
-			(at 166.37 84.7724 90)
+			(at 166.37 72.0724 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11976,7 +11857,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 166.37 87.3124 90)
+			(at 166.37 74.6124 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11985,7 +11866,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 163.83 87.63 0)
+			(at 163.83 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11994,7 +11875,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 163.83 87.63 0)
+			(at 163.83 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12003,7 +11884,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 163.83 87.63 0)
+			(at 163.83 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13086,74 +12967,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 270.51 116.84 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "68ae9805-c26b-4b7f-bd51-ba07a0076d4f")
-		(property "Reference" "D3"
-			(at 272.0975 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 272.0975 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 270.51 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 270.51 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 270.51 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d0739b85-70d6-4938-8c0e-4aa61df7c21b")
-		)
-		(pin "2"
-			(uuid "cab06978-bdd2-43ea-b03c-5e59d65e7d44")
-		)
-		(instances
-			(project ""
-				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
-					(reference "D3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:Microphone_Condenser")
 		(at 30.48 121.92 270)
 		(unit 1)
@@ -13305,6 +13118,95 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "R33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Elektuur:R")
+		(at 163.83 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6c150cb6-2c08-4308-840d-c0e15635454e")
+		(property "Reference" "R40"
+			(at 166.37 82.5499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5-10kOm"
+			(at 166.37 85.0899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 163.83 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 163.83 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "resistor"
+			(at 163.83 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 160.655 80.645 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 166.37 86.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f8a3462e-c01e-4f1f-9460-2f45328f57fc")
+		)
+		(pin "1"
+			(uuid "f7aee6df-aca6-41e1-991e-7d5feb26ff07")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "R40")
 					(unit 1)
 				)
 			)
@@ -17569,6 +17471,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 276.86 106.68 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e4e5e58b-ed4f-4d31-89f6-a4b8d1eb6ffa")
+		(property "Reference" "D3"
+			(at 279.4 103.8224 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LED"
+			(at 279.4 106.3624 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 276.86 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 276.86 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 276.86 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "dd307d37-3b32-42ba-9528-cc5a39084a9b")
+		)
+		(pin "1"
+			(uuid "9bdcf651-3319-4ffc-b053-44bdaa8493e0")
+		)
+		(instances
+			(project ""
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_Elektuur:R")
 		(at 196.85 127 0)
 		(unit 1)
@@ -17659,7 +17631,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Elektuur:R")
-		(at 275.59 107.95 0)
+		(at 276.86 115.57 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17668,7 +17640,7 @@
 		(fields_autoplaced yes)
 		(uuid "e6129875-dbbb-425f-b59a-56606bf2f5af")
 		(property "Reference" "R39"
-			(at 278.13 106.6799 0)
+			(at 279.4 114.2999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17677,7 +17649,7 @@
 			)
 		)
 		(property "Value" "1kOm"
-			(at 278.13 109.2199 0)
+			(at 279.4 116.8399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17686,7 +17658,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 275.59 107.95 0)
+			(at 276.86 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17695,7 +17667,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 275.59 107.95 0)
+			(at 276.86 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17704,7 +17676,7 @@
 			)
 		)
 		(property "Description" "resistor"
-			(at 275.59 107.95 0)
+			(at 276.86 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17713,7 +17685,7 @@
 			)
 		)
 		(property "Indicator" "+"
-			(at 272.415 104.775 0)
+			(at 273.685 112.395 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17722,7 +17694,7 @@
 			)
 		)
 		(property "Rating" "W"
-			(at 278.13 111.125 0)
+			(at 279.4 118.745 0)
 			(effects
 				(font
 					(size 1.27 1.27)
