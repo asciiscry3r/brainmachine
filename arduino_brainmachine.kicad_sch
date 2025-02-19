@@ -6367,6 +6367,12 @@
 		(uuid "623fbd5c-99d4-4cd3-bc88-39d5d9674567")
 	)
 	(junction
+		(at 53.34 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6332e8db-1db2-4bc5-ab95-6104b2461b6a")
+	)
+	(junction
 		(at 29.21 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7374,6 +7380,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 109.22) (xy 63.5 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "453af308-5bb6-4a9b-9abf-68b9f3ca6847")
+	)
+	(wire
+		(pts
 			(xy 16.51 121.92) (xy 16.51 123.19)
 		)
 		(stroke
@@ -7591,6 +7607,26 @@
 			(type default)
 		)
 		(uuid "5945651e-7d6e-486f-b186-9e54094370f0")
+	)
+	(wire
+		(pts
+			(xy 63.5 106.68) (xy 78.74 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59b1b132-e9d1-4d28-a3f2-22dd70f80f3c")
+	)
+	(wire
+		(pts
+			(xy 53.34 121.92) (xy 63.5 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59b8c84b-7a16-4b96-b72b-606ab9a13278")
 	)
 	(wire
 		(pts
@@ -7961,6 +7997,16 @@
 			(type default)
 		)
 		(uuid "79994a18-1a40-4571-a79d-c45a163402c1")
+	)
+	(wire
+		(pts
+			(xy 52.07 121.92) (xy 53.34 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7badcb66-0634-4d1b-a3ef-37139c2a75f6")
 	)
 	(wire
 		(pts
@@ -8584,6 +8630,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 119.38) (xy 63.5 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8218c17-f1cc-4fed-9d24-a94079b585ce")
+	)
+	(wire
+		(pts
 			(xy 210.82 140.97) (xy 226.06 140.97)
 		)
 		(stroke
@@ -8901,16 +8957,6 @@
 			(type default)
 		)
 		(uuid "d9c95568-ca6d-4628-bffd-8bb7b98b7533")
-	)
-	(wire
-		(pts
-			(xy 53.34 121.92) (xy 52.07 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "da743194-858d-4aed-bdbd-9fa6be4b3c99")
 	)
 	(wire
 		(pts
@@ -12961,6 +13007,95 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Elektuur:R")
+		(at 63.5 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "686bac75-e86a-40cf-9878-0c2d1e68ad19")
+		(property "Reference" "R43"
+			(at 66.04 113.0299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "9.8 KOm"
+			(at 66.04 115.5699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "resistor"
+			(at 63.5 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 60.325 111.125 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 66.04 117.475 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "55bf2022-8527-4a39-a634-225e9fcdc399")
+		)
+		(pin "1"
+			(uuid "69800a78-937a-4ef1-b584-a124920a0dd0")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "R43")
 					(unit 1)
 				)
 			)
