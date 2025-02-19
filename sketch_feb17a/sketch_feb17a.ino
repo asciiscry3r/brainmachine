@@ -1,9 +1,9 @@
-#include <avr/pgmspace.h>  // for arrays - PROGMEM
-//#include <Tone.h>          // Include the arduino tone library
-#include <avr/sleep.h>  // A library to control the sleep mode
-#include <avr/power.h>  // A library to control power
+#include <avr/pgmspace.h>   // for arrays - PROGMEM
+#include <arduino-timer.h>  // ticks counter
+#include <avr/sleep.h>      // A library to control the sleep mode
+#include <avr/power.h>      // A library to control power
 
-#define SIGNAL0Low 2    // SIGNAL only Hight/Low PWM
+#define SIGNAL0Low 2  // SIGNAL only Hight/Low PWM
 
 #define SIGNAL1Low 8    // SIGNAL only Hight/Low PWM
 #define SIGNAL2Low 11   // SIGNAL
@@ -18,7 +18,10 @@
 #define SIGNAL11Low 9   // SIGNAL
 #define SIGNAL12Low 10  // SIGNAL
 
+
 long randNumber;
+auto timer = timer_create_default();
+
 
 void setup() {
 
@@ -42,15 +45,35 @@ void setup() {
 
 
 void loop() {
+  timer.tick();
   analogReference(EXTERNAL);
   runrandomsignals();
 
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
-  analogWrite(SIGNAL1Low, randNumber);
+  analogWrite(SIGNAL0Low, randNumber);
+
+  digitalWrite(SIGNAL6Low, LOW);
+  timer.in(3000, toggle_port_state);
+  switch_rele();
 
   delay_one_tenth_ms(10);
-}3
+}
+
+
+void toggle_port_state() {
+  digitalWrite(SIGNAL6Low, !digitalRead(SIGNAL6Low));
+  return true;
+}
+
+
+void switch_rele() {
+  if (digitalRead(SIGNAL6Low) == "HIGH") {
+    analogWrite(SIGNAL6Low, 255);
+  } else {
+    analogWrite(SIGNAL6Low, 0);
+  }
+}
 
 
 void runrandomsignals() {
@@ -76,7 +99,7 @@ void runrandomsignals() {
 
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
-  analogWrite(SIGNAL6Low, randNumber);
+  //analogWrite(SIGNAL6Low, randNumber);
 
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
@@ -86,7 +109,7 @@ void runrandomsignals() {
   delay_one_tenth_ms(10);
   analogWrite(SIGNAL8Low, randNumber);
 
-    randNumber = random(0, 255);
+  randNumber = random(0, 255);
   delay_one_tenth_ms(10);
   analogWrite(SIGNAL9Low, randNumber);
 
