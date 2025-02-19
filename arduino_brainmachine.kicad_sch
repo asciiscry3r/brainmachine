@@ -10248,6 +10248,16 @@
 		)
 		(uuid "48bbca17-dd47-408a-b729-55726401764a")
 	)
+	(text "FAILED\n"
+		(exclude_from_sim no)
+		(at 77.47 215.138 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "601c37bc-e3aa-4588-a1a3-14a8866b5d11")
+	)
 	(text "Use ADC Power Connections\nIf possible\nTo AVCC pin on Atmega328"
 		(exclude_from_sim no)
 		(at 267.716 87.63 0)
