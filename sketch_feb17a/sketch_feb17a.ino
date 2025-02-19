@@ -53,9 +53,9 @@ void loop() {
   delay_one_tenth_ms(10);
   analogWrite(SIGNAL0Low, randNumber);
 
-  digitalWrite(SIGNAL6Low, LOW);
-  timer.in(3000, toggle_port_state);
-  switch_rele();
+  randNumber = random(2000, 4000);
+  timer.in(randNumber, toggle_port_state);
+  //switch_rele();
 
   delay_one_tenth_ms(10);
 }
