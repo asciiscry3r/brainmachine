@@ -10238,6 +10238,16 @@
 		)
 		(uuid "3df99030-1b14-4804-bf69-53798be3025b")
 	)
+	(text "TEST"
+		(exclude_from_sim no)
+		(at 42.672 213.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "48bbca17-dd47-408a-b729-55726401764a")
+	)
 	(text "Use ADC Power Connections\nIf possible\nTo AVCC pin on Atmega328"
 		(exclude_from_sim no)
 		(at 267.716 87.63 0)
