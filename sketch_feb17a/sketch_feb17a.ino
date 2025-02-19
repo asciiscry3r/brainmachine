@@ -50,7 +50,7 @@ void loop() {
   analogWrite(SIGNAL1Low, randNumber);
 
   delay_one_tenth_ms(10);
-}
+}3
 
 
 void runrandomsignals() {
