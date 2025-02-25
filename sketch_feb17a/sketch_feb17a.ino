@@ -66,7 +66,7 @@ void loop() {
 
 //========================================
 
-void switch_rele() {  // Must be "Clock" on NE555 with 1kOm/1kOm + 1mkF, Old/Current on 1kOm/1kOm + 1000mkF
+void switch_rele() {  // Must be "Clock" on NE555 with, BLUE, 1kOm/1kOm + 1mkF, Old/Current on, BLUE, 1kOm/1kOm + 1000mkF
   {
     int value = analogRead(3);
     if ((value / 4) > THRESHOLD) {
