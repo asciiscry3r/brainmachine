@@ -55,12 +55,12 @@ void loop() {
   analogWrite(SIGNAL0Low, randNumber);
 
   //currentMillis = millis();
-  SIGNAL4Low = (analogRead(A2) / 4);
+  //SIGNAL4Low = (analogRead(A2) / 4);
   //switchInterval = random(1000, 3000);
   //switchDuration = random(1000, 3000);
-
-  //switch_rele(currentMillis, currentMillis);
   delay_one_tenth_ms(10);
+
+  switch_rele();
 }
 
 
@@ -70,13 +70,13 @@ void switch_rele() {  // "Clock" on NE555 with 1kOm/1kOm + 1mkF, Old on 1kOm/1kO
   {
     int value = analogRead(3);
     if ((value / 4) > THRESHOLD) {
-      if (COUNTER = 32767) {
-        COUNTER == 0;
+      if (COUNTER == 32767) {
+        COUNTER = 0;
       } else {
         COUNTER = COUNTER++;
       }
       randNumber = random(1, 4);
-      if (COUNTER = randNumber) {
+      if (COUNTER == randNumber) {
         analogWrite(SIGNAL4Low, 255);
       }
     } else {
