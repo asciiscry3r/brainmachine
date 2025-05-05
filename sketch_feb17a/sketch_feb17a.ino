@@ -30,7 +30,7 @@ void setup() {
   pinMode(SIGNAL1Low, OUTPUT);
   pinMode(SIGNAL2Low, OUTPUT);
   pinMode(SIGNAL3Low, OUTPUT);
-  pinMode(SIGNAL1Low, OUTPUT);
+  pinMode(SIGNAL4Low, OUTPUT);
   pinMode(SIGNAL5Low, OUTPUT);
   pinMode(SIGNAL6Low, OUTPUT);
   pinMode(SIGNAL7Low, OUTPUT);
@@ -59,15 +59,13 @@ void loop() {
   //switchInterval = random(1000, 3000);
   //switchDuration = random(1000, 3000);
   delay_one_tenth_ms(10);
-
-  switch_rele();
+  //switch_rele();
 }
 
 
 //========================================
 
-void switch_rele() {  // Must be "Clock" on NE555 with, BLUE, 1kOm/1kOm + 1mkF, Old/Current on, BLUE, 1kOm/1kOm + 1000mkF
-  {
+void switch_rele() {  // Must be "Clock" on NE555 with, 1kOm/1kOm + 1mkF, Old/Current on 1kOm/1kOm + 1000mkF
     int value = analogRead(3);
     if ((value / 4) > THRESHOLD) {
       if (COUNTER == 32767) {
@@ -75,8 +73,8 @@ void switch_rele() {  // Must be "Clock" on NE555 with, BLUE, 1kOm/1kOm + 1mkF, 
       } else {
         COUNTER = COUNTER++;
       }
-      randNumber = random(1, 4);
-      if (COUNTER == randNumber) {
+      randNumber = random(100, 600);
+      if (COUNTER > randNumber) {
         analogWrite(SIGNAL4Low, 255);
       }
     } else {
