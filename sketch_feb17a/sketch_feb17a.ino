@@ -58,8 +58,10 @@ void loop() {
   //switchInterval = random(1000, 3000);
   //switchDuration = random(1000, 3000);
   //switch_rele();
-  randNumber = random(100, 20000);
+  randNumber = random(100, 10000);
+  analogWrite(SIGNAL0Low, randNumber);
   delay_one_tenth_ms(10);
+  randNumber = random(10000, 200000);
   analogWrite(SIGNAL0Low, randNumber);
 
   delay_one_tenth_ms(10);
@@ -102,107 +104,159 @@ void switch_rele() {  // Must be "Clock" on NE555 with, 1kOm/1kOm + 1mkF, Old/Cu
 
 void runrandomsignals() {
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL1Low, randNumber);
 
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL2Low, randNumber);
 
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL3Low, randNumber);
 
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL4Low, randNumber);
 
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL5Low, randNumber);
 
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL6Low, randNumber);
 
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL7Low, randNumber);
 
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL8Low, randNumber);
 
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL9Low, randNumber);
 
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL10Low, randNumber);
 
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL11Low, randNumber);
 
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL12Low, randNumber);
 
   randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL13Low, randNumber);
   /////////////////////////////////////////////////////////
-  randNumber = random(100, 20000);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL1Low, randNumber);
 
-  randNumber = random(100, 20000);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL2Low, randNumber);
 
-  randNumber = random(0, 200);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL3Low, randNumber);
 
-  randNumber = random(100, 20000);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL4Low, randNumber);
 
-  randNumber = random(100, 20000);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL5Low, randNumber);
 
-  randNumber = random(100, 20000);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL6Low, randNumber);
 
-  randNumber = random(100, 20000);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL7Low, randNumber);
 
-  randNumber = random(100, 20000);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL8Low, randNumber);
 
-  randNumber = random(100, 20000);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL9Low, randNumber);
 
-  randNumber = random(100, 20000);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL10Low, randNumber);
 
-  randNumber = random(100, 20000);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL11Low, randNumber);
 
-  randNumber = random(100, 20000);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL12Low, randNumber);
 
-  randNumber = random(100, 20000);
-  delay_one_tenth_ms(10);
+  randNumber = random(10000, 20000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL13Low, randNumber);
+/////////////////////////////////////
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL1Low, randNumber);
+
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL2Low, randNumber);
+
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL3Low, randNumber);
+
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL4Low, randNumber);
+
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL5Low, randNumber);
+
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL6Low, randNumber);
+
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL7Low, randNumber);
+
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL8Low, randNumber);
+
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL9Low, randNumber);
+
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL10Low, randNumber);
+
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL11Low, randNumber);
+
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
+  analogWrite(SIGNAL12Low, randNumber);
+
+  randNumber = random(100, 10000);
+  delay_one_tenth_ms(1);
   analogWrite(SIGNAL13Low, randNumber);
 }
 
