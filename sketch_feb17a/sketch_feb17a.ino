@@ -26,7 +26,6 @@ int THRESHOLD = 200;
 void setup() {
 
   pinMode(SIGNAL0Low, OUTPUT);
-
   pinMode(SIGNAL1Low, OUTPUT);
   pinMode(SIGNAL2Low, OUTPUT);
   pinMode(SIGNAL3Low, OUTPUT);
@@ -51,114 +50,170 @@ void loop() {
   runrandomsignals();
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(5);
   analogWrite(SIGNAL0Low, randNumber);
 
   //currentMillis = millis();
   //SIGNAL4Low = (analogRead(A2) / 4);
   //switchInterval = random(1000, 3000);
   //switchDuration = random(1000, 3000);
-  delay_one_tenth_ms(10);
   //switch_rele();
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL0Low, randNumber);
+
+  delay_one_tenth_ms(5);
 }
 
 
 //========================================
 
 void switch_rele() {  // Must be "Clock" on NE555 with, 1kOm/1kOm + 1mkF, Old/Current on 1kOm/1kOm + 1000mkF
-    int value = analogRead(3);
-    if ((value / 4) > THRESHOLD) {
-      if (COUNTER == 32767) {
-        COUNTER = 0;
-      } else {
-        COUNTER = COUNTER++;
-      }
-      randNumber = random(100, 600);
-      if (COUNTER > randNumber) {
-        analogWrite(SIGNAL4Low, 255);
-      }
+  int value = analogRead(3);
+  if ((value / 4) > THRESHOLD) {
+    if (COUNTER == 32767) {
+      COUNTER = 0;
     } else {
-      analogWrite(SIGNAL4Low, 0);
+      COUNTER = COUNTER++;
     }
-  }
-  //   if (currentMillis == switchDuration) {
-  //     if (port_level == 255) {
-  //       analogWrite(SIGNAL6Low, 0);
-  //       port_level = 0;
-  //     } else {
-  //       analogWrite(SIGNAL6Low, 255);
-  //       port_level = 255;
-  //     }
-  //   } else {
-  //     analogWrite(SIGNAL6Low, 255);
-  //     port_level = 255;
-  //   }
-  //   return switchDuration;
-  // }
-
-
-  void runrandomsignals() {
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL1Low, randNumber);
-
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL2Low, randNumber);
-
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL3Low, randNumber);
-
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL4Low, randNumber);
-
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL5Low, randNumber);
-
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL6Low, randNumber);
-
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL7Low, randNumber);
-
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL8Low, randNumber);
-
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL9Low, randNumber);
-
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL10Low, randNumber);
-
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL11Low, randNumber);
-
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL12Low, randNumber);
-
-    randNumber = random(0, 255);
-    delay_one_tenth_ms(10);
-    analogWrite(SIGNAL13Low, randNumber);
-  }
-
-
-  void delay_one_tenth_ms(unsigned long int ms) {
-    unsigned long int timer;
-    const unsigned long int DelayCount = 196;  // Default: 87 - this value was determined by trial and error
-
-    while (ms != 0) {
-      // Toggling PD0 is done here to force the compiler to do this loop, rather than optimize it away
-      for (timer = 0; timer <= DelayCount; timer++) { PIND |= 0b0000001; };
-      ms--;
+    randNumber = random(100, 600);
+    if (COUNTER > randNumber) {
+      analogWrite(SIGNAL4Low, 255);
     }
+  } else {
+    analogWrite(SIGNAL4Low, 0);
   }
+}
+//   if (currentMillis == switchDuration) {
+//     if (port_level == 255) {
+//       analogWrite(SIGNAL6Low, 0);
+//       port_level = 0;
+//     } else {
+//       analogWrite(SIGNAL6Low, 255);
+//       port_level = 255;
+//     }
+//   } else {
+//     analogWrite(SIGNAL6Low, 255);
+//     port_level = 255;
+//   }
+//   return switchDuration;
+// }
+
+
+void runrandomsignals() {
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL1Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL2Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL3Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL4Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL5Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL6Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL7Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL8Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL9Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL10Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL11Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL12Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL13Low, randNumber);
+  /////////////////////////////////////////////////////////
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL1Low, randNumber);
+
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL2Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL3Low, randNumber);
+
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL4Low, randNumber);
+
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL5Low, randNumber);
+
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL6Low, randNumber);
+
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL7Low, randNumber);
+
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL8Low, randNumber);
+
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL9Low, randNumber);
+
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL10Low, randNumber);
+
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL11Low, randNumber);
+
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL12Low, randNumber);
+
+  randNumber = random(100, 1000);
+  delay_one_tenth_ms(5);
+  analogWrite(SIGNAL13Low, randNumber);
+}
+
+
+void delay_one_tenth_ms(unsigned long int ms) {
+  unsigned long int timer;
+  const unsigned long int DelayCount = 196;  // Default: 87 - this value was determined by trial and error
+
+  while (ms != 0) {
+    // Toggling PD0 is done here to force the compiler to do this loop, rather than optimize it away
+    for (timer = 0; timer <= DelayCount; timer++) { PIND |= 0b0000001; };
+    ms--;
+  }
+}
