@@ -36,7 +36,7 @@ And to access brainwaveTab[3].bwDuration, which is a double-word, this is how to
 #define SIGNAL6Low 1    // SIGNAL only Hight/Low PWM
 #define SIGNAL7Low 12   // SIGNAL only Hight/Low PWM
 #define SIGNAL8Low 13   // SIGNAL only Hight/Low PWM
-
+#define SIGNAL0Low 0    // Button HIGT signal
 
 struct brainwaveElement {
   char bwType;  // 'a' for Alpha, 'b' for Beta, 't' for Theta,'d' for Delta or 'g' for gamma ('0' signifies last entry in table
@@ -125,6 +125,7 @@ void setup() {
   pinMode(SIGNAL6Low, OUTPUT);
   pinMode(SIGNAL7Low, OUTPUT);
   pinMode(SIGNAL8Low, OUTPUT);
+  pinMode(SIGNAL0Low, OUTPUT);
 
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed | Tone
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed  | Tone
@@ -134,6 +135,7 @@ void setup() {
 
 
 void loop() {
+  analogWrite(SIGNAL0Low, 255);
   analogReference(EXTERNAL);
   checkbuttonstate();
   runrandomsignals();
@@ -195,6 +197,30 @@ void runrandomsignals() {
 
   randNumber = random(0, 255);
   delay_one_tenth_ms(10);
+  analogWrite(SIGNAL8Low, randNumber);
+//########################################
+  randNumber = random(0, 255);
+  analogWrite(SIGNAL1Low, randNumber);
+
+  randNumber = random(0, 255);
+  SIGNAL2.play(randNumber);
+
+  randNumber = random(0, 255);
+  analogWrite(SIGNAL3Low, randNumber);
+
+  randNumber = random(0, 255);
+  SIGNAL4.play(randNumber);
+
+  randNumber = random(0, 255);
+  analogWrite(SIGNAL5Low, randNumber);
+
+  randNumber = random(0, 255);
+  analogWrite(SIGNAL6Low, randNumber);
+
+  randNumber = random(0, 255);
+  analogWrite(SIGNAL7Low, randNumber);
+
+  randNumber = random(0, 255);
   analogWrite(SIGNAL8Low, randNumber);
 }
 
