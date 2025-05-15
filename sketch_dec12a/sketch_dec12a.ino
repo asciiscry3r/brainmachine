@@ -130,7 +130,7 @@ void setup() {
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed | Tone
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed  | Tone
   
-  randomSeed(analogRead(A0) + analogRead(A2) + analogRead(A3) + analogRead(A4) + analogRead(A1) + analogRead(A5)); // previous is just experiment
+  randomSeed(analogRead(A0) + analogRead(A1) + analogRead(A2)); // previous is just experiment
 }
 
 
@@ -168,60 +168,44 @@ void checkbuttonstate() {
 
 void runrandomsignals() {
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL1Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   SIGNAL2.play(randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL3Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   SIGNAL4.play(randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL5Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL6Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL7Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(11);
   analogWrite(SIGNAL8Low, randNumber);
-//########################################
-  randNumber = random(0, 255);
-  analogWrite(SIGNAL1Low, randNumber);
 
   randNumber = random(0, 255);
-  SIGNAL2.play(randNumber);
+  delay_one_tenth_ms(11);
+  analogWrite(rightEyeRed, randNumber);
 
   randNumber = random(0, 255);
-  analogWrite(SIGNAL3Low, randNumber);
-
-  randNumber = random(0, 255);
-  SIGNAL4.play(randNumber);
-
-  randNumber = random(0, 255);
-  analogWrite(SIGNAL5Low, randNumber);
-
-  randNumber = random(0, 255);
-  analogWrite(SIGNAL6Low, randNumber);
-
-  randNumber = random(0, 255);
-  analogWrite(SIGNAL7Low, randNumber);
-
-  randNumber = random(0, 255);
-  analogWrite(SIGNAL8Low, randNumber);
+  delay_one_tenth_ms(11);
+  analogWrite(leftEyeRed, randNumber);
 }
 
 
@@ -229,24 +213,11 @@ void runrandomnoise() {
 
   randNumber = random(80);
   rightEar.play(randNumber);
-  analogWrite(rightEyeRed, 0);   // common anode -
-  analogWrite(leftEyeRed, 255);  // LOW means 'on'
   delay_one_tenth_ms(10);
-  // turn on LEDs
 
-  analogWrite(rightEyeRed, 255);  // common anode -
-  analogWrite(leftEyeRed, 0);     // HIGH means 'off'
-  delay_one_tenth_ms(10);
 
   randNumber = random(80);
   leftEar.play(randNumber);
-  analogWrite(rightEyeRed, 0);   // common anode -
-  analogWrite(leftEyeRed, 255);  // LOW means 'on'
-  delay_one_tenth_ms(10);
-  // turn on LEDs
-
-  analogWrite(rightEyeRed, 255);  // common anode -
-  analogWrite(leftEyeRed, 0);     // HIGH means 'off'
   delay_one_tenth_ms(10);
 }
 

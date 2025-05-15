@@ -1,6 +1,7 @@
 //#include <avr/pgmspace.h>  // for arrays - PROGMEM
 //#include <avr/sleep.h>     // A library to control the sleep mode
 //#include <avr/power.h>     // A library to control power
+//#include <Tone.h>  // Include the arduino tone library
 
 #define SIGNAL0Low 2    // SIGNAL only Hight/Low PWM
 #define SIGNAL13Low 0   // SIGNAL only Hight/Low PWM
@@ -16,6 +17,8 @@
 #define SIGNAL10Low 6   // SIGNAL
 #define SIGNAL11Low 9   // SIGNAL
 #define SIGNAL12Low 10  // SIGNAL
+
+
 
 
 long randNumber;
@@ -40,6 +43,14 @@ void setup() {
   pinMode(SIGNAL12Low, OUTPUT);
   pinMode(SIGNAL13Low, OUTPUT);
 
+  //TCCR0A = _BV(COM0A1) | _BV(COM0B1) | _BV(WGM02);
+  //TCCR0B = _BV(CS02);
+
+  //TCCR1A = _BV(COM1A1) | _BV(COM1B1) | _BV(WGM12);
+  //TCCR1B = _BV(CS12);
+
+  //TCCR2A = _BV(COM2A1) | _BV(COM2B1) | _BV(WGM20);
+  //TCCR2B = _BV(CS22);
 
   randomSeed(analogRead(A0) + analogRead(A1) + analogRead(A2));
 }
@@ -47,114 +58,94 @@ void setup() {
 
 void loop() {
   analogReference(EXTERNAL);
-  runrandomsignals();
+
+  randNumber = random(0, 1000);
+  tone(SIGNAL9Low, randNumber, 1000);
+  //analogWrite(SIGNAL9Low, randNumber);
+
+  randNumber = random(0, 1000);
+  tone(SIGNAL10Low, randNumber, 1000);
+  //analogWrite(SIGNAL10Low, randNumber);
+
+  randNumber = random(0, 1000);
+  tone(SIGNAL11Low, randNumber, 1000);
+  //analogWrite(SIGNAL11Low, randNumber);
+
+  randNumber = random(0, 1000);
+  tone(SIGNAL12Low, randNumber, 1000);
+  //analogWrite(SIGNAL12Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
   analogWrite(SIGNAL0Low, randNumber);
 
-  //currentMillis = millis();
-  //SIGNAL4Low = (analogRead(A2) / 4);
-  //switchInterval = random(1000, 3000);
-  //switchDuration = random(1000, 3000);
-  //switch_rele();
-  randNumber = random(100, 10000);
-  analogWrite(SIGNAL0Low, randNumber);
-  delay_one_tenth_ms(10);
-  randNumber = random(10000, 200000);
-  analogWrite(SIGNAL0Low, randNumber);
+  //randNumber = random(0, 180);
+  //pinMode(SIGNAL9Low, OUTPUT);
+  //pinMode(SIGNAL10Low, OUTPUT);
 
-  delay_one_tenth_ms(10);
+  //OCR0A = randNumber;
+  //randNumber = random(0, 50);
+  //OCR0B = randNumber;
+
+  //randNumber = random(0, 180);
+  //pinMode(SIGNAL11Low, OUTPUT);
+  //pinMode(SIGNAL12Low, OUTPUT);
+
+  //OCR1A = randNumber;
+  //randNumber = random(0, 50);
+  //OCR1B = randNumber;
+
+  //randNumber = random(0, 190);
+  //pinMode(SIGNAL4Low, OUTPUT);
+  //pinMode(SIGNAL2Low, OUTPUT);
+
+  //OCR2A = randNumber;
+  //randNumber = random(0, 50);
+  //OCR2B = randNumber;
+
+  runrandomsignals();
 }
-
-
-//========================================
-
-void switch_rele() {  // Must be "Clock" on NE555 with, 1kOm/1kOm + 1mkF, Old/Current on 1kOm/1kOm + 1000mkF
-  int value = analogRead(3);
-  if ((value / 4) > THRESHOLD) {
-    if (COUNTER == 32767) {
-      COUNTER = 0;
-    } else {
-      COUNTER = COUNTER++;
-    }
-    randNumber = random(100, 600);
-    if (COUNTER > randNumber) {
-      analogWrite(SIGNAL4Low, 255);
-    }
-  } else {
-    analogWrite(SIGNAL4Low, 0);
-  }
-}
-//   if (currentMillis == switchDuration) {
-//     if (port_level == 255) {
-//       analogWrite(SIGNAL6Low, 0);
-//       port_level = 0;
-//     } else {
-//       analogWrite(SIGNAL6Low, 255);
-//       port_level = 255;
-//     }
-//   } else {
-//     analogWrite(SIGNAL6Low, 255);
-//     port_level = 255;
-//   }
-//   return switchDuration;
-// }
 
 
 void runrandomsignals() {
+
   randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
+  delay_one_tenth_ms(10);
   analogWrite(SIGNAL1Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
+  delay_one_tenth_ms(10);
   analogWrite(SIGNAL2Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
+  delay_one_tenth_ms(10);
   analogWrite(SIGNAL3Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
+  delay_one_tenth_ms(10);
   analogWrite(SIGNAL4Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
+  delay_one_tenth_ms(10);
   analogWrite(SIGNAL5Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
+  delay_one_tenth_ms(10);
   analogWrite(SIGNAL6Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
+  delay_one_tenth_ms(10);
   analogWrite(SIGNAL7Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
+  delay_one_tenth_ms(10);
   analogWrite(SIGNAL8Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
-  analogWrite(SIGNAL9Low, randNumber);
-
-  randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
-  analogWrite(SIGNAL10Low, randNumber);
-
-  randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
-  analogWrite(SIGNAL11Low, randNumber);
-
-  randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
-  analogWrite(SIGNAL12Low, randNumber);
-
-  randNumber = random(0, 255);
-  delay_one_tenth_ms(11);
+  delay_one_tenth_ms(10);
   analogWrite(SIGNAL13Low, randNumber);
-//##################################################################
+
+  //##################################################################
+  
   randNumber = random(0, 255);
   analogWrite(SIGNAL1Low, randNumber);
 
@@ -180,19 +171,24 @@ void runrandomsignals() {
   analogWrite(SIGNAL8Low, randNumber);
 
   randNumber = random(0, 255);
-  analogWrite(SIGNAL9Low, randNumber);
+  //analogWrite(SIGNAL9Low, randNumber);
 
   randNumber = random(0, 255);
-  analogWrite(SIGNAL10Low, randNumber);
+  //analogWrite(SIGNAL10Low, randNumber);
 
   randNumber = random(0, 255);
-  analogWrite(SIGNAL11Low, randNumber);
+  //analogWrite(SIGNAL11Low, randNumber);
 
   randNumber = random(0, 255);
-  analogWrite(SIGNAL12Low, randNumber);
+  //analogWrite(SIGNAL12Low, randNumber);
 
   randNumber = random(0, 255);
   analogWrite(SIGNAL13Low, randNumber);
+
+  noTone(SIGNAL9Low);
+  noTone(SIGNAL10Low);
+  noTone(SIGNAL11Low);
+  noTone(SIGNAL12Low);
 }
 
 
