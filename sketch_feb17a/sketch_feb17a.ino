@@ -59,25 +59,45 @@ void setup() {
 void loop() {
   analogReference(EXTERNAL);
 
-  randNumber = random(0, 1000);
-  tone(SIGNAL9Low, randNumber, 1000);
-  //analogWrite(SIGNAL9Low, randNumber);
+  if (COUNTER = 0) {
+    randNumber = random(130, 1000);
+    tone(SIGNAL9Low, randNumber, 1000);
+    //analogWrite(SIGNAL9Low, randNumber);
 
-  randNumber = random(0, 1000);
-  tone(SIGNAL10Low, randNumber, 1000);
-  //analogWrite(SIGNAL10Low, randNumber);
+    randNumber = random(130, 1000);
+    tone(SIGNAL10Low, randNumber, 1000);
+    //analogWrite(SIGNAL10Low, randNumber);
 
-  randNumber = random(0, 1000);
-  tone(SIGNAL11Low, randNumber, 1000);
-  //analogWrite(SIGNAL11Low, randNumber);
+    randNumber = random(130, 1000);
+    tone(SIGNAL11Low, randNumber, 1000);
+    //analogWrite(SIGNAL11Low, randNumber);
 
-  randNumber = random(0, 1000);
-  tone(SIGNAL12Low, randNumber, 1000);
-  //analogWrite(SIGNAL12Low, randNumber);
+    randNumber = random(130, 1000);
+    tone(SIGNAL12Low, randNumber, 1000);
+    //analogWrite(SIGNAL12Low, randNumber);
+    COUNTER = 1;
+
+  } else {
+    randNumber = random(0, 130);
+    tone(SIGNAL9Low, randNumber, 1000);
+    //analogWrite(SIGNAL9Low, randNumber);
+
+    randNumber = random(0, 130);
+    tone(SIGNAL10Low, randNumber, 1000);
+    //analogWrite(SIGNAL10Low, randNumber);
+
+    randNumber = random(0, 130);
+    tone(SIGNAL11Low, randNumber, 1000);
+    //analogWrite(SIGNAL11Low, randNumber);
+
+    randNumber = random(0, 130);
+    tone(SIGNAL12Low, randNumber, 1000);
+    //analogWrite(SIGNAL12Low, randNumber);
+    COUNTER = 0;
+  }
 
   randNumber = random(0, 255);
   analogWrite(SIGNAL0Low, randNumber);
-
   //randNumber = random(0, 180);
   //pinMode(SIGNAL9Low, OUTPUT);
   //pinMode(SIGNAL10Low, OUTPUT);
@@ -109,43 +129,43 @@ void loop() {
 void runrandomsignals() {
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(20);
   analogWrite(SIGNAL1Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(20);
   analogWrite(SIGNAL2Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(20);
   analogWrite(SIGNAL3Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(20);
   analogWrite(SIGNAL4Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(20);
   analogWrite(SIGNAL5Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(20);
   analogWrite(SIGNAL6Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(20);
   analogWrite(SIGNAL7Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(20);
   analogWrite(SIGNAL8Low, randNumber);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(10);
+  delay_one_tenth_ms(20);
   analogWrite(SIGNAL13Low, randNumber);
 
   //##################################################################
-  
+
   randNumber = random(0, 255);
   analogWrite(SIGNAL1Low, randNumber);
 
@@ -169,18 +189,6 @@ void runrandomsignals() {
 
   randNumber = random(0, 255);
   analogWrite(SIGNAL8Low, randNumber);
-
-  randNumber = random(0, 255);
-  //analogWrite(SIGNAL9Low, randNumber);
-
-  randNumber = random(0, 255);
-  //analogWrite(SIGNAL10Low, randNumber);
-
-  randNumber = random(0, 255);
-  //analogWrite(SIGNAL11Low, randNumber);
-
-  randNumber = random(0, 255);
-  //analogWrite(SIGNAL12Low, randNumber);
 
   randNumber = random(0, 255);
   analogWrite(SIGNAL13Low, randNumber);
