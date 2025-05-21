@@ -1,7 +1,7 @@
 //#include <avr/pgmspace.h>  // for arrays - PROGMEM
 //#include <avr/sleep.h>     // A library to control the sleep mode
 //#include <avr/power.h>     // A library to control power
-//#include <Tone.h>  // Include the arduino tone library
+
 
 #define SIGNAL0Low 2    // SIGNAL only Hight/Low PWM
 #define SIGNAL13Low 0   // SIGNAL only Hight/Low PWM
@@ -21,9 +21,10 @@
 
 
 
-long randNumber;
-int COUNTER = 0;
-int THRESHOLD = 200;
+unsigned long int randNumber;
+unsigned long int COUNTER = 0;
+unsigned long int THRESHOLD_10000 = 1;
+unsigned long int THRESHOLD_20000 = 1;
 
 
 void setup() {
@@ -57,47 +58,11 @@ void setup() {
 
 
 void loop() {
+  unsigned long int i = 0;
+  i++;
+
   analogReference(EXTERNAL);
 
-  if (COUNTER = 0) {
-    randNumber = random(130, 1000);
-    tone(SIGNAL9Low, randNumber, 1000);
-    //analogWrite(SIGNAL9Low, randNumber);
-
-    randNumber = random(130, 1000);
-    tone(SIGNAL10Low, randNumber, 1000);
-    //analogWrite(SIGNAL10Low, randNumber);
-
-    randNumber = random(130, 1000);
-    tone(SIGNAL11Low, randNumber, 1000);
-    //analogWrite(SIGNAL11Low, randNumber);
-
-    randNumber = random(130, 1000);
-    tone(SIGNAL12Low, randNumber, 1000);
-    //analogWrite(SIGNAL12Low, randNumber);
-    COUNTER = 1;
-
-  } else {
-    randNumber = random(0, 130);
-    tone(SIGNAL9Low, randNumber, 1000);
-    //analogWrite(SIGNAL9Low, randNumber);
-
-    randNumber = random(0, 130);
-    tone(SIGNAL10Low, randNumber, 1000);
-    //analogWrite(SIGNAL10Low, randNumber);
-
-    randNumber = random(0, 130);
-    tone(SIGNAL11Low, randNumber, 1000);
-    //analogWrite(SIGNAL11Low, randNumber);
-
-    randNumber = random(0, 130);
-    tone(SIGNAL12Low, randNumber, 1000);
-    //analogWrite(SIGNAL12Low, randNumber);
-    COUNTER = 0;
-  }
-
-  randNumber = random(0, 255);
-  analogWrite(SIGNAL0Low, randNumber);
   //randNumber = random(0, 180);
   //pinMode(SIGNAL9Low, OUTPUT);
   //pinMode(SIGNAL10Low, OUTPUT);
@@ -122,11 +87,68 @@ void loop() {
   //randNumber = random(0, 50);
   //OCR2B = randNumber;
 
+  rundomsound();
+
   runrandomsignals();
+
+  freaquencyfrom1000(i);
+  freaquencyfrom10000(i);
+
+  noTone(SIGNAL9Low);
+  noTone(SIGNAL10Low);
+  noTone(SIGNAL11Low);
+  noTone(SIGNAL12Low);
+}
+
+void rundomsound() {
+  if (COUNTER = 0) {
+    randNumber = random(130, 1000);
+    tone(SIGNAL9Low, randNumber, 1000);
+    //analogWrite(SIGNAL9Low, randNumber);
+
+    randNumber = random(130, 1000);
+    tone(SIGNAL10Low, randNumber, 1000);
+    //analogWrite(SIGNAL10Low, randNumber);
+
+    randNumber = random(130, 1000);
+    tone(SIGNAL11Low, randNumber, 1000);
+    //analogWrite(SIGNAL11Low, randNumber);
+
+    randNumber = random(130, 1000);
+    tone(SIGNAL12Low, randNumber, 1000);
+    //analogWrite(SIGNAL12Low, randNumber);
+    delay_one_tenth_ms(20);
+
+    COUNTER = 1;
+  } else {
+    randNumber = random(0, 130);
+    tone(SIGNAL9Low, randNumber, 1000);
+    //analogWrite(SIGNAL9Low, randNumber);
+
+    randNumber = random(0, 130);
+    tone(SIGNAL10Low, randNumber, 1000);
+    //analogWrite(SIGNAL10Low, randNumber);
+
+    randNumber = random(0, 130);
+    tone(SIGNAL11Low, randNumber, 1000);
+    //analogWrite(SIGNAL11Low, randNumber);
+
+    randNumber = random(0, 130);
+    tone(SIGNAL12Low, randNumber, 1000);
+    //analogWrite(SIGNAL12Low, randNumber);
+    delay_one_tenth_ms(20);
+
+    COUNTER = 0;
+  }
+  return COUNTER;
 }
 
 
 void runrandomsignals() {
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(20);
+  analogWrite(SIGNAL0Low, randNumber);
 
   randNumber = random(0, 255);
   delay_one_tenth_ms(20);
@@ -167,6 +189,9 @@ void runrandomsignals() {
   //##################################################################
 
   randNumber = random(0, 255);
+  analogWrite(SIGNAL0Low, randNumber);
+
+  randNumber = random(0, 255);
   analogWrite(SIGNAL1Low, randNumber);
 
   randNumber = random(0, 255);
@@ -192,13 +217,64 @@ void runrandomsignals() {
 
   randNumber = random(0, 255);
   analogWrite(SIGNAL13Low, randNumber);
-
-  noTone(SIGNAL9Low);
-  noTone(SIGNAL10Low);
-  noTone(SIGNAL11Low);
-  noTone(SIGNAL12Low);
 }
 
+void freaquencyfrom1000(unsigned long int i) {
+  while (i > THRESHOLD_10000) {
+    randNumber = random(1000, 10000);
+    tone(SIGNAL9Low, randNumber, 1000);
+    //analogWrite(SIGNAL9Low, randNumber);
+
+    randNumber = random(1000, 10000);
+    tone(SIGNAL10Low, randNumber, 1000);
+    //analogWrite(SIGNAL10Low, randNumber);
+
+    randNumber = random(1000, 10000);
+    tone(SIGNAL11Low, randNumber, 1000);
+    //analogWrite(SIGNAL11Low, randNumber);
+
+    randNumber = random(1000, 10000);
+    tone(SIGNAL12Low, randNumber, 1000);
+    //analogWrite(SIGNAL12Low, randNumber);
+    delay_one_tenth_ms(20);
+
+
+    noTone(SIGNAL9Low);
+    noTone(SIGNAL10Low);
+    noTone(SIGNAL11Low);
+    noTone(SIGNAL12Low);
+    i = 0;
+  }
+  return i;
+}
+
+void freaquencyfrom10000(unsigned long int i) {
+  while (i > THRESHOLD_20000) {
+    randNumber = random(1000, 10000);
+    tone(SIGNAL9Low, randNumber, 1000);
+    //analogWrite(SIGNAL9Low, randNumber);
+
+    randNumber = random(1000, 10000);
+    tone(SIGNAL10Low, randNumber, 1000);
+    //analogWrite(SIGNAL10Low, randNumber);
+
+    randNumber = random(1000, 10000);
+    tone(SIGNAL11Low, randNumber, 1000);
+    //analogWrite(SIGNAL11Low, randNumber);
+
+    randNumber = random(1000, 10000);
+    tone(SIGNAL12Low, randNumber, 1000);
+    //analogWrite(SIGNAL12Low, randNumber);
+    delay_one_tenth_ms(20);
+
+    noTone(SIGNAL9Low);
+    noTone(SIGNAL10Low);
+    noTone(SIGNAL11Low);
+    noTone(SIGNAL12Low);
+    i = 0;
+  }
+  return i;
+}
 
 void delay_one_tenth_ms(unsigned long int ms) {
   unsigned long int timer;
