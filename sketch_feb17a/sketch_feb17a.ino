@@ -23,8 +23,8 @@
 
 unsigned long int randNumber;
 unsigned long int COUNTER = 0;
-unsigned long int THRESHOLD_10000 = 1;
-unsigned long int THRESHOLD_20000 = 1;
+unsigned long int THRESHOLD_10000 = 0;
+unsigned long int THRESHOLD_20000 = 0;
 
 
 void setup() {
@@ -250,19 +250,19 @@ void freaquencyfrom1000(unsigned long int i) {
 
 void freaquencyfrom10000(unsigned long int i) {
   while (i > THRESHOLD_20000) {
-    randNumber = random(1000, 10000);
+    randNumber = random(10000, 20000);
     tone(SIGNAL9Low, randNumber, 1000);
     //analogWrite(SIGNAL9Low, randNumber);
 
-    randNumber = random(1000, 10000);
+    randNumber = random(10000, 20000);
     tone(SIGNAL10Low, randNumber, 1000);
     //analogWrite(SIGNAL10Low, randNumber);
 
-    randNumber = random(1000, 10000);
+    randNumber = random(10000, 20000);
     tone(SIGNAL11Low, randNumber, 1000);
     //analogWrite(SIGNAL11Low, randNumber);
 
-    randNumber = random(1000, 10000);
+    randNumber = random(10000, 20000);
     tone(SIGNAL12Low, randNumber, 1000);
     //analogWrite(SIGNAL12Low, randNumber);
     delay_one_tenth_ms(20);
