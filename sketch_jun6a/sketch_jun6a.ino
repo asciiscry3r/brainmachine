@@ -20,8 +20,9 @@
 
 
 
-unsigned long int randTime;
+
 unsigned long int randNumber;
+unsigned long int randTime;
 unsigned long int COUNTER = 0;
 unsigned long int THRESHOLD_10000 = 0;
 unsigned long int THRESHOLD_20000 = 0;
@@ -92,9 +93,6 @@ void loop() {
   freaquencyfrom10000(i);
 
   noTone(SIGNAL9Low);
-  noTone(SIGNAL10Low);
-  noTone(SIGNAL11Low);
-  noTone(SIGNAL12Low);
   i++;
 }
 
@@ -104,38 +102,12 @@ void rundomsound() {
   if (COUNTER = 0) {
     randNumber = random(130, 1000);
     tone(SIGNAL9Low, randNumber, 1000);
-    //analogWrite(SIGNAL9Low, randNumber);
-
-    randNumber = random(130, 1000);
-    tone(SIGNAL10Low, randNumber, 1000);
-    //analogWrite(SIGNAL10Low, randNumber);
-
-    randNumber = random(130, 1000);
-    tone(SIGNAL11Low, randNumber, 1000);
-    //analogWrite(SIGNAL11Low, randNumber);
-
-    randNumber = random(130, 1000);
-    tone(SIGNAL12Low, randNumber, 1000);
-    //analogWrite(SIGNAL12Low, randNumber);
     delay_one_tenth_ms(randTime);
 
     COUNTER = 1;
   } else {
     randNumber = random(0, 130);
     tone(SIGNAL9Low, randNumber, 1000);
-    //analogWrite(SIGNAL9Low, randNumber);
-
-    randNumber = random(0, 130);
-    tone(SIGNAL10Low, randNumber, 1000);
-    //analogWrite(SIGNAL10Low, randNumber);
-
-    randNumber = random(0, 130);
-    tone(SIGNAL11Low, randNumber, 1000);
-    //analogWrite(SIGNAL11Low, randNumber);
-
-    randNumber = random(0, 130);
-    tone(SIGNAL12Low, randNumber, 1000);
-    //analogWrite(SIGNAL12Low, randNumber);
     delay_one_tenth_ms(randTime);
 
     COUNTER = 0;
@@ -187,6 +159,22 @@ void runrandomsignals() {
   delay_one_tenth_ms(randTime);
   analogWrite(SIGNAL13Low, randNumber);
 
+  //randNumber = random(0, 255);
+  //delay_one_tenth_ms(20);
+  //analogWrite(SIGNAL9Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(randTime);
+  analogWrite(SIGNAL10Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(randTime);
+  analogWrite(SIGNAL11Low, randNumber);
+
+  randNumber = random(0, 255);
+  delay_one_tenth_ms(randTime);
+  analogWrite(SIGNAL12Low, randNumber);
+
   //##################################################################
 
   randNumber = random(0, 255);
@@ -218,6 +206,18 @@ void runrandomsignals() {
 
   randNumber = random(0, 255);
   analogWrite(SIGNAL13Low, randNumber);
+
+  //randNumber = random(0, 255);
+  //analogWrite(SIGNAL9Low, randNumber);
+
+  randNumber = random(0, 255);
+  analogWrite(SIGNAL10Low, randNumber);
+
+  randNumber = random(0, 255);
+  analogWrite(SIGNAL11Low, randNumber);
+
+  randNumber = random(0, 255);
+  analogWrite(SIGNAL12Low, randNumber);
 }
 
 void freaquencyfrom1000(unsigned long int i) {
@@ -226,26 +226,10 @@ void freaquencyfrom1000(unsigned long int i) {
   while (i > THRESHOLD_10000) {
     randNumber = random(1000, 10000);
     tone(SIGNAL9Low, randNumber, 1000);
-    //analogWrite(SIGNAL9Low, randNumber);
-
-    randNumber = random(1000, 10000);
-    tone(SIGNAL10Low, randNumber, 1000);
-    //analogWrite(SIGNAL10Low, randNumber);
-
-    randNumber = random(1000, 10000);
-    tone(SIGNAL11Low, randNumber, 1000);
-    //analogWrite(SIGNAL11Low, randNumber);
-
-    randNumber = random(1000, 10000);
-    tone(SIGNAL12Low, randNumber, 1000);
-    //analogWrite(SIGNAL12Low, randNumber);
     delay_one_tenth_ms(randTime);
 
-
     noTone(SIGNAL9Low);
-    noTone(SIGNAL10Low);
-    noTone(SIGNAL11Low);
-    noTone(SIGNAL12Low);
+
     i = 0;
   }
   return i;
@@ -257,25 +241,10 @@ void freaquencyfrom10000(unsigned long int i) {
   while (i > THRESHOLD_20000) {
     randNumber = random(10000, 20000);
     tone(SIGNAL9Low, randNumber, 1000);
-    //analogWrite(SIGNAL9Low, randNumber);
-
-    randNumber = random(10000, 20000);
-    tone(SIGNAL10Low, randNumber, 1000);
-    //analogWrite(SIGNAL10Low, randNumber);
-
-    randNumber = random(10000, 20000);
-    tone(SIGNAL11Low, randNumber, 1000);
-    //analogWrite(SIGNAL11Low, randNumber);
-
-    randNumber = random(10000, 20000);
-    tone(SIGNAL12Low, randNumber, 1000);
-    //analogWrite(SIGNAL12Low, randNumber);
     delay_one_tenth_ms(randTime);
 
     noTone(SIGNAL9Low);
-    noTone(SIGNAL10Low);
-    noTone(SIGNAL11Low);
-    noTone(SIGNAL12Low);
+
     i = 0;
   }
   return i;
