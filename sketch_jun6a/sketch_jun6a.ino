@@ -97,7 +97,7 @@ void loop() {
 }
 
 void rundomsound() {
-  randTime = random(8, 28);
+  randTime = random(8, 15);
 
   if (COUNTER = 0) {
     randNumber = random(130, 1000);
@@ -117,7 +117,7 @@ void rundomsound() {
 
 
 void runrandomsignals() {
-  randTime = random(8, 28);
+  randTime = random(8, 15);
 
   randNumber = random(0, 255);
   delay_one_tenth_ms(randTime);
@@ -221,7 +221,7 @@ void runrandomsignals() {
 }
 
 void freaquencyfrom1000(unsigned long int i) {
-  randTime = random(8, 28);
+  randTime = random(8, 15);
 
   while (i > THRESHOLD_10000) {
     randNumber = random(1000, 10000);
@@ -236,7 +236,7 @@ void freaquencyfrom1000(unsigned long int i) {
 }
 
 void freaquencyfrom10000(unsigned long int i) {
-  randTime = random(8, 28);
+  randTime = random(8, 15);
 
   while (i > THRESHOLD_20000) {
     randNumber = random(10000, 20000);
