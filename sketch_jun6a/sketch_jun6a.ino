@@ -1,7 +1,3 @@
-//#include <avr/pgmspace.h>  // for arrays - PROGMEM
-//#include <avr/sleep.h>     // A library to control the sleep mode
-//#include <avr/power.h>     // A library to control power
-
 
 #define SIGNAL0Low 2    // SIGNAL only Hight/Low PWM
 #define SIGNAL13Low 0   // SIGNAL only Hight/Low PWM
@@ -19,13 +15,14 @@
 #define SIGNAL12Low 10  // SIGNAL
 
 
-
-
 unsigned long int randNumber;
 unsigned long int randTime;
+unsigned long int randLimit;
 unsigned long int COUNTER = 0;
 unsigned long int THRESHOLD_10000 = 0;
 unsigned long int THRESHOLD_20000 = 0;
+unsigned long int seed;
+unsigned long int output;
 
 
 void setup() {
@@ -53,13 +50,22 @@ void setup() {
 
   //TCCR2A = _BV(COM2A1) | _BV(COM2B1) | _BV(WGM20);
   //TCCR2B = _BV(CS22);
+  
+  for (int i = 0; i < 10; i++) {
+    unsigned long int AD0 = analogRead(A0);
+    unsigned long int AD1 = analogRead(A1);
+    unsigned long int AD2 = analogRead(A2);
 
-  randomSeed(analogRead(A0) + analogRead(A1) + analogRead(A2));
+    seed += abs(analogRead(A0) ^ AD0 + analogRead(A1) ^ AD1 + analogRead(A2) ^ AD2);
+  }
+
+  randomSeed(*reinterpret_cast<unsigned long*>(seed));
 }
 
 
 void loop() {
   unsigned long int i = 0;
+  randLimit = random(10, 20);
 
   //randNumber = random(0, 180);
   //pinMode(SIGNAL9Low, OUTPUT);
@@ -82,7 +88,6 @@ void loop() {
   //pinMode(SIGNAL2Low, OUTPUT);
 
   //OCR2A = randNumber;
-  //randNumber = random(0, 50);
   //OCR2B = randNumber;
 
   rundomsound();
@@ -92,23 +97,26 @@ void loop() {
   freaquencyfrom1000(i);
   freaquencyfrom10000(i);
 
-  noTone(SIGNAL9Low);
   i++;
 }
 
 void rundomsound() {
-  randTime = random(8, 15);
+  randTime = random(8, randLimit);
 
   if (COUNTER = 0) {
     randNumber = random(130, 1000);
     tone(SIGNAL9Low, randNumber, 1000);
     delay_one_tenth_ms(randTime);
 
+    noTone(SIGNAL9Low);
+
     COUNTER = 1;
   } else {
     randNumber = random(0, 130);
     tone(SIGNAL9Low, randNumber, 1000);
     delay_one_tenth_ms(randTime);
+
+    noTone(SIGNAL9Low);
 
     COUNTER = 0;
   }
@@ -117,7 +125,7 @@ void rundomsound() {
 
 
 void runrandomsignals() {
-  randTime = random(8, 15);
+  randTime = random(8, randLimit);
 
   randNumber = random(0, 255);
   delay_one_tenth_ms(randTime);
@@ -221,7 +229,7 @@ void runrandomsignals() {
 }
 
 void freaquencyfrom1000(unsigned long int i) {
-  randTime = random(8, 15);
+  randTime = random(8, randLimit);
 
   while (i > THRESHOLD_10000) {
     randNumber = random(1000, 10000);
@@ -230,16 +238,13 @@ void freaquencyfrom1000(unsigned long int i) {
 
     noTone(SIGNAL9Low);
 
-    i = 0;
   }
-  return i;
 }
 
 void freaquencyfrom10000(unsigned long int i) {
-  randTime = random(8, 15);
+  randTime = random(8, randLimit);
 
   while (i > THRESHOLD_20000) {
-    randNumber = random(10000, 20000);
     tone(SIGNAL9Low, randNumber, 1000);
     delay_one_tenth_ms(randTime);
 
