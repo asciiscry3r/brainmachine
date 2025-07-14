@@ -49,7 +49,7 @@ void setup() {
   //TCCR2A = _BV(COM2A1) | _BV(COM2B1) | _BV(WGM20);
   //TCCR2B = _BV(CS22);
   
-  randomSeed(analogRead(A0) + analogRead(A1) + analogRead(A2));
+  randomSeed(analogRead(A0)); // local ~putin~ faced police/millitia dont belive in addition, im IDK - we have this in many places
 }
 
 void loop() {

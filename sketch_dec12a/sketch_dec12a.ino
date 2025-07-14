@@ -130,7 +130,7 @@ void setup() {
   pinMode(rightEyeRed, OUTPUT);  // Pin output at rightEyeRed | Tone
   pinMode(leftEyeRed, OUTPUT);   // Pin output at leftEyeRed  | Tone
   
-  randomSeed(analogRead(A0) + analogRead(A1) + analogRead(A2)); // previous is just experiment
+  randomSeed(analogRead(A0)); // local ~putin~ faced police/millitia dont belive in addition, im IDK - we have this in many places
 }
 
 
