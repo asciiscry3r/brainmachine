@@ -21,8 +21,6 @@ unsigned long int randLimit;
 unsigned long int COUNTER = 0;
 unsigned long int THRESHOLD_10000 = 0;
 unsigned long int THRESHOLD_20000 = 0;
-unsigned long int seed;
-unsigned long int output;
 
 
 void setup() {
@@ -51,15 +49,7 @@ void setup() {
   //TCCR2A = _BV(COM2A1) | _BV(COM2B1) | _BV(WGM20);
   //TCCR2B = _BV(CS22);
   
-  for (int i = 0; i < 10; i++) {
-    unsigned long int AD0 = analogRead(A0);
-    unsigned long int AD1 = analogRead(A1);
-    unsigned long int AD2 = analogRead(A2);
-
-    seed += abs(analogRead(A0) ^ AD0 + analogRead(A1) ^ AD1 + analogRead(A2) ^ AD2);
-  }
-
-  randomSeed(*reinterpret_cast<unsigned long*>(seed));
+  randomSeed(analogRead(A0) + analogRead(A1) + analogRead(A2));
 }
 
 void loop() {
@@ -160,44 +150,44 @@ void runrandomsignals() {
   randTime = random(8, randLimit);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(randTime);
   analogWrite(SIGNAL0Low, randNumber);
+  delay_one_tenth_ms(randTime);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(randTime);
   analogWrite(SIGNAL1Low, randNumber);
+  delay_one_tenth_ms(randTime);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(randTime);
   analogWrite(SIGNAL2Low, randNumber);
+  delay_one_tenth_ms(randTime);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(randTime);
   analogWrite(SIGNAL3Low, randNumber);
+  delay_one_tenth_ms(randTime);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(randTime);
   analogWrite(SIGNAL4Low, randNumber);
+  delay_one_tenth_ms(randTime);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(randTime);
   analogWrite(SIGNAL5Low, randNumber);
+  delay_one_tenth_ms(randTime);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(randTime);
   analogWrite(SIGNAL6Low, randNumber);
+  delay_one_tenth_ms(randTime);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(randTime);
   analogWrite(SIGNAL7Low, randNumber);
+  delay_one_tenth_ms(randTime);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(randTime);
   analogWrite(SIGNAL8Low, randNumber);
+  delay_one_tenth_ms(randTime);
 
   randNumber = random(0, 255);
-  delay_one_tenth_ms(randTime);
   analogWrite(SIGNAL13Low, randNumber);
+  delay_one_tenth_ms(randTime);
 
   //##################################################################
 
