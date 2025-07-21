@@ -21,7 +21,7 @@ unsigned long int randTimePrevious = 0;
 unsigned long int randTime = 0;
 unsigned long int COUNTER = 0;
 unsigned long int randLimitFirst = 8;
-unsigned long int randLimitSecond = 24;
+unsigned long int randLimitSecond = 16;
 
 
 void setup() {
@@ -128,53 +128,53 @@ void rundomsound() {
 
 void runrandomsignals() {
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL0Low, randNumber);
   delay_one_tenth_ms(randTime);
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL1Low, randNumber);
   delay_one_tenth_ms(randTime);
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL2Low, randNumber);
   delay_one_tenth_ms(randTime);
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL3Low, randNumber);
   delay_one_tenth_ms(randTime);
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL4Low, randNumber);
   delay_one_tenth_ms(randTime);
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL5Low, randNumber);
   delay_one_tenth_ms(randTime);
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL6Low, randNumber);
   delay_one_tenth_ms(randTime);
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL7Low, randNumber);
   delay_one_tenth_ms(randTime);
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL8Low, randNumber);
   delay_one_tenth_ms(randTime);
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL13Low, randNumber);
   delay_one_tenth_ms(randTime);
 
@@ -182,18 +182,18 @@ void runrandomsignals() {
   //delay_one_tenth_ms(20);
   //analogWrite(SIGNAL9Low, randNumber);
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL10Low, randNumber);
   delay_one_tenth_ms(randTime);
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL11Low, randNumber);
   delay_one_tenth_ms(randTime);
 
+  randNumber = random(0, 255);
   randTime = random(randLimitFirst, randLimitSecond);
-  randNumber = random(randLimitFirst, randLimitSecond);
   analogWrite(SIGNAL12Low, randNumber);
   delay_one_tenth_ms(randTime);
 
