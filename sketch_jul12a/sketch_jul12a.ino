@@ -19,8 +19,6 @@ unsigned long int randNumber;
 unsigned long int randTime;
 unsigned long int randLimit;
 unsigned long int COUNTER = 0;
-unsigned long int THRESHOLD_10000 = 0;
-unsigned long int THRESHOLD_20000 = 0;
 
 
 void setup() {
@@ -54,10 +52,6 @@ void setup() {
 
 void loop() {
 
-  randLimit = random(10, 20);
-  do {
-    randLimit = random(10, 20);
-  } while (randLimit == random(10, 20));
   //pinMode(SIGNAL9Low, OUTPUT);
   //pinMode(SIGNAL10Low, OUTPUT);
 
@@ -83,15 +77,14 @@ void loop() {
 
 
   runrandomsignals();
-
 }
 
 
 void runrandomsignals() {
-  randTime = random(8, randLimit);
+  randTime = random(8, 22);
   do {
-    randTime = random(8, randLimit);
-  } while (randTime == random(8, randLimit));
+    randTime = random(8, 22);
+  } while (randTime == random(8, 22));
 
   randNumber = random(0, 255);
   do {
