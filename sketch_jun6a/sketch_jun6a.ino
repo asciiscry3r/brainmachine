@@ -121,6 +121,9 @@ void rundomsound() {
   if (COUNTER = 0) {
 
     randNumber = random(130, 1000);
+    do {
+      randNumber = random(130, 1000);
+    } while (randNumber == random(130, 1000));
     tone(SIGNAL9Low, randNumber);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);
@@ -128,6 +131,9 @@ void rundomsound() {
     noTone(SIGNAL9Low);
 
     randNumber = random(1000, 10000);
+    do {
+      randNumber = random(1000, 10000);
+    } while (randNumber == random(1000, 10000));
     tone(SIGNAL9Low, randNumber);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);
@@ -137,6 +143,9 @@ void rundomsound() {
     COUNTER = 1;  
   } else {
     randNumber = random(10000, 20000);
+    do {
+      randNumber = random(10000, 20000);
+    } while (randNumber == random(10000, 20000));
     tone(SIGNAL9Low, randNumber);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);
@@ -144,6 +153,9 @@ void rundomsound() {
     noTone(SIGNAL9Low);
 
     randNumber = random(0, 130);
+    do {
+      randNumber = random(0, 130);
+    } while (randNumber == random(0, 130));
     tone(SIGNAL9Low, randNumber);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);

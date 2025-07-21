@@ -15,10 +15,13 @@
 #define SIGNAL12Low 10  // SIGNAL
 
 
-unsigned long int randNumber;
-unsigned long int randTime;
-unsigned long int randLimit;
+unsigned long int randNumber = 0;
+unsigned long int randNumberPrevious = 0;
+unsigned long int randTimePrevious = 0;
+unsigned long int randTime = 0;
 unsigned long int COUNTER = 0;
+unsigned long int randLimitFirst = 8;
+unsigned long int randLimitSecond = 16;
 
 
 void setup() {
@@ -82,11 +85,38 @@ void loop() {
 
 }
 
+
+float randomtime() {
+
+  randTime = random(randLimitFirst, randLimitSecond);
+  
+  if (randTimePrevious != 0) {
+    do {
+      randTime = random(randLimitFirst, randLimitSecond);
+    } while (randTimePrevious == randTime);
+  }
+  randTimePrevious = randTime;
+
+  return randTime;
+}
+
+
+float randomnumber() {
+
+  randNumber = random(0, 255);
+
+  if (randTimePrevious != 0) {
+    do {
+      randNumber = random(0, 255);
+    } while (randNumber == randNumberPrevious);
+  }
+  randNumberPrevious = randNumber;
+
+  return randNumber;
+}
+
+
 void rundomsound() {
-  randTime = random(3, 33);
-  do {
-    randTime = random(3, 33);
-  } while (randTime == random(3, 33));
 
   if (COUNTER = 0) {
     randNumber = random(130, 1000);
@@ -94,29 +124,25 @@ void rundomsound() {
       randNumber = random(130, 1000);
     } while (randNumber == random(130, 1000));
     tone(SIGNAL9Low, randNumber);
-    //analogWrite(SIGNAL9Low, randNumber);
 
     randNumber = random(130, 1000);
     do {
       randNumber = random(130, 1000);
     } while (randNumber == random(130, 1000));
     tone(SIGNAL10Low, randNumber);
-    //analogWrite(SIGNAL10Low, randNumber);
 
     randNumber = random(130, 1000);
     do {
       randNumber = random(130, 1000);
     } while (randNumber == random(130, 1000));
     tone(SIGNAL11Low, randNumber);
-    //analogWrite(SIGNAL11Low, randNumber);
 
     randNumber = random(130, 1000);
-
     do {
       randNumber = random(130, 1000);
     } while (randNumber == random(130, 1000));
     tone(SIGNAL12Low, randNumber);
-    //analogWrite(SIGNAL12Low, randNumber);
+    randTime = randomtime();
     delay_one_tenth_ms(randTime);
 
     noTone(SIGNAL9Low);
@@ -129,28 +155,25 @@ void rundomsound() {
       randNumber = random(1000, 10000);
     } while (randNumber == random(1000, 10000));
     tone(SIGNAL9Low, randNumber);
-    //analogWrite(SIGNAL9Low, randNumber);
 
     randNumber = random(1000, 10000);
     do {
       randNumber = random(1000, 10000);
     } while (randNumber == random(1000, 10000));
     tone(SIGNAL10Low, randNumber);
-    //analogWrite(SIGNAL10Low, randNumber);
 
     randNumber = random(1000, 10000);
     do {
       randNumber = random(1000, 10000);
     } while (randNumber == random(1000, 10000));
     tone(SIGNAL11Low, randNumber);
-    //analogWrite(SIGNAL11Low, randNumber);
 
     randNumber = random(1000, 10000);
     do {
       randNumber = random(1000, 10000);
     } while (randNumber == random(1000, 10000));
     tone(SIGNAL12Low, randNumber);
-    //analogWrite(SIGNAL12Low, randNumber);
+    randTime = randomtime();
     delay_one_tenth_ms(randTime);
 
 
@@ -161,33 +184,31 @@ void rundomsound() {
 
     COUNTER = 1;
   } else {
+    
     randNumber = random(0, 130);
     do {
       randNumber = random(0, 130);
     } while (randNumber == random(0, 130));
     tone(SIGNAL9Low, randNumber);
-    //analogWrite(SIGNAL9Low, randNumber);
 
     randNumber = random(0, 130);
     do {
       randNumber = random(0, 130);
     } while (randNumber == random(0, 130));
     tone(SIGNAL10Low, randNumber);
-    //analogWrite(SIGNAL10Low, randNumber);
 
     randNumber = random(0, 130);
     do {
       randNumber = random(0, 130);
     } while (randNumber == random(0, 130));
     tone(SIGNAL11Low, randNumber);
-    //analogWrite(SIGNAL11Low, randNumber);
 
     randNumber = random(0, 130);
     do {
       randNumber = random(0, 130);
     } while (randNumber == random(0, 130));
     tone(SIGNAL12Low, randNumber);
-    //analogWrite(SIGNAL12Low, randNumber);
+    randTime = randomtime();
     delay_one_tenth_ms(randTime);
 
     noTone(SIGNAL9Low);
@@ -200,28 +221,25 @@ void rundomsound() {
       randNumber = random(10000, 20000);
     } while (randNumber == random(10000, 20000));
     tone(SIGNAL9Low, randNumber);
-    //analogWrite(SIGNAL9Low, randNumber);
 
     randNumber = random(10000, 20000);
     do {
       randNumber = random(10000, 20000);
     } while (randNumber == random(10000, 20000));
     tone(SIGNAL10Low, randNumber);
-    //analogWrite(SIGNAL10Low, randNumber);
 
     randNumber = random(10000, 20000);
     do {
       randNumber = random(10000, 20000);
     } while (randNumber == random(10000, 20000));
     tone(SIGNAL11Low, randNumber);
-    //analogWrite(SIGNAL11Low, randNumber);
 
     randNumber = random(10000, 20000);
     do {
       randNumber = random(10000, 20000);
     } while (randNumber == random(10000, 20000));
     tone(SIGNAL12Low, randNumber);
-    //analogWrite(SIGNAL12Low, randNumber);
+    randTime = randomtime();
     delay_one_tenth_ms(randTime);
 
     noTone(SIGNAL9Low);
@@ -236,141 +254,86 @@ void rundomsound() {
 
 
 void runrandomsignals() {
-  randTime = random(3, 33);
-  do {
-    randTime = random(3, 33);
-  } while (randTime == random(3, 33));
-
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
+  randTime = randomtime();
   analogWrite(SIGNAL0Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
+  randTime = randomtime();
   analogWrite(SIGNAL1Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
+  randTime = randomtime();
   analogWrite(SIGNAL2Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
+  randTime = randomtime();
   analogWrite(SIGNAL3Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
+  randTime = randomtime();
   analogWrite(SIGNAL4Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
+  randTime = randomtime();
   analogWrite(SIGNAL5Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
+  randTime = randomtime();
   analogWrite(SIGNAL6Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
+  randTime = randomtime();
   analogWrite(SIGNAL7Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
+  randTime = randomtime();
   analogWrite(SIGNAL8Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
+  randTime = randomtime();
   analogWrite(SIGNAL13Low, randNumber);
   delay_one_tenth_ms(randTime);
 
   //##################################################################
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
   analogWrite(SIGNAL0Low, randNumber);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
   analogWrite(SIGNAL1Low, randNumber);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
   analogWrite(SIGNAL2Low, randNumber);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
   analogWrite(SIGNAL3Low, randNumber);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
   analogWrite(SIGNAL4Low, randNumber);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
   analogWrite(SIGNAL5Low, randNumber);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
   analogWrite(SIGNAL6Low, randNumber);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
   analogWrite(SIGNAL7Low, randNumber);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
   analogWrite(SIGNAL8Low, randNumber);
 
-  randNumber = random(0, 255);
-  do {
-    randNumber = random(0, 255);
-  } while (randNumber == random(0, 255));
+  randNumber = randomnumber();
   analogWrite(SIGNAL13Low, randNumber);
 }
 
