@@ -18,10 +18,16 @@
 unsigned long int randNumber = 0;
 unsigned long int randNumberPrevious = 0;
 unsigned long int randTimePrevious = 0;
+unsigned long int randLimitInit = 0;
+unsigned long int randLimitInitPrevious = 0;
+unsigned long int randLimitEnd = 0;
+unsigned long int randLimitEndPrevious = 0;
 unsigned long int randTime = 0;
 unsigned long int COUNTER = 0;
-unsigned long int randLimitFirst = 8;
-unsigned long int randLimitSecond = 16;
+unsigned long int randLimitFirst_Initial = 2;
+unsigned long int randLimitSecond_Initial = 8;
+unsigned long int randLimitFirst_End = 10;
+unsigned long int randLimitSecond_End = 20;
 
 
 void setup() {
@@ -86,13 +92,43 @@ void loop() {
 }
 
 
+float randLimit_initial() {
+
+  randLimitInit = random(randLimitFirst_Initial, randLimitSecond_Initial);
+  
+  if (randLimitInitPrevious != 0) {
+    do {
+      randLimitInit = random(randLimitFirst_Initial, randLimitFirst_Initial);
+    } while (randLimitInitPrevious == randLimitInit);
+  }
+  randLimitInitPrevious = randLimitInit;
+
+  return randLimitInit;
+}
+
+
+float randLimit_end() {
+
+  randLimitEnd = random(randLimitFirst_End, randLimitSecond_End);
+  
+  if (randLimitEndPrevious != 0) {
+    do {
+      randLimitEnd = random(randLimitFirst_End, randLimitSecond_End);
+    } while (randLimitEndPrevious == randLimitEnd);
+  }
+  randLimitEndPrevious = randTime;
+
+  return randLimitEnd;
+}
+
+
 float randomtime() {
 
-  randTime = random(randLimitFirst, randLimitSecond);
+  randTime = random(randLimitInit, randLimitEnd);
   
   if (randTimePrevious != 0) {
     do {
-      randTime = random(randLimitFirst, randLimitSecond);
+      randTime = random(randLimitInit, randLimitEnd);
     } while (randTimePrevious == randTime);
   }
   randTimePrevious = randTime;
@@ -105,7 +141,7 @@ float randomnumber() {
 
   randNumber = random(0, 255);
 
-  if (randTimePrevious != 0) {
+  if (randNumberPrevious != 0) {
     do {
       randNumber = random(0, 255);
     } while (randNumber == randNumberPrevious);
@@ -116,47 +152,43 @@ float randomnumber() {
 }
 
 
+void playtone(long int firstfreaquency, long int secondfreaquency) {
+
+    randNumber = random(firstfreaquency, secondfreaquency);
+    //do {
+    //  randNumber = random(firstfreaquency, secondfreaquency);
+    //} while (randNumber == random(firstfreaquency, secondfreaquency));
+    tone(SIGNAL9Low, randNumber);
+}
+
+
 void rundomsound() {
 
   if (COUNTER = 0) {
 
-    randNumber = random(130, 1000);
-    do {
-      randNumber = random(130, 1000);
-    } while (randNumber == random(130, 1000));
-    tone(SIGNAL9Low, randNumber);
+    playtone(130, 1000);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);
 
     noTone(SIGNAL9Low);
 
-    randNumber = random(1000, 10000);
-    do {
-      randNumber = random(1000, 10000);
-    } while (randNumber == random(1000, 10000));
-    tone(SIGNAL9Low, randNumber);
+    playtone(1000, 10000);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);
 
     noTone(SIGNAL9Low);
 
-    COUNTER = 1;  
+    COUNTER = 1;
+
   } else {
-    randNumber = random(10000, 20000);
-    do {
-      randNumber = random(10000, 20000);
-    } while (randNumber == random(10000, 20000));
-    tone(SIGNAL9Low, randNumber);
+
+    playtone(10000, 20000);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);
 
     noTone(SIGNAL9Low);
 
-    randNumber = random(0, 130);
-    do {
-      randNumber = random(0, 130);
-    } while (randNumber == random(0, 130));
-    tone(SIGNAL9Low, randNumber);
+    playtone(0, 130);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);
 
@@ -287,7 +319,7 @@ void runrandomsignals() {
 
 void delay_one_tenth_ms(unsigned long int ms) {
   unsigned long int timer;
-  const unsigned long int DelayCount = 196;  // Default: 87 - this value was determined by trial and error
+  const unsigned long int DelayCount = 93;  // Default: 87 - this value was determined by trial and error
 
   while (ms != 0) {
     // Toggling PD0 is done here to force the compiler to do this loop, rather than optimize it away
