@@ -22,6 +22,10 @@ unsigned long int randLimitInit = 0;
 unsigned long int randLimitInitPrevious = 0;
 unsigned long int randLimitEnd = 0;
 unsigned long int randLimitEndPrevious = 0;
+unsigned long int randNumber_130_previous = 0;
+unsigned long int randNumber_1000_previous = 0;
+unsigned long int randNumber_10000_previous = 0;
+unsigned long int randNumber_20000_previous = 0;
 unsigned long int randTime = 0;
 unsigned long int COUNTER = 0;
 unsigned long int randLimitFirst_Initial = 2;
@@ -152,32 +156,77 @@ float randomnumber() {
 }
 
 
+void playtone_130(long int firstfreaquency, long int secondfreaquency, int portNumber) {
+
+    long int randNumber_130;
+
+    randNumber_130 = random(firstfreaquency, secondfreaquency);
+
+    do {
+      randNumber_130 = random(firstfreaquency, secondfreaquency);
+    } while (randNumber_130_previous == randNumber_130);
+
+    randNumber_130_previous = randNumber_130;
+
+    tone(portNumber, randNumber_130);
+}
+
+
+void playtone_1000(long int firstfreaquency, long int secondfreaquency, int portNumber) {
+
+    long int randNumber_1000;
+
+    randNumber_1000 = random(firstfreaquency, secondfreaquency);
+
+    do {
+      randNumber_1000 = random(firstfreaquency, secondfreaquency);
+    } while (randNumber_1000_previous == randNumber_1000);
+
+    randNumber_1000_previous = randNumber_1000;
+
+    tone(portNumber, randNumber_1000);
+}
+
+
+void playtone_10000(long int firstfreaquency, long int secondfreaquency, int portNumber) {
+
+    long int randNumber_10000;
+
+    randNumber_10000 = random(firstfreaquency, secondfreaquency);
+
+    do {
+      randNumber_10000 = random(firstfreaquency, secondfreaquency);
+    } while (randNumber_10000_previous == randNumber_10000);
+
+    randNumber_10000_previous = randNumber_10000;
+
+    tone(portNumber, randNumber_10000);
+}
+
+
+void playtone_20000(long int firstfreaquency, long int secondfreaquency, int portNumber) {
+    
+    long int randNumber_20000;
+
+    randNumber_20000 = random(firstfreaquency, secondfreaquency);
+
+    do {
+      randNumber_20000 = random(firstfreaquency, secondfreaquency);
+    } while (randNumber_20000_previous == randNumber_20000);
+
+    randNumber_20000_previous = randNumber_20000;
+
+    tone(portNumber, randNumber_20000);
+}
+
+
 void rundomsound() {
 
   if (COUNTER = 0) {
-    randNumber = random(130, 1000);
-    do {
-      randNumber = random(130, 1000);
-    } while (randNumber == random(130, 1000));
-    tone(SIGNAL9Low, randNumber);
-
-    randNumber = random(130, 1000);
-    do {
-      randNumber = random(130, 1000);
-    } while (randNumber == random(130, 1000));
-    tone(SIGNAL10Low, randNumber);
-
-    randNumber = random(130, 1000);
-    do {
-      randNumber = random(130, 1000);
-    } while (randNumber == random(130, 1000));
-    tone(SIGNAL11Low, randNumber);
-
-    randNumber = random(130, 1000);
-    do {
-      randNumber = random(130, 1000);
-    } while (randNumber == random(130, 1000));
-    tone(SIGNAL12Low, randNumber);
+    playtone_1000(130, 1000, 5);
+    playtone_1000(130, 1000, 6);
+    playtone_1000(130, 1000, 9);
+    playtone_1000(130, 1000, 10);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);
 
@@ -186,32 +235,12 @@ void rundomsound() {
     noTone(SIGNAL11Low);
     noTone(SIGNAL12Low);
 
-    randNumber = random(1000, 10000);
-    do {
-      randNumber = random(1000, 10000);
-    } while (randNumber == random(1000, 10000));
-    tone(SIGNAL9Low, randNumber);
-
-    randNumber = random(1000, 10000);
-    do {
-      randNumber = random(1000, 10000);
-    } while (randNumber == random(1000, 10000));
-    tone(SIGNAL10Low, randNumber);
-
-    randNumber = random(1000, 10000);
-    do {
-      randNumber = random(1000, 10000);
-    } while (randNumber == random(1000, 10000));
-    tone(SIGNAL11Low, randNumber);
-
-    randNumber = random(1000, 10000);
-    do {
-      randNumber = random(1000, 10000);
-    } while (randNumber == random(1000, 10000));
-    tone(SIGNAL12Low, randNumber);
+    playtone_10000(1000, 10000, 5);
+    playtone_10000(1000, 10000, 6);
+    playtone_10000(1000, 10000, 9);
+    playtone_10000(1000, 10000, 10);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);
-
 
     noTone(SIGNAL9Low);
     noTone(SIGNAL10Low);
@@ -221,29 +250,10 @@ void rundomsound() {
     COUNTER = 1;
   } else {
     
-    randNumber = random(0, 130);
-    do {
-      randNumber = random(0, 130);
-    } while (randNumber == random(0, 130));
-    tone(SIGNAL9Low, randNumber);
-
-    randNumber = random(0, 130);
-    do {
-      randNumber = random(0, 130);
-    } while (randNumber == random(0, 130));
-    tone(SIGNAL10Low, randNumber);
-
-    randNumber = random(0, 130);
-    do {
-      randNumber = random(0, 130);
-    } while (randNumber == random(0, 130));
-    tone(SIGNAL11Low, randNumber);
-
-    randNumber = random(0, 130);
-    do {
-      randNumber = random(0, 130);
-    } while (randNumber == random(0, 130));
-    tone(SIGNAL12Low, randNumber);
+    playtone_130(0, 130, 5);
+    playtone_130(0, 130, 6);
+    playtone_130(0, 130, 9);
+    playtone_130(0, 130, 10);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);
 
@@ -252,29 +262,10 @@ void rundomsound() {
     noTone(SIGNAL11Low);
     noTone(SIGNAL12Low);
 
-    randNumber = random(10000, 20000);
-    do {
-      randNumber = random(10000, 20000);
-    } while (randNumber == random(10000, 20000));
-    tone(SIGNAL9Low, randNumber);
-
-    randNumber = random(10000, 20000);
-    do {
-      randNumber = random(10000, 20000);
-    } while (randNumber == random(10000, 20000));
-    tone(SIGNAL10Low, randNumber);
-
-    randNumber = random(10000, 20000);
-    do {
-      randNumber = random(10000, 20000);
-    } while (randNumber == random(10000, 20000));
-    tone(SIGNAL11Low, randNumber);
-
-    randNumber = random(10000, 20000);
-    do {
-      randNumber = random(10000, 20000);
-    } while (randNumber == random(10000, 20000));
-    tone(SIGNAL12Low, randNumber);
+    playtone_20000(10000, 20000, 5);
+    playtone_20000(10000, 20000, 6);
+    playtone_20000(10000, 20000, 9);
+    playtone_20000(10000, 20000, 10);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);
 
