@@ -6057,131 +6057,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "R_Small_1"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.016 1.016)
-					)
-				)
-			)
-			(property "Value" "R_Small"
-				(at 1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor, small symbol"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_Small_1_0_1"
-				(rectangle
-					(start -0.762 1.778)
-					(end 0.762 -1.778)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_Small_1_1_1"
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.762)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.762)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "R_Small_2"
 			(pin_numbers
 				(hide yes)
@@ -7301,6 +7176,16 @@
 		)
 		(uuid "104a01fc-ad06-44d2-9edf-43563d29d3bd")
 	)
+	(text "Im dont use this switch and BrainWave Entertaiment program from spring "
+		(exclude_from_sim no)
+		(at 139.954 27.178 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "3d94d2a2-02d9-4462-ba2e-8051ad6f9fa5")
+	)
 	(text "Install all from first to bigger value"
 		(exclude_from_sim no)
 		(at 219.202 162.814 0)
@@ -7508,12 +7393,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "18cb13a5-67f2-443f-9e55-8825e1940829")
-	)
-	(junction
-		(at 247.65 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "19434d5c-5390-4dcd-8676-fa9636621ff4")
 	)
 	(junction
 		(at 245.11 46.99)
@@ -8128,6 +8007,12 @@
 		(uuid "98ac389b-7797-451c-b779-bf0aa560d6df")
 	)
 	(junction
+		(at 199.39 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "98cb2227-4a0b-4b3f-90f7-37247671f172")
+	)
+	(junction
 		(at 119.38 105.41)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8366,12 +8251,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "db70b56e-95bd-467e-aef7-8f79453b3c55")
-	)
-	(junction
-		(at 199.39 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "dbeb0483-b650-451b-83fe-daa4d5ff1f63")
 	)
 	(junction
 		(at 212.09 99.06)
@@ -9255,7 +9134,7 @@
 	)
 	(wire
 		(pts
-			(xy 256.54 29.21) (xy 256.54 33.02)
+			(xy 254 29.21) (xy 254 38.1)
 		)
 		(stroke
 			(width 0)
@@ -9272,26 +9151,6 @@
 			(type default)
 		)
 		(uuid "1a4f2525-14e1-4df3-8c96-5196bbd83858")
-	)
-	(wire
-		(pts
-			(xy 196.85 38.1) (xy 199.39 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1b083a60-4e40-44af-85b5-1b9c2e9583ed")
-	)
-	(wire
-		(pts
-			(xy 199.39 29.21) (xy 199.39 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1c4c6f8c-8855-45ef-89d0-adce53b9240b")
 	)
 	(wire
 		(pts
@@ -10725,7 +10584,7 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 38.1) (xy 205.74 38.1)
+			(xy 196.85 38.1) (xy 199.39 38.1)
 		)
 		(stroke
 			(width 0)
@@ -12065,6 +11924,16 @@
 	)
 	(wire
 		(pts
+			(xy 199.39 29.21) (xy 199.39 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b55205f-720d-4856-8cc2-eb7459868f9a")
+	)
+	(wire
+		(pts
 			(xy 207.01 160.02) (xy 207.01 162.56)
 		)
 		(stroke
@@ -12292,16 +12161,6 @@
 			(type default)
 		)
 		(uuid "a63f8a51-521b-4ac6-8c28-dbb84b22a4df")
-	)
-	(wire
-		(pts
-			(xy 247.65 33.02) (xy 256.54 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a6413d4a-cfe7-4ce0-9e7a-e60a055a5ed3")
 	)
 	(wire
 		(pts
@@ -13645,16 +13504,6 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 38.1) (xy 247.65 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e2a2be55-5dbe-4bc4-9267-181971c53e8b")
-	)
-	(wire
-		(pts
 			(xy 267.97 146.05) (xy 267.97 156.21)
 		)
 		(stroke
@@ -13695,7 +13544,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 38.1) (xy 254 38.1)
+			(xy 245.11 38.1) (xy 254 38.1)
 		)
 		(stroke
 			(width 0)
@@ -13712,6 +13561,16 @@
 			(type default)
 		)
 		(uuid "e407bc47-956a-478e-a20b-4d1490611ac3")
+	)
+	(wire
+		(pts
+			(xy 199.39 38.1) (xy 205.74 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e49de4bf-ca30-45b7-be62-25177b8877ca")
 	)
 	(wire
 		(pts
@@ -14361,7 +14220,7 @@
 	)
 	(global_label "SWPS1"
 		(shape input)
-		(at 256.54 29.21 0)
+		(at 254 29.21 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14371,7 +14230,7 @@
 		)
 		(uuid "253ba238-4889-4630-907a-47b6357b6127")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 265.8751 29.21 0)
+			(at 263.3351 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16828,77 +16687,6 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "R_Small_1")
-		(lib_id "Device:R_Small")
-		(at 247.65 35.56 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "22eaedab-2f82-4157-a548-2ce909d45a7c")
-		(property "Reference" "R61"
-			(at 250.19 34.2899 0)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1KOm"
-			(at 250.19 36.8299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 247.65 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 247.65 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 247.65 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b4479fb9-b427-40ae-942d-732046720250")
-		)
-		(pin "2"
-			(uuid "8d9565c1-32ac-4c39-8f90-81a6804bcf0b")
-		)
-		(instances
-			(project "arduino_brainmachine"
-				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
-					(reference "R61")
 					(unit 1)
 				)
 			)
@@ -23958,7 +23746,7 @@
 				)
 			)
 		)
-		(property "Value" "12v LED, part of strip or 1-2 W  LED"
+		(property "Value" "12v LED, 10+ cm strip or 2-3 1-2 W LED"
 			(at 36.576 177.546 0)
 			(effects
 				(font
@@ -27254,7 +27042,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1-1000mkF"
+		(property "Value" "1-10000mkF"
 			(at 185.42 61.468 0)
 			(effects
 				(font
@@ -28018,7 +27806,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1-1000mkF"
+		(property "Value" "1-10000mkF"
 			(at 233.68 61.468 0)
 			(effects
 				(font
@@ -29521,77 +29309,6 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "R15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "R_Small_1")
-		(lib_id "Device:R_Small")
-		(at 199.39 35.56 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e0a7302e-190f-42e4-8641-d9dc2cb7dd8c")
-		(property "Reference" "R60"
-			(at 201.93 34.2899 0)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1KOm"
-			(at 201.93 36.8299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 199.39 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 199.39 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 199.39 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a327b445-86af-461e-baf5-547d406fe2fa")
-		)
-		(pin "2"
-			(uuid "cc20c356-b93c-45f3-a8e0-e3f0126d4be8")
-		)
-		(instances
-			(project ""
-				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
-					(reference "R60")
 					(unit 1)
 				)
 			)
