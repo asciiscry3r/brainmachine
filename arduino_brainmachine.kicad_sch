@@ -21817,7 +21817,7 @@
 				)
 			)
 		)
-		(property "Value" "Choke_CM_FerriteCore (some one for HF filters)"
+		(property "Value" "Choke_CM_FerriteCore (some two for HF filters, with double wire winding)"
 			(at 227.457 19.05 0)
 			(effects
 				(font
@@ -25351,7 +25351,7 @@
 				)
 			)
 		)
-		(property "Value" "10mkH"
+		(property "Value" "10mkH (Must be two core, two wire winding)"
 			(at 261.62 121.92 90)
 			(effects
 				(font
