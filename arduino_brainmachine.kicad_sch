@@ -3130,6 +3130,189 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "LED_3"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LED"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Light emitting diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "LED diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "LED_3_0_1"
+				(polyline
+					(pts
+						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LED_3_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "MCU_Module:Arduino_Nano_v3.x"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -7390,6 +7573,12 @@
 		(uuid "7a827a91-453d-4200-9ff2-83afc72f0ca0")
 	)
 	(junction
+		(at 100.33 29.21)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7b31f14f-0606-4ffa-839e-4856ef6f9ad4")
+	)
+	(junction
 		(at 217.17 26.67)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7414,6 +7603,12 @@
 		(uuid "83ef4f98-a168-4dac-a525-44979ed50840")
 	)
 	(junction
+		(at 87.63 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8723d4f8-d961-4c7d-98d7-743122b08f7e")
+	)
+	(junction
 		(at 257.81 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7424,6 +7619,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "87e9c3f0-df0e-4ab6-b2ac-9af27a8bb499")
+	)
+	(junction
+		(at 270.51 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8909c8f5-055e-4984-a316-e0bfd7debbf6")
 	)
 	(junction
 		(at 196.85 46.99)
@@ -8573,6 +8774,26 @@
 	)
 	(wire
 		(pts
+			(xy 68.58 194.31) (xy 73.66 194.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18402e67-23ae-4b0f-bbc5-ed87c547576f")
+	)
+	(wire
+		(pts
+			(xy 275.59 68.58) (xy 275.59 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18f0797e-be2f-414b-aa86-453f50532806")
+	)
+	(wire
+		(pts
 			(xy 264.16 50.8) (xy 264.16 63.5)
 		)
 		(stroke
@@ -8733,6 +8954,16 @@
 	)
 	(wire
 		(pts
+			(xy 100.33 26.67) (xy 100.33 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "219b9001-a6f8-4f8a-aa40-55344374675f")
+	)
+	(wire
+		(pts
 			(xy 66.04 66.04) (xy 66.04 151.13)
 		)
 		(stroke
@@ -8860,16 +9091,6 @@
 			(type default)
 		)
 		(uuid "27f64b3f-5b2c-4f1d-aa2e-23113dd6f4cb")
-	)
-	(wire
-		(pts
-			(xy 68.58 184.15) (xy 72.39 184.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2814f327-6830-4798-bbe1-24b4be644a82")
 	)
 	(wire
 		(pts
@@ -9333,6 +9554,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 55.88) (xy 127 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a7f8208-3a81-45b1-96af-7ffcb2ab7610")
+	)
+	(wire
+		(pts
 			(xy 151.13 168.91) (xy 151.13 170.18)
 		)
 		(stroke
@@ -9470,6 +9701,26 @@
 			(type default)
 		)
 		(uuid "3f29489a-2120-4ec3-bd6e-8a23b98202f4")
+	)
+	(wire
+		(pts
+			(xy 120.65 48.26) (xy 135.89 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f540aea-5a54-4b3a-b77b-1f9cabd59dfa")
+	)
+	(wire
+		(pts
+			(xy 83.82 184.15) (xy 87.63 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3fb2d96d-0ade-4591-99f0-7d8b338c6b9a")
 	)
 	(wire
 		(pts
@@ -9880,6 +10131,16 @@
 			(type default)
 		)
 		(uuid "52c056cf-a6ab-4b3b-b242-8279580220f3")
+	)
+	(wire
+		(pts
+			(xy 275.59 54.61) (xy 270.51 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52ef1eca-5af1-4fff-bc7f-76ed9abb7a71")
 	)
 	(wire
 		(pts
@@ -11413,6 +11674,16 @@
 	)
 	(wire
 		(pts
+			(xy 83.82 194.31) (xy 88.9 194.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a454272d-cb7a-4ddd-bacf-d38a0df69e9f")
+	)
+	(wire
+		(pts
 			(xy 207.01 26.67) (xy 217.17 26.67)
 		)
 		(stroke
@@ -12053,6 +12324,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 40.64) (xy 90.17 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4f1f3c7-4069-49d5-b0c4-c5b5123b42d3")
+	)
+	(wire
+		(pts
 			(xy 138.43 153.67) (xy 138.43 154.94)
 		)
 		(stroke
@@ -12433,6 +12714,16 @@
 	)
 	(wire
 		(pts
+			(xy 90.17 26.67) (xy 90.17 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6001f8f-409d-4502-b4e7-c901ebcc2b91")
+	)
+	(wire
+		(pts
 			(xy 139.7 175.26) (xy 140.97 175.26)
 		)
 		(stroke
@@ -12480,6 +12771,16 @@
 			(type default)
 		)
 		(uuid "d7d949d4-786b-4a3a-b3a0-2f1adb1cc74f")
+	)
+	(wire
+		(pts
+			(xy 68.58 184.15) (xy 73.66 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d81baec1-ab7e-4147-bb90-c518e6461c62")
 	)
 	(wire
 		(pts
@@ -12630,16 +12931,6 @@
 			(type default)
 		)
 		(uuid "dfab23a2-382a-4829-8c0b-4e4f94b75533")
-	)
-	(wire
-		(pts
-			(xy 68.58 194.31) (xy 72.39 194.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e055b3a8-a883-4ab0-87db-fed9124a736e")
 	)
 	(wire
 		(pts
@@ -12953,6 +13244,16 @@
 	)
 	(wire
 		(pts
+			(xy 270.51 38.1) (xy 270.51 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9b18edc-137d-4850-b1d4-1d3fb07f94ae")
+	)
+	(wire
+		(pts
 			(xy 116.84 162.56) (xy 116.84 153.67)
 		)
 		(stroke
@@ -13153,7 +13454,7 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 40.64) (xy 77.47 40.64)
+			(xy 77.47 40.64) (xy 87.63 40.64)
 		)
 		(stroke
 			(width 0)
@@ -13393,28 +13694,6 @@
 			)
 		)
 	)
-	(global_label "SWPS1"
-		(shape input)
-		(at 120.65 48.26 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0bdee7a2-a0f3-4575-a5da-b4a3c5689896")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 129.9851 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "LOAD"
 		(shape input)
 		(at 246.38 53.34 0)
@@ -13591,6 +13870,28 @@
 			)
 		)
 	)
+	(global_label "TVS"
+		(shape input)
+		(at 260.35 114.3 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5fd5355f-3919-49e9-8135-a0ac43048b4a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 266.6009 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "12v Power Source"
 		(shape input)
 		(at 232.41 30.48 0)
@@ -13657,6 +13958,28 @@
 			)
 		)
 	)
+	(global_label "SWPS1"
+		(shape input)
+		(at 143.51 48.26 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6b79c7ab-15e8-4782-b97e-76775c6b0c52")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 152.8451 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "JLH Class-A L or R Channel"
 		(shape input)
 		(at 196.85 134.62 270)
@@ -13682,7 +14005,6 @@
 	(global_label "PStoCrystal"
 		(shape input)
 		(at 137.16 123.19 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13691,7 +14013,7 @@
 		)
 		(uuid "79ada09c-ff02-4bb2-8b52-88fdbaf72f77")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 151.0912 123.19 0)
+			(at 138.3912 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13703,7 +14025,7 @@
 	)
 	(global_label "LED"
 		(shape input)
-		(at 72.39 194.31 0)
+		(at 88.9 194.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13713,7 +14035,7 @@
 		)
 		(uuid "81b131d4-2262-492e-b25d-7911beeaff14")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 78.8223 194.31 0)
+			(at 95.3323 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13855,6 +14177,28 @@
 			)
 		)
 	)
+	(global_label "TVS"
+		(shape input)
+		(at 180.34 139.7 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b49e093f-0f10-4d6d-85b9-c332082df9a0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 186.5909 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "Second SW capacitor set"
 		(shape input)
 		(at 252.73 123.19 180)
@@ -13901,7 +14245,7 @@
 	)
 	(global_label "LED"
 		(shape input)
-		(at 72.39 184.15 0)
+		(at 87.63 184.15 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13911,7 +14255,29 @@
 		)
 		(uuid "bb6bc9da-10e0-48f5-9c1c-a72502b5d0fc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 78.8223 184.15 0)
+			(at 94.0623 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TVS1"
+		(shape input)
+		(at 81.28 115.57 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c2ec74bc-cbc0-4e88-a0c8-6f1734e48fae")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 88.7404 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13967,7 +14333,7 @@
 	)
 	(global_label "SWPS2"
 		(shape input)
-		(at 120.65 55.88 0)
+		(at 134.62 55.88 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13977,7 +14343,29 @@
 		)
 		(uuid "c4d15055-8b9d-4480-885a-b7704ded75b1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 129.9851 55.88 0)
+			(at 143.9551 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TVS1"
+		(shape input)
+		(at 163.83 95.25 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c5a01173-d84b-473e-88b8-1fe9e9e6a3cb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 171.2904 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14005,6 +14393,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TVS2"
+		(shape input)
+		(at 105.41 124.46 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c6cd1d4f-f157-42a8-afb9-eb8ab97ba29e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 112.8704 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -14066,6 +14476,28 @@
 		(uuid "e37b39ea-d7d6-44ab-a9f0-6d07b94e1b34")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 178.1846 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TVS2"
+		(shape input)
+		(at 275.59 55.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e9508e2f-579f-4c85-b84b-befdb1a7016a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 283.0504 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15491,6 +15923,95 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_Elektuur:D-Zener")
+		(at 275.59 73.66 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "200a39dc-70bf-45ca-8bf3-0c58a6b7dded")
+		(property "Reference" "12V1"
+			(at 279.4 73.0249 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "${SIM.PARAMS}"
+			(at 279.4 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 275.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 275.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zener/avalanche diode; unidirectional breakdown diode; voltage regulator diode"
+			(at 275.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field-1" "type=\"\" model=\"D-Zener\" lib=\"semiconductor.lib\""
+			(at 275.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 276.225 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2467fd0d-458d-4ee9-8b9b-b2c64641724b")
+		)
+		(pin "1"
+			(uuid "37cd9b5c-1780-4bfd-ae12-2991d7efeadd")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "12V1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 238.76 46.99 0)
 		(unit 1)
@@ -16236,6 +16757,93 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_Elektuur:R")
+		(at 78.74 194.31 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "31e89245-1d36-4624-b768-230ba612e01c")
+		(property "Reference" "R72"
+			(at 78.74 187.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1 kOm"
+			(at 78.74 190.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 78.74 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "resistor"
+			(at 78.74 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 75.565 197.485 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 81.915 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "13c177a1-61c0-488e-95a1-f7b76342be7a")
+		)
+		(pin "1"
+			(uuid "a16db027-fa04-40dc-8a91-d6eafb5cb260")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "R72")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+12V")
 		(at 153.67 153.67 270)
 		(mirror x)
@@ -16716,6 +17324,91 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "R45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:TVS0500DRV")
+		(at 180.34 147.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "37a32611-9cf9-44d0-8d21-cd6d27f8af33")
+		(property "Reference" "U2"
+			(at 184.15 146.0499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TVS 05V"
+			(at 184.15 148.5899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+			(at 185.42 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tvs0500.pdf"
+			(at 177.8 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Flat-Clamp Surge Protection Device. 5Vrwm, WSON-6"
+			(at 180.34 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "9ca87f52-957b-4b95-934f-a5ebe1bce404")
+		)
+		(pin "4"
+			(uuid "72855128-4537-4995-a270-c331a6f7b84b")
+		)
+		(pin "3"
+			(uuid "6ad631c6-40de-4da0-8f3b-3b786e1c682d")
+		)
+		(pin "1"
+			(uuid "341c162a-47a9-480e-8ff1-bd0e903064c6")
+		)
+		(pin "6"
+			(uuid "64cf673b-068e-4c04-bc1d-a4ae599aee7f")
+		)
+		(pin "7"
+			(uuid "7278f5fa-d47c-457e-8122-da0a68767f2f")
+		)
+		(pin "2"
+			(uuid "e8cf4042-fe1e-4dc0-b725-3e0d8033e80d")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -18733,6 +19426,91 @@
 		)
 	)
 	(symbol
+		(lib_id "Power_Protection:TVS0500DRV")
+		(at 81.28 123.19 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5dad3bbd-391c-4c32-94a7-19c12c20c5c8")
+		(property "Reference" "U5"
+			(at 85.09 121.9199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TVS 12V"
+			(at 85.09 124.4599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+			(at 86.36 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tvs0500.pdf"
+			(at 78.74 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Flat-Clamp Surge Protection Device. 5Vrwm, WSON-6"
+			(at 81.28 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "522da743-d43e-4f85-bd22-f33d85e4b8d5")
+		)
+		(pin "4"
+			(uuid "49c5b606-4046-489f-bbd3-4005393dca0f")
+		)
+		(pin "3"
+			(uuid "b5a7ebad-8fbb-4b67-bdaf-a2fa736b3307")
+		)
+		(pin "1"
+			(uuid "ec49e295-59da-43d6-8f95-017c8ad38b72")
+		)
+		(pin "6"
+			(uuid "94aebce3-f5d3-4303-94dd-1756dcbd7dc6")
+		)
+		(pin "7"
+			(uuid "8beeb37a-34ff-44fc-9887-831597f6f2e4")
+		)
+		(pin "2"
+			(uuid "c748350e-e74d-4f1e-b85b-c2902f16e983")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_Elektuur:C")
 		(at 250.19 106.68 0)
 		(unit 1)
@@ -19113,6 +19891,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 81.28 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "62c54e0f-616d-4328-8e39-4513f306069b")
+		(property "Reference" "#PWR033"
+			(at 81.28 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 81.28 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 81.28 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 81.28 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 81.28 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "39f412c3-12a4-461a-96f7-feb190330068")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_Elektuur:D-Zener")
 		(at 248.92 119.38 90)
 		(unit 1)
@@ -19194,6 +20038,72 @@
 			(project ""
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "5.1V")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 275.59 78.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "662278dd-924e-4ee2-b69d-151df7c0f697")
+		(property "Reference" "#PWR031"
+			(at 275.59 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND_Power_Source"
+			(at 275.59 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 275.59 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 275.59 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 275.59 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0f54efd0-2140-4427-aa94-66f8feb8f7fc")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -20121,6 +21031,91 @@
 		)
 	)
 	(symbol
+		(lib_id "Power_Protection:TVS0500DRV")
+		(at 105.41 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "74253c14-7008-44d3-a1be-671e33f5209e")
+		(property "Reference" "U6"
+			(at 109.5056 130.8099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TVS 12V"
+			(at 109.5056 133.3499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+			(at 110.49 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tvs0500.pdf"
+			(at 102.87 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Flat-Clamp Surge Protection Device. 5Vrwm, WSON-6"
+			(at 105.41 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "c38ad966-611c-4fb5-a292-1049f1c8c32e")
+		)
+		(pin "4"
+			(uuid "8e4d9603-27a8-47d4-9b23-8e8afbb1e93e")
+		)
+		(pin "3"
+			(uuid "d3387c4f-dce6-4014-bbc1-5c0e050f4896")
+		)
+		(pin "1"
+			(uuid "19d2f6bd-4d73-4d32-b27e-d3ff841cd16b")
+		)
+		(pin "6"
+			(uuid "9cf94789-1558-439c-8969-dc0a6925c4c0")
+		)
+		(pin "7"
+			(uuid "42843cc9-4927-4087-9e49-e441c09b4e1c")
+		)
+		(pin "2"
+			(uuid "e9fd6358-7c76-4fa4-a4f1-8b7347ff0280")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "U6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 87.63 40.64 0)
 		(unit 1)
@@ -21042,6 +22037,72 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 105.41 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "85157295-aa4d-4021-a1c8-80fc5eefba3f")
+		(property "Reference" "#PWR034"
+			(at 105.41 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND_Power_Source"
+			(at 105.41 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 105.41 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 105.41 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 105.41 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a693c3c0-7bab-4dab-af16-6998cce6e5df")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -22842,6 +23903,85 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "R26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "LED_3")
+		(lib_id "Device:LED")
+		(at 139.7 48.26 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9f1239c4-39fc-47e4-8437-9656ba35e647")
+		(property "Reference" "D24"
+			(at 141.2875 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 141.2875 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 139.7 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 139.7 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 139.7 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7a74eb31-ba72-4f66-b864-e88b06d56687")
+		)
+		(pin "2"
+			(uuid "e1686008-f300-4719-bb00-aab44f02ea3b")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "D24")
 					(unit 1)
 				)
 			)
@@ -25442,6 +26582,85 @@
 		)
 	)
 	(symbol
+		(lib_name "LED_3")
+		(lib_id "Device:LED")
+		(at 130.81 55.88 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c748b99c-485b-44d1-a461-8a5fc97d484f")
+		(property "Reference" "D23"
+			(at 132.3975 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 132.3975 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 130.81 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 130.81 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 130.81 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 130.81 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cbbe9811-ea72-4532-aa8e-cf504cdea2fb")
+		)
+		(pin "2"
+			(uuid "5456cc77-8d36-4867-b85e-34fa58b03264")
+		)
+		(instances
+			(project ""
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "D23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 265.43 105.41 0)
 		(unit 1)
@@ -26037,6 +27256,72 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "R67")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 180.34 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d2ba93c7-087b-4860-b5c6-7431e8245a42")
+		(property "Reference" "#PWR032"
+			(at 180.34 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 180.34 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 180.34 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 180.34 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "81eb5861-dde3-46c4-b33e-670d19db6886")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -28651,7 +29936,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TVS0500DRV"
+		(property "Value" "TVS 05V"
 			(at 81.28 49.5299 0)
 			(effects
 				(font
@@ -28856,6 +30141,93 @@
 	)
 	(symbol
 		(lib_id "PCM_Elektuur:R")
+		(at 78.74 184.15 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fc00590b-656d-46d0-9170-7e26ae202954")
+		(property "Reference" "R71"
+			(at 78.74 177.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1 kOm"
+			(at 78.74 180.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 78.74 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "resistor"
+			(at 78.74 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" "+"
+			(at 75.565 187.325 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 81.915 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ba497d72-0468-40da-8216-6fdc427f43a5")
+		)
+		(pin "1"
+			(uuid "4294dc93-842a-406f-a9b6-5feb413485f4")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "R71")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Elektuur:R")
 		(at 31.75 171.45 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -28936,6 +30308,93 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "R41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Elektuur:D-Zener")
+		(at 95.25 26.67 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe758202-c1bb-4f1f-8469-8d23029ae389")
+		(property "Reference" "5.1V1"
+			(at 95.25 21.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "${SIM.PARAMS}"
+			(at 95.25 22.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 95.25 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 95.25 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zener/avalanche diode; unidirectional breakdown diode; voltage regulator diode"
+			(at 95.25 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field-1" "type=\"\" model=\"D-Zener\" lib=\"semiconductor.lib\""
+			(at 95.25 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 91.44 26.035 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "07887e77-2f2e-4878-8bd9-24bfb9337852")
+		)
+		(pin "1"
+			(uuid "d178b506-41a1-414f-9a19-9522a92c9f1f")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "5.1V1")
 					(unit 1)
 				)
 			)
