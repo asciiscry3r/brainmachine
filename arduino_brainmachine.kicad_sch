@@ -7016,6 +7016,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "2025.09.03"
+		(exclude_from_sim no)
+		(at 257.81 183.642 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0ddd554b-3dbf-4b9d-a59d-6e2cce5fcacb")
+	)
 	(text "Install all from first to bigger value"
 		(exclude_from_sim no)
 		(at 224.282 76.2 0)
@@ -7025,6 +7035,16 @@
 			)
 		)
 		(uuid "104a01fc-ad06-44d2-9edf-43563d29d3bd")
+	)
+	(text "Must be OSH"
+		(exclude_from_sim no)
+		(at 254.508 177.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "14d53112-61b5-4626-95a5-7692bfe1c7fa")
 	)
 	(text "Install all from first to bigger value"
 		(exclude_from_sim no)
