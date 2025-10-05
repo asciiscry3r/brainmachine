@@ -29,8 +29,8 @@ unsigned long int randNumber_20000_previous = 0;
 unsigned long int randTime = 0;
 unsigned long int COUNTER = 0;
 unsigned long int randLimitFirst_Initial = 2;
-unsigned long int randLimitSecond_Initial = 10;
-unsigned long int randLimitFirst_End = 10;
+unsigned long int randLimitSecond_Initial = 6;
+unsigned long int randLimitFirst_End = 7;
 unsigned long int randLimitSecond_End = 25;
 
 
