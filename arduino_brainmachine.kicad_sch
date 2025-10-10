@@ -6219,6 +6219,131 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:+3.3V"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+3.3V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+3.3V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3.3V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+5V"
 			(power)
 			(pin_numbers
@@ -7165,6 +7290,12 @@
 		(uuid "3bea6ac5-4df3-4dfb-9127-ad614d019bc9")
 	)
 	(junction
+		(at 182.88 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3c2c8634-3834-49ee-912f-5b50e64c3541")
+	)
+	(junction
 		(at 27.94 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7343,6 +7474,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6545bf47-f935-47a4-a375-28ef168123ba")
+	)
+	(junction
+		(at 267.97 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "655a214a-0b51-4475-a08f-c081f59a4664")
 	)
 	(junction
 		(at 246.38 59.69)
@@ -7765,6 +7902,12 @@
 		(uuid "be10acff-6706-4403-81bf-f1e2ed0c1559")
 	)
 	(junction
+		(at 222.25 30.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "be8631c8-bc53-44a3-a4f9-6754e11001e3")
+	)
+	(junction
 		(at 86.36 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7823,6 +7966,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c84bb388-3ecd-4227-86a5-5460fc3da862")
+	)
+	(junction
+		(at 167.64 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c9fdbff7-968a-47ab-896c-aedb1769149a")
 	)
 	(junction
 		(at 207.01 21.59)
@@ -7999,6 +8148,12 @@
 		(uuid "f6d02628-33c1-49f5-bc2d-37d5cb4ced20")
 	)
 	(junction
+		(at 259.08 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8371862-d99c-421f-b12e-52f7dd2c949d")
+	)
+	(junction
 		(at 93.98 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8084,6 +8239,16 @@
 	)
 	(wire
 		(pts
+			(xy 167.64 118.11) (xy 167.64 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01424efc-1b4e-4cbf-bb8d-8dcd121ec602")
+	)
+	(wire
+		(pts
 			(xy 62.23 20.32) (xy 120.65 20.32)
 		)
 		(stroke
@@ -8151,6 +8316,16 @@
 			(type default)
 		)
 		(uuid "03dee0f4-1d3c-47f9-ab8e-b19df02e019d")
+	)
+	(wire
+		(pts
+			(xy 180.34 71.12) (xy 182.88 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04cc92fd-f3ff-4268-828b-843601302232")
 	)
 	(wire
 		(pts
@@ -8834,6 +9009,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 44.45) (xy 180.34 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c040568-2de9-47a4-9c07-0788efeffbf3")
+	)
+	(wire
+		(pts
 			(xy 15.24 25.4) (xy 17.78 25.4)
 		)
 		(stroke
@@ -9034,6 +9219,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 30.48) (xy 222.25 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22e21244-8db0-4d99-bafe-ddf2044d40d9")
+	)
+	(wire
+		(pts
 			(xy 143.51 27.94) (xy 148.59 27.94)
 		)
 		(stroke
@@ -9194,7 +9389,7 @@
 	)
 	(wire
 		(pts
-			(xy 267.97 26.67) (xy 267.97 43.18)
+			(xy 267.97 26.67) (xy 267.97 35.56)
 		)
 		(stroke
 			(width 0)
@@ -9664,7 +9859,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 27.94) (xy 222.25 44.45)
+			(xy 222.25 27.94) (xy 222.25 30.48)
 		)
 		(stroke
 			(width 0)
@@ -9701,6 +9896,16 @@
 			(type default)
 		)
 		(uuid "3a5f9484-85aa-47aa-a30b-a1cf08dc1b0b")
+	)
+	(wire
+		(pts
+			(xy 162.56 119.38) (xy 167.64 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a989041-d967-49c0-9c6d-b4ab7c75ff7d")
 	)
 	(wire
 		(pts
@@ -9771,6 +9976,16 @@
 			(type default)
 		)
 		(uuid "3d28e456-64f9-4821-bb21-ff0808a7b580")
+	)
+	(wire
+		(pts
+			(xy 153.67 120.65) (xy 153.67 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3db59a39-f360-4a7e-b316-c10452e1fbe2")
 	)
 	(wire
 		(pts
@@ -9931,16 +10146,6 @@
 			(type default)
 		)
 		(uuid "42321ecf-4a9a-4074-aeaf-8b20f6b7ef2d")
-	)
-	(wire
-		(pts
-			(xy 182.88 71.12) (xy 186.69 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "427e2ce3-a996-4ce0-a8ea-05f28ebf46da")
 	)
 	(wire
 		(pts
@@ -10194,7 +10399,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 46.99) (xy 161.29 143.51)
+			(xy 161.29 46.99) (xy 161.29 120.65)
 		)
 		(stroke
 			(width 0)
@@ -10724,6 +10929,16 @@
 	)
 	(wire
 		(pts
+			(xy 182.88 71.12) (xy 186.69 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "644e4f6b-e54b-4b43-adb9-56640b9bdbca")
+	)
+	(wire
+		(pts
 			(xy 158.75 27.94) (xy 163.83 27.94)
 		)
 		(stroke
@@ -10781,6 +10996,26 @@
 			(type default)
 		)
 		(uuid "69e5f20c-fac7-499b-824b-8324ec69445c")
+	)
+	(wire
+		(pts
+			(xy 267.97 35.56) (xy 274.32 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69f56f11-198c-4a0a-8061-c2039db9e31f")
+	)
+	(wire
+		(pts
+			(xy 274.32 49.53) (xy 259.08 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a264cf0-48b2-4833-a71e-4c0f7ef78b83")
 	)
 	(wire
 		(pts
@@ -11764,6 +11999,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 34.29) (xy 177.8 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "912a3705-744d-47e3-b402-e24ca2ced842")
+	)
+	(wire
+		(pts
 			(xy 186.69 76.2) (xy 193.04 76.2)
 		)
 		(stroke
@@ -11901,6 +12146,16 @@
 			(type default)
 		)
 		(uuid "971432a3-87a2-4b84-afa6-7664b084c5a9")
+	)
+	(wire
+		(pts
+			(xy 167.64 119.38) (xy 167.64 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "972c958c-f081-42a6-a3f3-4eabc7062a4d")
 	)
 	(wire
 		(pts
@@ -12124,6 +12379,16 @@
 	)
 	(wire
 		(pts
+			(xy 267.97 35.56) (xy 267.97 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2800df9-4d72-4da9-8565-01f98f5b6534")
+	)
+	(wire
+		(pts
 			(xy 143.51 17.78) (xy 148.59 17.78)
 		)
 		(stroke
@@ -12151,6 +12416,16 @@
 			(type default)
 		)
 		(uuid "a2ebab4d-d042-47fc-9264-b69a5309e128")
+	)
+	(wire
+		(pts
+			(xy 180.34 44.45) (xy 180.34 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a368f8ae-0561-4e41-8b04-2e5161b2bf93")
 	)
 	(wire
 		(pts
@@ -12351,6 +12626,16 @@
 			(type default)
 		)
 		(uuid "abf8c08f-9d29-4e33-a6f1-a4341e124a09")
+	)
+	(wire
+		(pts
+			(xy 222.25 30.48) (xy 222.25 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac886103-17af-451b-a481-a961c6f55b3b")
 	)
 	(wire
 		(pts
@@ -13514,16 +13799,6 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 143.51) (xy 161.29 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "db29ad7e-049d-4838-9fa7-ec1aa9c6a318")
-	)
-	(wire
-		(pts
 			(xy 149.86 95.25) (xy 149.86 96.52)
 		)
 		(stroke
@@ -14014,6 +14289,16 @@
 	)
 	(wire
 		(pts
+			(xy 274.32 45.72) (xy 274.32 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea19b04a-acd3-4906-b446-bd6a730564a2")
+	)
+	(wire
+		(pts
 			(xy 68.58 93.98) (xy 73.66 93.98)
 		)
 		(stroke
@@ -14181,6 +14466,16 @@
 			(type default)
 		)
 		(uuid "f162e6c2-a739-4ece-abf9-b7a0fb094cc7")
+	)
+	(wire
+		(pts
+			(xy 153.67 120.65) (xy 161.29 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1c727f5-a751-46bf-84d4-c3523764cc8f")
 	)
 	(wire
 		(pts
@@ -15079,7 +15374,7 @@
 	)
 	(global_label "TVS"
 		(shape input)
-		(at 180.34 139.7 0)
+		(at 187.96 142.24 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15089,7 +15384,7 @@
 		)
 		(uuid "b49e093f-0f10-4d6d-85b9-c332082df9a0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 186.5909 139.7 0)
+			(at 194.2109 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16268,6 +16563,72 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "#PWR045")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 167.64 118.11 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "08c266b7-1dec-4bf3-9fc1-0bf78ba57aa4")
+		(property "Reference" "#PWR050"
+			(at 167.64 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 167.64 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 167.64 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 167.64 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 167.64 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f8a34ee1-1e44-4d17-aef4-f4214e2fcd6b")
+		)
+		(instances
+			(project ""
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -18422,6 +18783,95 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_Elektuur:D-Zener")
+		(at 162.56 124.46 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2d7175b0-2baf-4a46-9a09-38ecb4b2420a")
+		(property "Reference" "3.3v"
+			(at 166.37 123.8249 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "${SIM.PARAMS}"
+			(at 166.37 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zener/avalanche diode; unidirectional breakdown diode; voltage regulator diode"
+			(at 162.56 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field-1" "type=\"\" model=\"D-Zener\" lib=\"semiconductor.lib\""
+			(at 162.56 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 163.195 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "991b9bfb-186e-4d6f-98b2-b13d85f5b884")
+		)
+		(pin "1"
+			(uuid "6f949828-8e82-4f44-996a-bcb3903c76d3")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "3.3v")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_Elektuur:C-polar")
 		(at 17.78 44.45 0)
 		(unit 1)
@@ -19153,7 +19603,7 @@
 	)
 	(symbol
 		(lib_id "Power_Protection:TVS0500DRV")
-		(at 180.34 147.32 0)
+		(at 187.96 149.86 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -19162,7 +19612,7 @@
 		(fields_autoplaced yes)
 		(uuid "37a32611-9cf9-44d0-8d21-cd6d27f8af33")
 		(property "Reference" "U2"
-			(at 184.15 146.0499 0)
+			(at 191.77 148.5899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19171,7 +19621,7 @@
 			)
 		)
 		(property "Value" "TVS 05V"
-			(at 184.15 148.5899 0)
+			(at 191.77 151.1299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19180,7 +19630,7 @@
 			)
 		)
 		(property "Footprint" "Package_SON:WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
-			(at 185.42 156.21 0)
+			(at 193.04 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19189,7 +19639,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tvs0500.pdf"
-			(at 177.8 147.32 0)
+			(at 185.42 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19198,7 +19648,7 @@
 			)
 		)
 		(property "Description" "Flat-Clamp Surge Protection Device. 5Vrwm, WSON-6"
-			(at 180.34 147.32 0)
+			(at 187.96 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24116,6 +24566,95 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_Elektuur:D-Zener")
+		(at 274.32 40.64 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7a7c9385-b240-47ce-b141-ddd0b7151c92")
+		(property "Reference" "12V2"
+			(at 278.13 40.0049 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "${SIM.PARAMS}"
+			(at 278.13 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 274.32 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 274.32 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zener/avalanche diode; unidirectional breakdown diode; voltage regulator diode"
+			(at 274.32 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field-1" "type=\"\" model=\"D-Zener\" lib=\"semiconductor.lib\""
+			(at 274.32 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 274.955 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3b881601-4fdc-4740-9d26-67bf132543c8")
+		)
+		(pin "1"
+			(uuid "127ce292-dc92-4075-91a8-601e90ffb600")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "12V2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 24.13 58.42 0)
 		(unit 1)
@@ -24874,6 +25413,72 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 167.64 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "851b68fa-51bd-4d51-b728-07abe23ab60e")
+		(property "Reference" "#PWR049"
+			(at 167.64 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 167.64 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 167.64 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 167.64 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 167.64 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "defc5d96-379c-4f54-a970-cff73f8b9ab8")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -27110,6 +27715,95 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "D13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Elektuur:D-Zener")
+		(at 177.8 39.37 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a076b342-a660-4fb6-b664-3f7f3df80908")
+		(property "Reference" "12V3"
+			(at 181.61 38.7349 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "${SIM.PARAMS}"
+			(at 181.61 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 177.8 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 177.8 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zener/avalanche diode; unidirectional breakdown diode; voltage regulator diode"
+			(at 177.8 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field-1" "type=\"\" model=\"D-Zener\" lib=\"semiconductor.lib\""
+			(at 177.8 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "W"
+			(at 178.435 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b1bb59ad-cb88-405b-86d6-d1261e8052bc")
+		)
+		(pin "1"
+			(uuid "db63a9fb-18f8-40a9-9308-995695f04eb4")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "12V3")
 					(unit 1)
 				)
 			)
@@ -30080,7 +30774,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 180.34 154.94 0)
+		(at 187.96 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -30089,7 +30783,7 @@
 		(fields_autoplaced yes)
 		(uuid "d2ba93c7-087b-4860-b5c6-7431e8245a42")
 		(property "Reference" "#PWR032"
-			(at 180.34 161.29 0)
+			(at 187.96 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30098,7 +30792,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 180.34 160.02 0)
+			(at 187.96 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30106,7 +30800,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 180.34 154.94 0)
+			(at 187.96 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30115,7 +30809,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 180.34 154.94 0)
+			(at 187.96 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30124,7 +30818,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 180.34 154.94 0)
+			(at 187.96 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31124,6 +31818,72 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "C26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 162.56 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dcb3eabf-6854-470f-a592-10d4a6537d0e")
+		(property "Reference" "#PWR051"
+			(at 162.56 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 162.56 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 162.56 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fb6600a9-223c-4b9a-82a7-ceb23c648364")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)
@@ -32365,6 +33125,91 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:TVS0500DRV")
+		(at 167.64 140.97 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef17b2e8-7b8c-45a2-aed1-b099a99eba60")
+		(property "Reference" "U10"
+			(at 171.45 139.6999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TVS 3.3V"
+			(at 171.45 142.2399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+			(at 172.72 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tvs0500.pdf"
+			(at 165.1 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Flat-Clamp Surge Protection Device. 5Vrwm, WSON-6"
+			(at 167.64 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "86ed461d-cad7-4778-9d10-d04782dc0cdb")
+		)
+		(pin "4"
+			(uuid "5333b20f-4539-449a-8d60-66e108a64cb0")
+		)
+		(pin "3"
+			(uuid "c2bb0f27-952f-4fbf-9597-c71466e72a05")
+		)
+		(pin "1"
+			(uuid "3ad1a3db-14da-453c-bae7-5d5255fc0d49")
+		)
+		(pin "6"
+			(uuid "d3d52f35-6c99-4bd7-aaba-482c92748d29")
+		)
+		(pin "7"
+			(uuid "85bffe84-cbec-45dc-a458-ef71255d169b")
+		)
+		(pin "2"
+			(uuid "adae3e85-ca3a-4eb1-9872-af2e509ac29c")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "U10")
 					(unit 1)
 				)
 			)
