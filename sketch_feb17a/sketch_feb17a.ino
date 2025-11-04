@@ -28,10 +28,10 @@ unsigned long int randNumber_10000_previous = 0;
 unsigned long int randNumber_20000_previous = 0;
 unsigned long int randTime = 0;
 unsigned long int COUNTER = 0;
-unsigned long int randLimitFirst_Initial = 2;
-unsigned long int randLimitSecond_Initial = 6;
-unsigned long int randLimitFirst_End = 7;
-unsigned long int randLimitSecond_End = 25;
+unsigned long int randLimitFirst_Initial = 6;
+unsigned long int randLimitSecond_Initial = 15;
+unsigned long int randLimitFirst_End = 15;
+unsigned long int randLimitSecond_End = 23;
 
 
 void setup() {
@@ -60,7 +60,7 @@ void setup() {
   //TCCR2A = _BV(COM2A1) | _BV(COM2B1) | _BV(WGM20);
   //TCCR2B = _BV(CS22);
   
-  randomSeed(analogRead(A0)); // local ~putin~ faced police/millitia dont belive in addition, im IDK - we have this in many places | ffffff
+  randomSeed(analogRead(A0)); // local ~putin~ faced police/millitia dont belive in addition, im IDK - we have this in many places
 }
 
 void loop() {

@@ -22,11 +22,15 @@ unsigned long int randLimitInit = 0;
 unsigned long int randLimitInitPrevious = 0;
 unsigned long int randLimitEnd = 0;
 unsigned long int randLimitEndPrevious = 0;
+unsigned long int randNumber_130_previous = 0;
+unsigned long int randNumber_1000_previous = 0;
+unsigned long int randNumber_10000_previous = 0;
+unsigned long int randNumber_20000_previous = 0;
 unsigned long int randTime = 0;
 unsigned long int COUNTER = 0;
 unsigned long int randLimitFirst_Initial = 6;
-unsigned long int randLimitSecond_Initial = 13;
-unsigned long int randLimitFirst_End = 13;
+unsigned long int randLimitSecond_Initial = 18;
+unsigned long int randLimitFirst_End = 18;
 unsigned long int randLimitSecond_End = 23;
 
 
@@ -59,33 +63,36 @@ void setup() {
   randomSeed(analogRead(A0)); // local ~putin~ faced police/millitia dont belive in addition, im IDK - we have this in many places
 }
 
+
 void loop() {
 
+  //TEST = random(0, 180);
   //pinMode(SIGNAL9Low, OUTPUT);
   //pinMode(SIGNAL10Low, OUTPUT);
 
-  //OCR0A = randNumber;
-  //randNumber = random(0, 50);
-  //OCR0B = randNumber;
+  //OCR0A = TEST;
+  //TEST = random(0, 50);
+  //OCR0B = TEST;
 
-  //randNumber = random(0, 180);
+  //TEST = random(0, 180);
   //pinMode(SIGNAL11Low, OUTPUT);
   //pinMode(SIGNAL12Low, OUTPUT);
 
-  //OCR1A = randNumber;
-  //randNumber = random(0, 50);
-  //OCR1B = randNumber;
+  //OCR1A = TEST;
+  //TEST = random(0, 50);
+  //OCR1B = TEST;
 
-  //randNumber = random(0, 190);
+  //TEST = random(0, 190);
   //pinMode(SIGNAL4Low, OUTPUT);
   //pinMode(SIGNAL2Low, OUTPUT);
 
-  //OCR2A = randNumber;
-  //randNumber = random(0, 50);
-  //OCR2B = randNumber;
+  //OCR2A = TEST;
+  //OCR2B = TEST;
 
+  rundomsound();
 
   runrandomsignals();
+
 }
 
 
@@ -120,11 +127,6 @@ float randLimit_end() {
 
 
 float randomtime() {
-}
-
-
-float randLimit_end() {
-
 
   randTime = random(randLimitInit, randLimitEnd);
   
@@ -154,148 +156,231 @@ float randomnumber() {
 }
 
 
-void runrandomsignals() {
-  randNumber = randomnumber();
-  randTime = randomtime();
+void playtone_130(long int firstfreaquency, long int secondfreaquency, int portNumber) {
 
+    long int randNumber_130;
+
+    randNumber_130 = random(firstfreaquency, secondfreaquency);
+
+    do {
+      randNumber_130 = random(firstfreaquency, secondfreaquency);
+    } while (randNumber_130_previous == randNumber_130);
+
+    randNumber_130_previous = randNumber_130;
+
+    tone(portNumber, randNumber_130);
+}
+
+
+void playtone_1000(long int firstfreaquency, long int secondfreaquency, int portNumber) {
+
+    long int randNumber_1000;
+
+    randNumber_1000 = random(firstfreaquency, secondfreaquency);
+
+    do {
+      randNumber_1000 = random(firstfreaquency, secondfreaquency);
+    } while (randNumber_1000_previous == randNumber_1000);
+
+    randNumber_1000_previous = randNumber_1000;
+
+    tone(portNumber, randNumber_1000);
+}
+
+
+void playtone_10000(long int firstfreaquency, long int secondfreaquency, int portNumber) {
+
+    long int randNumber_10000;
+
+    randNumber_10000 = random(firstfreaquency, secondfreaquency);
+
+    do {
+      randNumber_10000 = random(firstfreaquency, secondfreaquency);
+    } while (randNumber_10000_previous == randNumber_10000);
+
+    randNumber_10000_previous = randNumber_10000;
+
+    tone(portNumber, randNumber_10000);
+}
+
+
+void playtone_20000(long int firstfreaquency, long int secondfreaquency, int portNumber) {
+    
+    long int randNumber_20000;
+
+    randNumber_20000 = random(firstfreaquency, secondfreaquency);
+
+    do {
+      randNumber_20000 = random(firstfreaquency, secondfreaquency);
+    } while (randNumber_20000_previous == randNumber_20000);
+
+    randNumber_20000_previous = randNumber_20000;
+
+    tone(portNumber, randNumber_20000);
+}
+
+
+void rundomsound() {
+
+  if (COUNTER = 0) {
+
+    playtone_1000(130, 1000, 10);
+    playtone_1000(130, 1000, 9);
+    randTime = randomtime();
+    delay_one_tenth_ms(randTime);
+
+    noTone(SIGNAL9Low);
+    noTone(SIGNAL10Low);
+
+    playtone_10000(1000, 10000, 10);
+    playtone_10000(1000, 10000, 9);
+    randTime = randomtime();
+    delay_one_tenth_ms(randTime);
+
+    noTone(SIGNAL9Low);
+    noTone(SIGNAL10Low);
+
+    COUNTER = 1;
+
+  } else {
+
+    playtone_20000(10000, 20000, 10);
+    playtone_20000(10000, 20000, 9);
+    randTime = randomtime();
+    delay_one_tenth_ms(randTime);
+
+    noTone(SIGNAL9Low);
+    noTone(SIGNAL10Low);
+
+    playtone_130(0, 130, 10);
+    playtone_130(0, 130, 9);
+    randTime = randomtime();
+    delay_one_tenth_ms(randTime);
+
+    noTone(SIGNAL9Low);
+    noTone(SIGNAL10Low);
+
+    COUNTER = 0;
+  }
+  return COUNTER;
+}
+
+
+void runrandomsignals() {
+
+  randNumber = randomnumber();
+  randTime = randomtime();//
   analogWrite(SIGNAL0Low, randNumber);
   delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
-
   analogWrite(SIGNAL1Low, randNumber);
   delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
-
   analogWrite(SIGNAL2Low, randNumber);
   delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
-
   analogWrite(SIGNAL3Low, randNumber);
   delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
-
   analogWrite(SIGNAL4Low, randNumber);
   delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
-
   analogWrite(SIGNAL5Low, randNumber);
   delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
-
   analogWrite(SIGNAL6Low, randNumber);
   delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
-
   analogWrite(SIGNAL7Low, randNumber);
   delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
-
   analogWrite(SIGNAL8Low, randNumber);
   delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
-
   analogWrite(SIGNAL13Low, randNumber);
   delay_one_tenth_ms(randTime);
-
+  
   randNumber = randomnumber();
   randTime = randomtime();
-
   analogWrite(SIGNAL9Low, randNumber);
   delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
-
   analogWrite(SIGNAL10Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = randomnumber();
-  randTime = randomtime();
+  //randNumber = randomnumber();
+  //randTime = randomtime();
+  //analogWrite(SIGNAL11Low, randNumber);
+  //delay_one_tenth_ms(randTime);
 
-  analogWrite(SIGNAL11Low, randNumber);
-  delay_one_tenth_ms(randTime);
-
-  randNumber = randomnumber();
-  randTime = randomtime();
-
-  analogWrite(SIGNAL12Low, randNumber);
-  delay_one_tenth_ms(randTime);
+  //randNumber = randomnumber();
+  //randTime = randomtime();
+  //analogWrite(SIGNAL12Low, randNumber);
+  //delay_one_tenth_ms(randTime);
 
   //##################################################################
 
   randNumber = randomnumber();
-
   analogWrite(SIGNAL0Low, randNumber);
 
   randNumber = randomnumber();
-
   analogWrite(SIGNAL1Low, randNumber);
 
   randNumber = randomnumber();
-
   analogWrite(SIGNAL2Low, randNumber);
 
   randNumber = randomnumber();
-
   analogWrite(SIGNAL3Low, randNumber);
 
   randNumber = randomnumber();
-
   analogWrite(SIGNAL4Low, randNumber);
 
   randNumber = randomnumber();
-
   analogWrite(SIGNAL5Low, randNumber);
 
   randNumber = randomnumber();
-
   analogWrite(SIGNAL6Low, randNumber);
 
   randNumber = randomnumber();
-
   analogWrite(SIGNAL7Low, randNumber);
 
   randNumber = randomnumber();
-
   analogWrite(SIGNAL8Low, randNumber);
 
   randNumber = randomnumber();
-
   analogWrite(SIGNAL13Low, randNumber);
 
   randNumber = randomnumber();
-
   analogWrite(SIGNAL9Low, randNumber);
 
   randNumber = randomnumber();
-
   analogWrite(SIGNAL10Low, randNumber);
 
-  randNumber = randomnumber();
+  //randNumber = randomnumber();
+  //analogWrite(SIGNAL11Low, randNumber);
 
-  analogWrite(SIGNAL11Low, randNumber);
-
-  randNumber = randomnumber();
-
-  analogWrite(SIGNAL12Low, randNumber);
+  //randNumber = randomnumber();
+  //analogWrite(SIGNAL12Low, randNumber);
 }
 
 

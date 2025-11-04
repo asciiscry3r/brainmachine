@@ -28,10 +28,10 @@ unsigned long int randNumber_10000_previous = 0;
 unsigned long int randNumber_20000_previous = 0;
 unsigned long int randTime = 0;
 unsigned long int COUNTER = 0;
-unsigned long int randLimitFirst_Initial = 5;
-unsigned long int randLimitSecond_Initial = 9;
-unsigned long int randLimitFirst_End = 10;
-unsigned long int randLimitSecond_End = 25;
+unsigned long int randLimitFirst_Initial = 6;
+unsigned long int randLimitSecond_Initial = 18;
+unsigned long int randLimitFirst_End = 18;
+unsigned long int randLimitSecond_End = 23;
 
 
 void setup() {
@@ -225,7 +225,7 @@ void rundomsound() {
   if (COUNTER = 0) {
 
     playtone_1000(130, 1000, 5);
-    playtone_1000(130, 1000, 6);
+    playtone_1000(130, 1000, 9);
     randTime = randomtime();
     delay_one_tenth_ms(randTime);
 
