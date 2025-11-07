@@ -120,11 +120,6 @@ float randLimit_end() {
 
 
 float randomtime() {
-}
-
-
-float randLimit_end() {
-
 
   randTime = random(randLimitInit, randLimitEnd);
   
@@ -152,6 +147,7 @@ float randomnumber() {
 
   return randNumber;
 }
+
 
 
 void runrandomsignals() {
@@ -301,7 +297,7 @@ void runrandomsignals() {
 
 void delay_one_tenth_ms(unsigned long int ms) {
   unsigned long int timer;
-  const unsigned long int DelayCount = 93;  // Default: 87 - this value was determined by trial and error
+  const unsigned long int DelayCount = 94;  // Default: 87 - this value was determined by trial and error
 
   while (ms != 0) {
     // Toggling PD0 is done here to force the compiler to do this loop, rather than optimize it away

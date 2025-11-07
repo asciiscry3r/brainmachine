@@ -156,9 +156,9 @@ float randomnumber() {
 }
 
 
-void playtone_130(long int firstfreaquency, long int secondfreaquency, int portNumber) {
+void playtone_130(unsigned int firstfreaquency, unsigned int secondfreaquency, int portNumber, unsigned long randTime) {
 
-    long int randNumber_130;
+    unsigned int randNumber_130;
 
     randNumber_130 = random(firstfreaquency, secondfreaquency);
 
@@ -168,13 +168,13 @@ void playtone_130(long int firstfreaquency, long int secondfreaquency, int portN
 
     randNumber_130_previous = randNumber_130;
 
-    tone(portNumber, randNumber_130);
+    tone(portNumber, randNumber_130, randTime);
 }
 
 
-void playtone_1000(long int firstfreaquency, long int secondfreaquency, int portNumber) {
+void playtone_1000(unsigned int firstfreaquency, unsigned int secondfreaquency, int portNumber, unsigned long randTime) {
 
-    long int randNumber_1000;
+    unsigned int randNumber_1000;
 
     randNumber_1000 = random(firstfreaquency, secondfreaquency);
 
@@ -184,13 +184,13 @@ void playtone_1000(long int firstfreaquency, long int secondfreaquency, int port
 
     randNumber_1000_previous = randNumber_1000;
 
-    tone(portNumber, randNumber_1000);
+    tone(portNumber, randNumber_1000, randTime);
 }
 
 
-void playtone_10000(long int firstfreaquency, long int secondfreaquency, int portNumber) {
+void playtone_10000(unsigned int firstfreaquency, unsigned int secondfreaquency, int portNumber, unsigned long randTime) {
 
-    long int randNumber_10000;
+    unsigned int randNumber_10000;
 
     randNumber_10000 = random(firstfreaquency, secondfreaquency);
 
@@ -200,13 +200,13 @@ void playtone_10000(long int firstfreaquency, long int secondfreaquency, int por
 
     randNumber_10000_previous = randNumber_10000;
 
-    tone(portNumber, randNumber_10000);
+    tone(portNumber, randNumber_10000, randTime);
 }
 
 
-void playtone_20000(long int firstfreaquency, long int secondfreaquency, int portNumber) {
+void playtone_20000(unsigned int firstfreaquency, unsigned int secondfreaquency, int portNumber, unsigned long randTime) {
     
-    long int randNumber_20000;
+    unsigned int randNumber_20000;
 
     randNumber_20000 = random(firstfreaquency, secondfreaquency);
 
@@ -216,7 +216,7 @@ void playtone_20000(long int firstfreaquency, long int secondfreaquency, int por
 
     randNumber_20000_previous = randNumber_20000;
 
-    tone(portNumber, randNumber_20000);
+    tone(portNumber, randNumber_20000, randTime);
 }
 
 
@@ -224,41 +224,41 @@ void rundomsound() {
 
   if (COUNTER = 0) {
 
-    playtone_1000(130, 1000, 5);
-    playtone_1000(130, 1000, 9);
     randTime = randomtime();
+    playtone_1000(130, 1000, 5, randTime);
+    playtone_1000(130, 1000, 11, randTime);
     delay_one_tenth_ms(randTime);
 
     noTone(SIGNAL9Low);
-    noTone(SIGNAL10Low);
+    noTone(SIGNAL2Low);
 
-    playtone_10000(1000, 10000, 5);
-    playtone_10000(1000, 10000, 6);
     randTime = randomtime();
+    playtone_10000(1000, 10000, 5, randTime);
+    playtone_10000(1000, 10000, 11, randTime);
     delay_one_tenth_ms(randTime);
 
     noTone(SIGNAL9Low);
-    noTone(SIGNAL10Low);
+    noTone(SIGNAL2Low);
 
     COUNTER = 1;
 
   } else {
-
-    playtone_20000(10000, 20000, 5);
-    playtone_20000(10000, 20000, 6);
+    
     randTime = randomtime();
+    playtone_20000(10000, 20000, 5, randTime);
+    playtone_20000(10000, 20000, 11, randTime);
     delay_one_tenth_ms(randTime);
 
     noTone(SIGNAL9Low);
-    noTone(SIGNAL10Low);
+    noTone(SIGNAL2Low);
 
-    playtone_130(0, 130, 5);
-    playtone_130(0, 130, 6);
     randTime = randomtime();
+    playtone_130(0, 130, 5, randTime);
+    playtone_130(0, 130, 11, randTime);
     delay_one_tenth_ms(randTime);
 
     noTone(SIGNAL9Low);
-    noTone(SIGNAL10Low);
+    noTone(SIGNAL2Low);
 
     COUNTER = 0;
   }
@@ -278,10 +278,10 @@ void runrandomsignals() {
   analogWrite(SIGNAL1Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = randomnumber();
-  randTime = randomtime();
-  analogWrite(SIGNAL2Low, randNumber);
-  delay_one_tenth_ms(randTime);
+  //randNumber = randomnumber();
+  //randTime = randomtime();
+  //analogWrite(SIGNAL2Low, randNumber);
+  //delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
@@ -322,10 +322,10 @@ void runrandomsignals() {
   //delay_one_tenth_ms(20);
   //analogWrite(SIGNAL9Low, randNumber);
 
-  //randNumber = randomnumber();
-  //randTime = randomtime();
-  //analogWrite(SIGNAL10Low, randNumber);
-  //delay_one_tenth_ms(randTime);
+  randNumber = randomnumber();
+  randTime = randomtime();
+  analogWrite(SIGNAL10Low, randNumber);
+  delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
@@ -345,8 +345,8 @@ void runrandomsignals() {
   randNumber = randomnumber();
   analogWrite(SIGNAL1Low, randNumber);
 
-  randNumber = randomnumber();
-  analogWrite(SIGNAL2Low, randNumber);
+  //randNumber = randomnumber();
+  //analogWrite(SIGNAL2Low, randNumber);
 
   randNumber = randomnumber();
   analogWrite(SIGNAL3Low, randNumber);
@@ -372,8 +372,8 @@ void runrandomsignals() {
   //TEST = random(0, 255);
   //analogWrite(SIGNAL9Low, randNumber);
 
-  //randNumber = randomnumber();
-  //analogWrite(SIGNAL10Low, randNumber);
+  randNumber = randomnumber();
+  analogWrite(SIGNAL10Low, randNumber);
 
   randNumber = randomnumber();
   analogWrite(SIGNAL11Low, randNumber);
@@ -385,7 +385,7 @@ void runrandomsignals() {
 
 void delay_one_tenth_ms(unsigned long int ms) {
   unsigned long int timer;
-  const unsigned long int DelayCount = 93;  // Default: 87 - this value was determined by trial and error
+  const unsigned long int DelayCount = 97;  // Default: 87 - this value was determined by trial and error
 
   while (ms != 0) {
     // Toggling PD0 is done here to force the compiler to do this loop, rather than optimize it away
