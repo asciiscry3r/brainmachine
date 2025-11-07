@@ -8707,6 +8707,16 @@
 		)
 		(uuid "e8dacf20-de41-4dc3-a3d6-813c32b54368")
 	)
+	(text "I use same, by concept, on AC filter in 2024"
+		(exclude_from_sim no)
+		(at 313.944 60.198 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f76dfec0-632e-45b9-9c5f-6e6632449fa4")
+	)
 	(junction
 		(at 21.59 156.21)
 		(diameter 0)
@@ -9104,6 +9114,12 @@
 		(uuid "3cd1f463-fb42-438f-b069-83f2dcb0b4ec")
 	)
 	(junction
+		(at 323.85 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3fb54923-bc31-4255-936e-f7c75b6f3dfb")
+	)
+	(junction
 		(at 27.94 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9144,6 +9160,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4632c360-2ed1-4791-92c6-1ab847704f2f")
+	)
+	(junction
+		(at 330.2 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "463a5bea-d665-415e-bdbf-d571c6f1915f")
 	)
 	(junction
 		(at 307.34 102.87)
@@ -9260,6 +9282,12 @@
 		(uuid "606e2413-1a26-4818-913e-206c8a0680f1")
 	)
 	(junction
+		(at 335.28 16.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "612f8294-1813-4cd7-8130-c65597763d52")
+	)
+	(junction
 		(at 46.99 153.67)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9336,6 +9364,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6c48df53-bf9d-4123-af6b-e44094001f76")
+	)
+	(junction
+		(at 318.77 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6e1dae6a-68a5-4c86-99f1-762a5e169fe3")
 	)
 	(junction
 		(at 149.86 88.9)
@@ -9566,6 +9600,12 @@
 		(uuid "8c01ff58-ed49-4fad-a15d-cb6366f3f1b6")
 	)
 	(junction
+		(at 323.85 16.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8cee7234-3383-4b00-8fbf-f974f73560c4")
+	)
+	(junction
 		(at 233.68 21.59)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9576,6 +9616,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8e59270a-e3d8-49d1-bb65-75b058876e75")
+	)
+	(junction
+		(at 330.2 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8e870c0b-59b9-4cad-a277-87e8733883f9")
 	)
 	(junction
 		(at 205.74 38.1)
@@ -9926,6 +9972,12 @@
 		(uuid "ca6bb1de-d000-47e7-ab04-a033a88d09e6")
 	)
 	(junction
+		(at 335.28 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cc30dbec-4cef-483c-a89b-ffaf38a39e27")
+	)
+	(junction
 		(at 302.26 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9984,6 +10036,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "db70b56e-95bd-467e-aef7-8f79453b3c55")
+	)
+	(junction
+		(at 328.93 16.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dc703655-8325-4d9c-aeb6-83d24a367736")
+	)
+	(junction
+		(at 328.93 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ddba3f69-49c8-44be-85b9-5ba2143386ca")
 	)
 	(junction
 		(at 151.13 179.07)
@@ -11067,6 +11131,16 @@
 	)
 	(wire
 		(pts
+			(xy 298.45 49.53) (xy 298.45 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e108a3a-91f7-40e7-90b2-0998e406037c")
+	)
+	(wire
+		(pts
 			(xy 148.59 107.95) (xy 149.86 107.95)
 		)
 		(stroke
@@ -11094,6 +11168,16 @@
 			(type default)
 		)
 		(uuid "1effd882-0eef-49ab-af4f-c8176c86c79d")
+	)
+	(wire
+		(pts
+			(xy 298.45 49.53) (xy 318.77 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f01c858-8585-4651-880b-d8c21118c626")
 	)
 	(wire
 		(pts
@@ -11224,6 +11308,16 @@
 			(type default)
 		)
 		(uuid "22969c55-b21a-4da2-ab93-3f6e294a7cda")
+	)
+	(wire
+		(pts
+			(xy 318.77 49.53) (xy 330.2 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2423bdbf-3ae8-4aba-bc49-207bd7d63982")
 	)
 	(wire
 		(pts
@@ -11717,6 +11811,16 @@
 	)
 	(wire
 		(pts
+			(xy 335.28 34.29) (xy 335.28 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3116c1e8-e172-4272-a6c5-8f1919e8defa")
+	)
+	(wire
+		(pts
 			(xy 138.43 153.67) (xy 143.51 153.67)
 		)
 		(stroke
@@ -11924,6 +12028,16 @@
 			(type default)
 		)
 		(uuid "37e3a3fe-5894-4112-adc4-623aa5aa2c6f")
+	)
+	(wire
+		(pts
+			(xy 339.09 58.42) (xy 339.09 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37e7206a-368a-4e30-a039-870bb3b9ab48")
 	)
 	(wire
 		(pts
@@ -12427,6 +12541,16 @@
 	)
 	(wire
 		(pts
+			(xy 339.09 35.56) (xy 339.09 16.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47f76613-c8a7-4578-9be6-e6244d90fa38")
+	)
+	(wire
+		(pts
 			(xy 190.5 46.99) (xy 196.85 46.99)
 		)
 		(stroke
@@ -12464,6 +12588,16 @@
 			(type default)
 		)
 		(uuid "49638115-404e-49dd-92d7-a83a5c28f3ba")
+	)
+	(wire
+		(pts
+			(xy 335.28 16.51) (xy 335.28 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49909c26-56be-4445-9786-f2a44331a29c")
 	)
 	(wire
 		(pts
@@ -12837,6 +12971,16 @@
 	)
 	(wire
 		(pts
+			(xy 335.28 16.51) (xy 328.93 16.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55439a66-5a4b-4132-af92-58dfbab7fd6a")
+	)
+	(wire
+		(pts
 			(xy 302.26 80.01) (xy 302.26 102.87)
 		)
 		(stroke
@@ -12944,6 +13088,16 @@
 			(type default)
 		)
 		(uuid "5c45770b-18c6-4a71-82f5-cc685838b943")
+	)
+	(wire
+		(pts
+			(xy 298.45 38.1) (xy 302.26 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c578abb-6ed4-45cc-8c76-b1a91128424d")
 	)
 	(wire
 		(pts
@@ -13204,6 +13358,16 @@
 			(type default)
 		)
 		(uuid "644e4f6b-e54b-4b43-adb9-56640b9bdbca")
+	)
+	(wire
+		(pts
+			(xy 328.93 40.64) (xy 335.28 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "646b6c2c-689c-45b1-8609-5a7e245486e4")
 	)
 	(wire
 		(pts
@@ -13474,6 +13638,16 @@
 			(type default)
 		)
 		(uuid "70444f72-4aa7-45ed-92b2-16547ed50fc9")
+	)
+	(wire
+		(pts
+			(xy 330.2 53.34) (xy 330.2 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70590470-1998-4332-a43b-4b3487c57c3e")
 	)
 	(wire
 		(pts
@@ -13987,6 +14161,16 @@
 	)
 	(wire
 		(pts
+			(xy 330.2 58.42) (xy 330.2 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7caf8286-ceef-493a-b0c4-5e39621749c3")
+	)
+	(wire
+		(pts
 			(xy 260.35 53.34) (xy 266.7 53.34)
 		)
 		(stroke
@@ -14117,6 +14301,16 @@
 	)
 	(wire
 		(pts
+			(xy 323.85 40.64) (xy 328.93 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "800f3c36-16be-420e-9771-9325feebd67c")
+	)
+	(wire
+		(pts
 			(xy 153.67 50.8) (xy 153.67 55.88)
 		)
 		(stroke
@@ -14164,6 +14358,16 @@
 			(type default)
 		)
 		(uuid "82d9c12a-336f-4c74-9759-761a0f3384de")
+	)
+	(wire
+		(pts
+			(xy 328.93 16.51) (xy 328.93 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "831945f7-05bd-4c33-9d4b-766c8856a8a0")
 	)
 	(wire
 		(pts
@@ -14317,6 +14521,16 @@
 	)
 	(wire
 		(pts
+			(xy 328.93 16.51) (xy 323.85 16.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "892e3c5b-50b9-4dcc-832f-1f18b6782e08")
+	)
+	(wire
+		(pts
 			(xy 186.69 105.41) (xy 186.69 107.95)
 		)
 		(stroke
@@ -14374,6 +14588,16 @@
 			(type default)
 		)
 		(uuid "8a5e0a15-67fb-4a64-a48d-25059872e4da")
+	)
+	(wire
+		(pts
+			(xy 330.2 63.5) (xy 339.09 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a9d6524-4f27-41d6-8eb3-8b3d55676ef8")
 	)
 	(wire
 		(pts
@@ -14597,7 +14821,7 @@
 	)
 	(wire
 		(pts
-			(xy 323.85 46.99) (xy 323.85 21.59)
+			(xy 323.85 46.99) (xy 323.85 40.64)
 		)
 		(stroke
 			(width 0)
@@ -14817,6 +15041,16 @@
 	)
 	(wire
 		(pts
+			(xy 330.2 49.53) (xy 339.09 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a69790b-472f-4149-a87e-42ff6051ff46")
+	)
+	(wire
+		(pts
 			(xy 316.23 35.56) (xy 321.31 35.56)
 		)
 		(stroke
@@ -14874,6 +15108,16 @@
 			(type default)
 		)
 		(uuid "9bda8990-e8d8-4943-911d-a42b6ae45122")
+	)
+	(wire
+		(pts
+			(xy 323.85 40.64) (xy 323.85 21.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c648c57-6338-44d3-9895-e4a2f2a96fb1")
 	)
 	(wire
 		(pts
@@ -15224,6 +15468,16 @@
 			(type default)
 		)
 		(uuid "a9e69187-6fe8-4db6-853c-59c7d7be9b40")
+	)
+	(wire
+		(pts
+			(xy 328.93 27.94) (xy 328.93 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa61d3fe-05af-44dc-ac82-14d1ffa12622")
 	)
 	(wire
 		(pts
@@ -15987,6 +16241,16 @@
 	)
 	(wire
 		(pts
+			(xy 335.28 40.64) (xy 339.09 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c68809c9-af3a-4afc-b522-b9d0fca5690e")
+	)
+	(wire
+		(pts
 			(xy 137.16 118.11) (xy 137.16 123.19)
 		)
 		(stroke
@@ -16124,16 +16388,6 @@
 			(type default)
 		)
 		(uuid "caf2c699-b723-4b5b-8bd9-337fb0f980a5")
-	)
-	(wire
-		(pts
-			(xy 307.34 46.99) (xy 323.85 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cb78649c-afa5-4140-be11-c21b3dd0a391")
 	)
 	(wire
 		(pts
@@ -16497,6 +16751,16 @@
 	)
 	(wire
 		(pts
+			(xy 318.77 54.61) (xy 318.77 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d5b7d2e4-c31e-47e9-b2d7-5eddc3635eef")
+	)
+	(wire
+		(pts
 			(xy 90.17 26.67) (xy 90.17 40.64)
 		)
 		(stroke
@@ -16634,6 +16898,16 @@
 			(type default)
 		)
 		(uuid "dacf3894-3c7f-4d0a-89ff-cafce242f561")
+	)
+	(wire
+		(pts
+			(xy 339.09 16.51) (xy 335.28 16.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db7ab53b-618c-435a-96a4-ecf1891d347b")
 	)
 	(wire
 		(pts
@@ -17307,6 +17581,16 @@
 	)
 	(wire
 		(pts
+			(xy 318.77 63.5) (xy 330.2 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec493624-b975-4be4-a291-be6611175242")
+	)
+	(wire
+		(pts
 			(xy 313.69 15.24) (xy 321.31 15.24)
 		)
 		(stroke
@@ -17544,6 +17828,16 @@
 			(type default)
 		)
 		(uuid "f7240463-e975-4875-9c86-02f9ad88eb40")
+	)
+	(wire
+		(pts
+			(xy 307.34 46.99) (xy 323.85 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7a4ae86-d729-4b7d-af0f-b059319d1c03")
 	)
 	(wire
 		(pts
@@ -19693,6 +19987,76 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized_Small")
+		(at 328.93 25.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0cd6406a-c709-4d9e-8331-4a19438aa577")
+		(property "Reference" "C3"
+			(at 331.47 23.5838 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10mkF"
+			(at 331.47 26.1238 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 328.93 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 328.93 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Polarized capacitor, small symbol"
+			(at 328.93 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "be6bcb55-f1c8-431a-894f-9845bdea5dd6")
+		)
+		(pin "1"
+			(uuid "4316b6a2-1791-450c-a9ea-f7b480cb4edf")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -25281,6 +25645,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Polarized_Small")
+		(at 330.2 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5a8f624e-629d-4b17-8c57-dda970beeca6")
+		(property "Reference" "C36"
+			(at 332.74 54.0638 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1mkF"
+			(at 332.74 56.6038 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 330.2 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 330.2 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Polarized capacitor, small symbol"
+			(at 330.2 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "00338bb2-f7cf-4199-9847-d38e4452a0e9")
+		)
+		(pin "1"
+			(uuid "585bdfff-f8d0-4c3d-adf3-3097a4e58b9b")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "C36")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 217.17 24.13 0)
 		(unit 1)
@@ -27777,6 +28211,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Polarized_Small")
+		(at 335.28 31.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "742928bd-6f62-49eb-8bbb-183ddfef1850")
+		(property "Reference" "C4"
+			(at 337.82 29.9338 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1mkF"
+			(at 337.82 32.4738 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 335.28 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 335.28 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Polarized capacitor, small symbol"
+			(at 335.28 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fd552fec-fd63-4903-8756-f8d751aa94fe")
+		)
+		(pin "1"
+			(uuid "93d1dc46-d7a0-4a11-8218-a8153b4301b6")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D_Zener")
 		(at 146.05 88.9 0)
 		(unit 1)
@@ -28361,6 +28865,76 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "R60")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized_Small")
+		(at 318.77 52.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7aa16da1-1687-424c-aec3-fd0abe95d8bc")
+		(property "Reference" "C14"
+			(at 321.31 50.2538 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10mkF"
+			(at 321.31 52.7938 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 318.77 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 318.77 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Polarized capacitor, small symbol"
+			(at 318.77 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "166fd737-ab64-4429-ba50-25fc36ef3284")
+		)
+		(pin "1"
+			(uuid "5e790fab-98c9-4340-98ea-d939004662c1")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -30182,6 +30756,72 @@
 			(project ""
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 328.93 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8f83c969-4df6-423b-9814-676887960604")
+		(property "Reference" "#PWR061"
+			(at 328.93 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 328.93 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 328.93 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 328.93 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 328.93 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2889a1e5-752c-43aa-a10d-0aeb2a3b6d92")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "#PWR061")
 					(unit 1)
 				)
 			)
@@ -32803,6 +33443,76 @@
 			(project ""
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "D41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 339.09 60.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b27f6182-15a4-4454-b508-ba37b89fcfec")
+		(property "Reference" "C37"
+			(at 341.63 59.6962 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1mkF"
+			(at 341.63 62.2362 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 339.09 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 339.09 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 339.09 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ded462b8-54f0-4899-9ce4-976b21a863c5")
+		)
+		(pin "1"
+			(uuid "df618c38-d704-4f95-9374-510fb9680b4c")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "C37")
 					(unit 1)
 				)
 			)
@@ -36908,6 +37618,76 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 339.09 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "df75226c-ba3e-4e67-8a51-61999c0ad886")
+		(property "Reference" "C43"
+			(at 341.63 36.8362 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1mkF"
+			(at 341.63 39.3762 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 339.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 339.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 339.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "006ae9d8-19a0-4a03-b299-9de6df37c2b8")
+		)
+		(pin "1"
+			(uuid "da7de40b-b931-4e71-8593-90c81f4984b1")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "C43")
 					(unit 1)
 				)
 			)
