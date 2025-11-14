@@ -133,7 +133,8 @@ float randomtime() {
   if (randTimePrevious != 0) {
     do {
       randTime = random(randLimitInit, randLimitEnd);
-    } while (randTimePrevious == randTime);
+    } while (randTimePrevious == randTime);    noTone(SIGNAL11Low);
+    noTone(SIGNAL12Low);
   }
   randTimePrevious = randTime;
 
@@ -232,8 +233,8 @@ void rundomsound() {
 
     noTone(SIGNAL9Low);
     noTone(SIGNAL10Low);
-    noTone(SIGNAL11Low);
-    noTone(SIGNAL12Low);
+    //noTone(SIGNAL11Low);
+    //noTone(SIGNAL12Low);
 
     randTime = randomtime();
     playtone_10000(1000, 10000, 5, randTime);
@@ -244,8 +245,8 @@ void rundomsound() {
  
     noTone(SIGNAL9Low);
     noTone(SIGNAL10Low);
-    noTone(SIGNAL11Low);
-    noTone(SIGNAL12Low);
+    //noTone(SIGNAL11Low);
+    //noTone(SIGNAL12Low);
 
     COUNTER = 1;
   } else {
@@ -258,8 +259,8 @@ void rundomsound() {
 
     noTone(SIGNAL9Low);
     noTone(SIGNAL10Low);
-    noTone(SIGNAL11Low);
-    noTone(SIGNAL12Low);
+    //noTone(SIGNAL11Low);
+    //noTone(SIGNAL12Low);
 
     randTime = randomtime();
     playtone_20000(10000, 20000, 5, randTime);
@@ -270,8 +271,8 @@ void rundomsound() {
 
     noTone(SIGNAL9Low);
     noTone(SIGNAL10Low);
-    noTone(SIGNAL11Low);
-    noTone(SIGNAL12Low);
+    //noTone(SIGNAL11Low);
+    //noTone(SIGNAL12Low);
 
     COUNTER = 0;
   }
