@@ -11946,6 +11946,12 @@
 		(uuid "622c8d46-38e3-4aef-942f-cecad0f11ca6")
 	)
 	(junction
+		(at 81.28 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "623466dc-b52a-4cc0-a375-2215d8bca514")
+	)
+	(junction
 		(at 276.86 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -12636,6 +12642,12 @@
 		(uuid "bc45dea0-7b1b-4b5e-a24f-796b94869f9c")
 	)
 	(junction
+		(at 62.23 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bced63ca-52b0-419b-9421-23a26489b544")
+	)
+	(junction
 		(at 241.3 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -12946,6 +12958,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eea4b7ae-eb3c-490d-ad9a-3d8846fa9fde")
+	)
+	(junction
+		(at 68.58 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f0dbb82b-46b5-42fe-b779-bf59e08ad51c")
 	)
 	(junction
 		(at 237.49 21.59)
@@ -14066,6 +14084,16 @@
 			(type default)
 		)
 		(uuid "1e4b4360-9589-4c4d-aade-f93f6f50307d")
+	)
+	(wire
+		(pts
+			(xy 68.58 135.89) (xy 68.58 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e63dc80-ebf7-47f9-b1e8-72e587b80513")
 	)
 	(wire
 		(pts
@@ -15976,6 +16004,16 @@
 			(type default)
 		)
 		(uuid "51785a1f-dc80-435e-b35c-83f574927d47")
+	)
+	(wire
+		(pts
+			(xy 72.39 152.4) (xy 81.28 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51f476f4-b531-4643-80dd-94719b7cdebd")
 	)
 	(wire
 		(pts
@@ -18069,7 +18107,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 153.67) (xy 81.28 148.59)
+			(xy 81.28 153.67) (xy 81.28 152.4)
 		)
 		(stroke
 			(width 0)
@@ -18166,6 +18204,16 @@
 			(type default)
 		)
 		(uuid "91e8a118-f3b2-449f-a9e1-f0261eecbae8")
+	)
+	(wire
+		(pts
+			(xy 81.28 152.4) (xy 81.28 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9214d20e-5cb8-4dc2-9082-87a5e4857a48")
 	)
 	(wire
 		(pts
@@ -21506,6 +21554,16 @@
 			(type default)
 		)
 		(uuid "f162e6c2-a739-4ece-abf9-b7a0fb094cc7")
+	)
+	(wire
+		(pts
+			(xy 62.23 138.43) (xy 68.58 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1c15b86-7011-41b8-998f-3d898b516d2c")
 	)
 	(wire
 		(pts
@@ -26217,6 +26275,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D")
+		(at 72.39 148.59 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "226f1187-5f71-455d-a9b3-ada7af261f27")
+		(property "Reference" "D52"
+			(at 74.93 147.3199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "D"
+			(at 74.93 149.8599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 72.39 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 72.39 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Diode"
+			(at 72.39 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 72.39 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 72.39 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fe7527d7-e34b-4904-beb3-614140cff560")
+		)
+		(pin "2"
+			(uuid "e1f112c7-3020-4618-bc9e-0cb8bcf42da4")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "D52")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED")
 		(at 134.62 180.34 0)
 		(mirror y)
@@ -27048,6 +27194,72 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "3.3v")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 72.39 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2e883997-8120-4bcb-a532-c098eb167913")
+		(property "Reference" "#PWR070"
+			(at 72.39 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 72.39 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 72.39 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 72.39 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 72.39 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8d7fb4ef-0e31-40cf-9b0c-82ca6b8f66dc")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "#PWR070")
 					(unit 1)
 				)
 			)
@@ -30304,6 +30516,76 @@
 			(project "arduino_brainmachine"
 				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
 					(reference "R61")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized_Small")
+		(at 68.58 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "573e61b2-8255-4e61-8d3b-a2e7cbf35bc1")
+		(property "Reference" "C59"
+			(at 71.12 131.5338 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100mkF"
+			(at 71.12 134.0738 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 68.58 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 68.58 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Polarized capacitor, small symbol"
+			(at 68.58 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2c9c4c35-5f84-493f-bf6d-834c8b30db8e")
+		)
+		(pin "1"
+			(uuid "dee06bce-d9fd-464d-9939-d835503a3300")
+		)
+		(instances
+			(project "arduino_brainmachine"
+				(path "/16427a71-30ca-4ef8-b47f-54137aef95d2"
+					(reference "C59")
 					(unit 1)
 				)
 			)
