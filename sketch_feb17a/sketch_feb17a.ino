@@ -240,6 +240,7 @@ void rundomsound() {
     playtone_10000(1000, 10000, 5, randTime);
     playtone_10000(1000, 10000, 6, randTime);
     //playtone_10000(1000, 10000, 9, randTime);
+    //playtone_130(0, 130, 9, randTime);
     //playtone_10000(1000, 10000, 10, randTime);
     delay_one_tenth_ms(randTime);
  

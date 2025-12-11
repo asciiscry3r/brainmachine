@@ -67,7 +67,6 @@ void loop() {
   //OCR0A = randNumber;
   //randNumber = random(0, 50);
   //OCR0B = randNumber;
-
   //randNumber = random(0, 180);
   //pinMode(SIGNAL11Low, OUTPUT);
   //pinMode(SIGNAL12Low, OUTPUT);
