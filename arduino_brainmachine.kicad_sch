@@ -14059,6 +14059,12 @@
 		(uuid "f27c89c6-7bcf-46d4-884b-a400fe3d75e6")
 	)
 	(junction
+		(at 40.64 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f294cb76-9e65-4c34-a93c-d880040085a9")
+	)
+	(junction
 		(at 245.11 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -17955,6 +17961,16 @@
 			(type default)
 		)
 		(uuid "55fab88d-3a04-4100-bcb3-8470e4e367cf")
+	)
+	(wire
+		(pts
+			(xy 40.64 100.33) (xy 43.18 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56174d37-1926-4c52-aff0-e822d1673f4d")
 	)
 	(wire
 		(pts
@@ -24398,7 +24414,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 100.33) (xy 43.18 100.33)
+			(xy 38.1 100.33) (xy 40.64 100.33)
 		)
 		(stroke
 			(width 0)
@@ -29164,7 +29180,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 38.1 100.33 0)
+		(at 40.64 100.33 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -29173,7 +29189,7 @@
 		(fields_autoplaced yes)
 		(uuid "1b5abe3e-f653-4c98-bf9b-ea06356852a2")
 		(property "Reference" "#PWR038"
-			(at 38.1 106.68 0)
+			(at 40.64 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29182,7 +29198,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 38.1 105.41 0)
+			(at 40.64 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29190,7 +29206,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 38.1 100.33 0)
+			(at 40.64 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29199,7 +29215,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 38.1 100.33 0)
+			(at 40.64 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29208,7 +29224,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 38.1 100.33 0)
+			(at 40.64 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35044,7 +35060,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33KOm"
+		(property "Value" "47KOm"
 			(at 17.78 96.5199 0)
 			(effects
 				(font
@@ -35342,7 +35358,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33KOm"
+		(property "Value" "100KOm"
 			(at 17.78 80.0099 0)
 			(effects
 				(font
