@@ -28,10 +28,10 @@ unsigned long int randNumber_10000_previous = 0;
 unsigned long int randNumber_20000_previous = 0;
 unsigned long int randTime = 0;
 unsigned long int COUNTER = 0;
-unsigned long int randLimitFirst_Initial = 6;
+unsigned long int randLimitFirst_Initial = 2;
 unsigned long int randLimitSecond_Initial = 15;
 unsigned long int randLimitFirst_End = 15;
-unsigned long int randLimitSecond_End = 23;
+unsigned long int randLimitSecond_End = 19;
 
 
 void setup() {

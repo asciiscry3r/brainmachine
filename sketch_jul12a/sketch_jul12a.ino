@@ -24,10 +24,10 @@ unsigned long int randLimitEnd = 0;
 unsigned long int randLimitEndPrevious = 0;
 unsigned long int randTime = 0;
 unsigned long int COUNTER = 0;
-unsigned long int randLimitFirst_Initial = 6;
+unsigned long int randLimitFirst_Initial = 3;
 unsigned long int randLimitSecond_Initial = 13;
 unsigned long int randLimitFirst_End = 13;
-unsigned long int randLimitSecond_End = 23;
+unsigned long int randLimitSecond_End = 18;
 
 
 void setup() {

@@ -3,7 +3,7 @@
 #define SIGNAL13Low 0   // SIGNAL only Hight/Low PWM
 #define SIGNAL1Low 8    // SIGNAL only Hight/Low PWM
 #define SIGNAL2Low 11   // SIGNAL
-#define SIGNAL3Low 4    // SIGNAL only Hight/Low PWM
+#define SIGNAL3Low 4    // SIGNAL only Hight/Low PWM / DAC
 #define SIGNAL4Low 3    // SIGNAL
 #define SIGNAL5Low 7    // SIGNAL only Hight/Low PWM
 #define SIGNAL6Low 1    // SIGNAL only Hight/Low PWM
@@ -52,12 +52,14 @@ void setup() {
 
   //TCCR1A = _BV(COM1A1) | _BV(COM1B1) | _BV(WGM12);
   //TCCR1B = _BV(CS12);
+  analogReference(DEFAULT);  // 5v
 
   //TCCR2A = _BV(COM2A1) | _BV(COM2B1) | _BV(WGM20);
   //TCCR2B = _BV(CS22);
   pinMode(DAC0, ANALOG);
+  analogWrite(DAC0, 255);
 
-  randomSeed(analogRead(A0)); // local ~putin~ faced police/millitia dont belive in addition, im IDK - we have this in many places
+  randomSeed(analogRead(A0));
 }
 
 void loop() {
