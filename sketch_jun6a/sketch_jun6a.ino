@@ -28,10 +28,10 @@ unsigned long int randNumber_10000_previous = 0;
 unsigned long int randNumber_20000_previous = 0;
 unsigned long int randTime = 0;
 unsigned long int COUNTER = 0;
-unsigned long int randLimitFirst_Initial = 3;
-unsigned long int randLimitSecond_Initial = 11;
-unsigned long int randLimitFirst_End = 11;
-unsigned long int randLimitSecond_End = 17;
+unsigned long int randLimitFirst_Initial = 5;
+unsigned long int randLimitSecond_Initial = 14;
+unsigned long int randLimitFirst_End = 14;
+unsigned long int randLimitSecond_End = 21;
 
 
 void setup() {
@@ -386,7 +386,7 @@ void runrandomsignals() {
 
 void delay_one_tenth_ms(unsigned long int ms) {
   unsigned long int timer;
-  const unsigned long int DelayCount = 97;  // Default: 87 - this value was determined by trial and error
+  const unsigned long int DelayCount = 89;  // Default: 87 - this value was determined by trial and error
 
   while (ms != 0) {
     // Toggling PD0 is done here to force the compiler to do this loop, rather than optimize it away
