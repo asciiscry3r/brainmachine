@@ -12082,7 +12082,7 @@
 		)
 		(uuid "01b9b7f0-3bb3-4dc9-96be-2d7fe4c86b37")
 	)
-	(text "Device for lowering standing waves and, while not under strong interference etc, information.\nFor filters and some, free running, power supplies."
+	(text "Device for lowering standing waves and, while not under strong interference etc, quantity of information.\nFor filters and some, free running, power supplies."
 		(exclude_from_sim no)
 		(at 522.478 378.968 0)
 		(effects
@@ -12417,6 +12417,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "005b2c5b-45ea-452a-9061-2055b73d94b7")
+	)
+	(junction
+		(at 326.39 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "00b3b09e-3e3b-4feb-93d6-6813500da3ac")
 	)
 	(junction
 		(at 21.59 156.21)
@@ -14357,12 +14363,6 @@
 		(uuid "98ac389b-7797-451c-b779-bf0aa560d6df")
 	)
 	(junction
-		(at 327.66 255.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "98adae79-52ce-45f2-b275-7db7e19f5aab")
-	)
-	(junction
 		(at 147.32 179.07)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -16062,6 +16062,16 @@
 	)
 	(wire
 		(pts
+			(xy 326.39 243.84) (xy 326.39 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "085b0576-db65-484b-bcda-867a8fbc949f")
+	)
+	(wire
+		(pts
 			(xy 54.61 189.23) (xy 54.61 184.15)
 		)
 		(stroke
@@ -16812,7 +16822,7 @@
 	)
 	(wire
 		(pts
-			(xy 322.58 266.7) (xy 328.93 266.7)
+			(xy 322.58 266.7) (xy 326.39 266.7)
 		)
 		(stroke
 			(width 0)
@@ -20672,16 +20682,6 @@
 	)
 	(wire
 		(pts
-			(xy 327.66 243.84) (xy 327.66 255.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "52192357-966b-4b44-824d-02618d188341")
-	)
-	(wire
-		(pts
 			(xy 142.24 190.5) (xy 142.24 191.77)
 		)
 		(stroke
@@ -21179,16 +21179,6 @@
 			(type default)
 		)
 		(uuid "5c578abb-6ed4-45cc-8c76-b1a91128424d")
-	)
-	(wire
-		(pts
-			(xy 320.04 255.27) (xy 327.66 255.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5ccf14fb-ce03-4b21-b3e7-14af475b64bf")
 	)
 	(wire
 		(pts
@@ -23159,6 +23149,16 @@
 			(type default)
 		)
 		(uuid "7dc5b358-1ded-4fb7-b615-cecbf808d965")
+	)
+	(wire
+		(pts
+			(xy 327.66 243.84) (xy 326.39 243.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7dcccf9b-10a7-4b54-86b3-663d6e58e9a5")
 	)
 	(wire
 		(pts
@@ -26862,6 +26862,16 @@
 	)
 	(wire
 		(pts
+			(xy 326.39 266.7) (xy 328.93 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c009092a-499e-4fa9-847f-e94204b5168a")
+	)
+	(wire
+		(pts
 			(xy 232.41 21.59) (xy 232.41 26.67)
 		)
 		(stroke
@@ -29992,7 +30002,7 @@
 	)
 	(wire
 		(pts
-			(xy 327.66 255.27) (xy 328.93 255.27)
+			(xy 320.04 255.27) (xy 328.93 255.27)
 		)
 		(stroke
 			(width 0)
@@ -30931,6 +30941,28 @@
 		(uuid "53c7dd82-d7b4-4144-8ff1-059c8f0d260a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 205.8224 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Random PWM"
+		(shape input)
+		(at 340.36 242.57 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5cc5b81b-cce2-4878-b3be-03c5ef6da23e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 340.36 226.8851 90)
 			(effects
 				(font
 					(size 1.27 1.27)
