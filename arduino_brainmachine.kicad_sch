@@ -12082,6 +12082,16 @@
 		)
 		(uuid "01b9b7f0-3bb3-4dc9-96be-2d7fe4c86b37")
 	)
+	(text "Device for lowering standing waves and, while not under strong interference etc, information.\nFor filters and some, free running, power supplies."
+		(exclude_from_sim no)
+		(at 522.478 378.968 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "07d0cc21-718b-42a0-8a35-d01979508c64")
+	)
 	(text "2025. sping/start of summer, 2025.10.05"
 		(exclude_from_sim no)
 		(at 519.43 388.366 0)
@@ -12244,7 +12254,7 @@
 	)
 	(text "2025.10.05 - error fix"
 		(exclude_from_sim no)
-		(at 538.988 381.508 0)
+		(at 560.832 389.636 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12301,6 +12311,16 @@
 			)
 		)
 		(uuid "bc6f9e9e-a18b-43b9-9853-90830354eb5d")
+	)
+	(text "2026.02.25\n"
+		(exclude_from_sim no)
+		(at 563.626 395.732 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "be9200e1-dd6f-4400-9d28-fb2ee93c68de")
 	)
 	(text "CapSet"
 		(exclude_from_sim no)
