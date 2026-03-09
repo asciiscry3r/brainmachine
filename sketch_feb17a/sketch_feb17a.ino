@@ -1,3 +1,4 @@
+#include <TimerOne.h>
 
 #define SIGNAL0Low 2    // SIGNAL only Hight/Low PWM
 #define SIGNAL13Low 0   // SIGNAL only Hight/Low PWM
@@ -59,7 +60,9 @@ void setup() {
 
   //TCCR2A = _BV(COM2A1) | _BV(COM2B1) | _BV(WGM20);
   //TCCR2B = _BV(CS22);
-  
+  Timer1.initialize(1);  // Frequency, 1us = 1 MHz
+  Timer1.pwm(SIGNAL11Low, 50);      // 50% DC on pin 9
+
   randomSeed(analogRead(A0)); // local ~putin~ faced police/millitia dont belive in addition, im IDK - we have this in many places
 }
 
@@ -88,6 +91,8 @@ void loop() {
   //OCR2A = randNumber;
   //randNumber = random(0, 50);
   //OCR2B = randNumber;
+  randNumber = randomnumberTimer();
+  Timer1.pwm(SIGNAL11Low, randNumber);
 
   rundomsound();
 
@@ -157,6 +162,21 @@ float randomnumber() {
 }
 
 
+float randomnumberTimer() {
+
+  randNumber = random(0, 1023);
+
+  if (randNumberPrevious != 0) {
+    do {
+      randNumber = random(0, 1023);
+    } while (randNumber == randNumberPrevious);
+  }
+  randNumberPrevious = randNumber;
+
+  return randNumber;
+}
+
+
 void playtone_130(unsigned int firstfreaquency, unsigned int secondfreaquency, int portNumber, unsigned long randTime) {
 
     unsigned int randNumber_130;
@@ -185,6 +205,12 @@ void playtone_1000(unsigned int firstfreaquency, unsigned int secondfreaquency, 
 
     randNumber_1000_previous = randNumber_1000;
 
+    randTime = randomtime();    
+    playtone_130(0, 130, 5, randTime);
+    playtone_130(0, 130, 6, randTime);
+    //playtone_130(0, 130, 9, randTime);
+    //playtone_130(0, 130, 10, randTime);
+    delay_one_tenth_ms(randTime);
     tone(portNumber, randNumber_1000, randTime);
 }
 
@@ -291,6 +317,7 @@ void runrandomsignals() {
   randTime = randomtime();
   analogWrite(SIGNAL1Low, randNumber);
   delay_one_tenth_ms(randTime);
+  pinMode(SIGNAL11Low, OUTPUT);
 
   randNumber = randomnumber();
   randTime = randomtime();
@@ -332,10 +359,10 @@ void runrandomsignals() {
   analogWrite(SIGNAL13Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = randomnumber();
-  randTime = randomtime();
-  analogWrite(SIGNAL11Low, randNumber);
-  delay_one_tenth_ms(randTime);
+  //randNumber = randomnumber();
+  //randTime = randomtime();
+  //analogWrite(SIGNAL11Low, randNumber);
+  //delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
@@ -373,8 +400,8 @@ void runrandomsignals() {
   randNumber = randomnumber();
   analogWrite(SIGNAL13Low, randNumber);
 
-  analogWrite(SIGNAL11Low, randNumber);
-  delay_one_tenth_ms(randTime);
+  //analogWrite(SIGNAL11Low, randNumber);
+  //delay_one_tenth_ms(randTime);
 
   analogWrite(SIGNAL12Low, randNumber);
   delay_one_tenth_ms(randTime);

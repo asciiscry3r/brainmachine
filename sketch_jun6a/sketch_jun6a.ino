@@ -145,6 +145,7 @@ float randomnumber() {
 
   randNumber = random(0, 255);
 
+
   if (randNumberPrevious != 0) {
     do {
       randNumber = random(0, 255);

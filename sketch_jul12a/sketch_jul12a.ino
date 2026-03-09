@@ -1,3 +1,4 @@
+#include <TimerOne.h>
 
 #define SIGNAL0Low 2    // SIGNAL only Hight/Low PWM
 #define SIGNAL13Low 0   // SIGNAL only Hight/Low PWM
@@ -29,7 +30,6 @@ unsigned long int randLimitSecond_Initial = 13;
 unsigned long int randLimitFirst_End = 13;
 unsigned long int randLimitSecond_End = 30;
 
-
 void setup() {
 
   pinMode(SIGNAL0Low, OUTPUT);
@@ -46,7 +46,9 @@ void setup() {
   pinMode(SIGNAL11Low, OUTPUT);
   pinMode(SIGNAL12Low, OUTPUT);
   pinMode(SIGNAL13Low, OUTPUT);
-
+  
+  Timer1.initialize(1);  // Frequency, 1us = 1 MHz
+  Timer1.pwm(SIGNAL11Low, 50);      // 50% DC on pin 9
   //TCCR0A = _BV(COM0A1) | _BV(COM0B1) | _BV(WGM02);
   //TCCR0B = _BV(CS02);
 
@@ -60,29 +62,8 @@ void setup() {
 }
 
 void loop() {
-
-  //pinMode(SIGNAL9Low, OUTPUT);
-  //pinMode(SIGNAL10Low, OUTPUT);
-
-  //OCR0A = randNumber;
-  //randNumber = random(0, 50);
-  //OCR0B = randNumber;
-  //randNumber = random(0, 180);
-  //pinMode(SIGNAL11Low, OUTPUT);
-  //pinMode(SIGNAL12Low, OUTPUT);
-
-  //OCR1A = randNumber;
-  //randNumber = random(0, 50);
-  //OCR1B = randNumber;
-
-  //randNumber = random(0, 190);
-  //pinMode(SIGNAL4Low, OUTPUT);
-  //pinMode(SIGNAL2Low, OUTPUT);
-
-  //OCR2A = randNumber;
-  //randNumber = random(0, 50);
-  //OCR2B = randNumber;
-
+  randNumber = randomnumberTimer();
+  Timer1.pwm(SIGNAL11Low, randNumber);
 
   runrandomsignals();
 }
@@ -147,7 +128,19 @@ float randomnumber() {
   return randNumber;
 }
 
+float randomnumberTimer() {
 
+  randNumber = random(0, 1023);
+
+  if (randNumberPrevious != 0) {
+    do {
+      randNumber = random(0, 1023);
+    } while (randNumber == randNumberPrevious);
+  }
+  randNumberPrevious = randNumber;
+
+  return randNumber;
+}
 
 void runrandomsignals() {
   randNumber = randomnumber();
@@ -155,7 +148,7 @@ void runrandomsignals() {
 
   analogWrite(SIGNAL0Low, randNumber);
   delay_one_tenth_ms(randTime);
-
+SIGNAL10Low
   randNumber = randomnumber();
   randTime = randomtime();
 
@@ -222,17 +215,18 @@ void runrandomsignals() {
   analogWrite(SIGNAL10Low, randNumber);
   delay_one_tenth_ms(randTime);
 
-  randNumber = randomnumber();
-  randTime = randomtime();
+  //randNumber = randomnumber();
+  //randTime = randomtime();
 
-  analogWrite(SIGNAL11Low, randNumber);
-  delay_one_tenth_ms(randTime);
+  //analogWrite(SIGNAL11Low, randNumber);
+  //delay_one_tenth_ms(randTime);
 
   randNumber = randomnumber();
   randTime = randomtime();
 
   analogWrite(SIGNAL12Low, randNumber);
   delay_one_tenth_ms(randTime);
+
 
   //##################################################################
 
@@ -284,9 +278,9 @@ void runrandomsignals() {
 
   analogWrite(SIGNAL10Low, randNumber);
 
-  randNumber = randomnumber();
+//  randNumber = randomnumber();
 
-  analogWrite(SIGNAL11Low, randNumber);
+//  analogWrite(SIGNAL11Low, randNumber);
 
   randNumber = randomnumber();
 
